@@ -1,2 +1,25 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Byte-exact reproducibility artefacts.
+# Preserve committed line endings; do not apply Git EOL normalization.
+PAID/stage00_data_audit/mask/analysis_mask.csv -text
+PAID/stage00_data_audit/mask/grid_validity.csv -text
+PAID/stage01_protocol/locked/zone_C_targets.csv -text
+PAID/stage01_protocol/split/analysis_split.csv -text
+PAID/stage01_protocol/split/zone_A_open.csv -text
+PAID/stage01_protocol/split/zone_B_devval.csv -text
+PAID/stage02_platform/sandbox_root/inputs/zone_A_open.csv -text
+PAID/stage02_platform/sandbox_root/inputs/zone_B_devval.csv -text
+data/shenzhen/analysis_split.csv -text
+data/shenzhen/zone_A_open.csv -text
+data/shenzhen/zone_B_devval.csv -text
+data/shenzhen/zone_C_targets.csv -text
+docs/AUTHOR_CREATED_MATERIALS_MATRIX.csv -text
+docs/DATA_PUBLICATION_AUDIT.csv -text
+docs/SHENZHEN_DATA_FILE_INVENTORY.csv -text
+docs/SHENZHEN_LICENSING_MATRIX.csv -text
+docs/SHENZHEN_VARIABLE_PROVENANCE.csv -text
+docs/UPSTREAM_DATA_RIGHTS_MATRIX.csv -text
+docs/EOL_BYTE_IDENTITY_AUDIT.csv -text
+docs/EOL_MANIFEST_STABILITY_CHECK.csv -text
