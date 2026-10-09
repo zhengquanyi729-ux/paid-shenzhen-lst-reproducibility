@@ -1,0 +1,12 @@
+{
+  "created": "2026-09-24T13:12:08",
+  "frozen_candidates_sha256": "fb8f1d76b1f340e7682844069e42cfc8d505ad91d347105dc43f1572f7277186",
+  "frozen_validation_runs": {
+    "S03-H11-REFINE": 0,
+    "S03-H10-GREEDY": 0,
+    "S03-H10P-GREEDY-MIN": 0,
+    "S03-H01-LIN7": 0
+  },
+  "log_lines_pre": 1237,
+  "log_sha256_pre": "f3178f48d96e9b370f0938d7395004346aba8518b3b29955bde8062ff0864305"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "stage04-approved-unseal-v1",
+  "created": "2026-09-27",
+  "approved_by": "user",
+  "decision": "保守方案：先解封 1 个发现候选 + 1 个安慰剂参考；其余冻结候选保留，不消耗其唯一解封机会。",
+  "approved_candidates": [
+    {
+      "id": "S03-H10-GREEDY",
+      "role": "discovery_candidate",
+      "why": "A、B 两区同向改善（ΔA=+0.2016, ΔB=+0.1222），复杂度 14 的中间解；A 区稳健性检查 p=0.005。"
+    },
+    {
+      "id": "S03-H01-LIN7",
+      "role": "reference_placebo",
+      "why": "冻结 Baseline A 规格本身，验证区 ΔRMSE 按定义为 0，**应当被验证服务判为不通过**——用于确认验证服务能识别零效应（判别力自检）。"
+    }
+  ],
+  "not_unsealed": [
+    {"id": "S03-H11-REFINE", "reason": "A 区增益最大但 B 区增益略小、复杂度触顶；留待本轮结果后再决定。"},
+    {"id": "S03-H10P-GREEDY-MIN", "reason": "A 区增益在稳健性检查中区间含 0（p=0.335）、B 区 ΔB 为负；不建议消耗解封机会。"}
+  ],
+  "multiplicity": "Holm–Bonferroni，family = 冻结候选集（4 个：3 发现候选 + 1 安慰剂）；同时报告未校正 p。",
+  "irreversible": true,
+  "note": "每个候选 validation_runs 上限为 1；本次解封后 H10-GREEDY 与 H01-LIN7 的机会即被消耗，结果完整发布、不可撤回。"
+}

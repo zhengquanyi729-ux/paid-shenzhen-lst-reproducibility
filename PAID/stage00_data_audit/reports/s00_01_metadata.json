@@ -1,0 +1,1433 @@
+{
+  "raster": [
+    {
+      "file": "DEM_30m_Final.tif",
+      "bytes": 10231552,
+      "sha256": "226fe256792369b5d2734ac658ff4eed0fed809ea92f92b0623e7a6a16234f7a",
+      "mtime": "2026-01-11T12:11:50",
+      "epsg": 32650,
+      "crs_wkt_name": "WGS 84 / UTM zone 50N|WGS 84|",
+      "size": [
+        2966,
+        1723
+      ],
+      "px": [
+        30.0,
+        30.0
+      ],
+      "origin": [
+        166483.328,
+        2531918.1307
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 16,
+      "sample_format": 2,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "LST_30m_Final new.tif",
+      "bytes": 19080994,
+      "sha256": "97958256383e015af8b2f8a9b2eb7a52c759231fe9b80af947942179fe0e71e0",
+      "mtime": "2026-01-11T12:35:42",
+      "epsg": 32650,
+      "crs_wkt_name": "WGS 84 / UTM zone 50N|WGS 84|",
+      "size": [
+        2874,
+        1658
+      ],
+      "px": [
+        30.0,
+        30.0
+      ],
+      "origin": [
+        167357.3694,
+        2531643.1133
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "NDVI_30m_Final.tif",
+      "bytes": 42984086,
+      "sha256": "f412fb70f2051afe301b4a237160095e8bb37704b8d1b7a9274ffff4ae16623c",
+      "mtime": "2026-01-11T11:43:18",
+      "epsg": 32650,
+      "crs_wkt_name": "WGS 84 / UTM zone 50N|WGS 84|",
+      "size": [
+        3011,
+        1784
+      ],
+      "px": [
+        30.0,
+        30.0
+      ],
+      "origin": [
+        165793.3139688911,
+        2532210.457563955
+      ],
+      "nodata": -9999.0,
+      "bands": 2,
+      "bits_per_sample": [
+        32,
+        32
+      ],
+      "sample_format": [
+        3,
+        3
+      ],
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": true,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "archi_30m_Final.tif",
+      "bytes": 19070688,
+      "sha256": "d4ce7b9273e97869e175126ec328d9c14bf050aa738cf2708ea9de7b17bf9b70",
+      "mtime": "2026-01-11T11:55:08",
+      "epsg": 32650,
+      "crs_wkt_name": "WGS 84 / UTM zone 50N|WGS 84|",
+      "size": [
+        2874,
+        1658
+      ],
+      "px": [
+        30.0,
+        30.0
+      ],
+      "origin": [
+        167357.3694,
+        2531643.1133
+      ],
+      "nodata": 0.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "road_30m_Final.tif",
+      "bytes": 20452388,
+      "sha256": "5f3175f2c7a1717eb30fe6faa6052bf8272a68610e27b4cd232a12ee41d86ade",
+      "mtime": "2026-01-11T11:46:52",
+      "epsg": 32650,
+      "crs_wkt_name": "WGS 84 / UTM zone 50N|WGS 84|",
+      "size": [
+        2966,
+        1723
+      ],
+      "px": [
+        30.0,
+        30.0
+      ],
+      "origin": [
+        166483.327967696,
+        2531918.1306583844
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/DEM_shenzhen.tif",
+      "bytes": 1872092,
+      "sha256": "12fbbdedf32cf3377322d53edea2a751f40e70852930fe1f651a52e893ec7531",
+      "mtime": "2026-01-29T13:27:08",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        1205,
+        776
+      ],
+      "px": [
+        30.00042699061487,
+        30.01114340526047
+      ],
+      "origin": [
+        794467.4183897156,
+        2508387.9647896728
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 16,
+      "sample_format": 2,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/LST_shenzhen.tif",
+      "bytes": 3745354,
+      "sha256": "c943a80402e68e70c8daf8901ed889aed826827a09aa3be82150192c0a841824",
+      "mtime": "2026-01-29T13:30:18",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        1205,
+        776
+      ],
+      "px": [
+        30.00042699061487,
+        30.01114340526047
+      ],
+      "origin": [
+        794467.4183897156,
+        2508387.9647896728
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/NVDI_shenzhen.tif",
+      "bytes": 7485686,
+      "sha256": "025d840ca953dafa10ae2cb6cc93ddc98fcb10f2f0e2e31af57fbbe4cc52d4cb",
+      "mtime": "2026-01-29T13:32:28",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        1205,
+        776
+      ],
+      "px": [
+        30.00042699061487,
+        30.01114340526047
+      ],
+      "origin": [
+        794467.4183897156,
+        2508387.9647896728
+      ],
+      "nodata": -9999.0,
+      "bands": 2,
+      "bits_per_sample": [
+        32,
+        32
+      ],
+      "sample_format": [
+        3,
+        3
+      ],
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": true,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/Road_shenzhen.tif",
+      "bytes": 3745354,
+      "sha256": "3918a82bdaf94e78a92a04b2e08a1f5002ca561e9ed91d00755a54a38148b1bc",
+      "mtime": "2026-01-29T13:31:26",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        1205,
+        776
+      ],
+      "px": [
+        30.00042699061487,
+        30.01114340526047
+      ],
+      "origin": [
+        794467.4183897156,
+        2508387.9647896728
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/SVF_Shenzhen.tif",
+      "bytes": 134765986,
+      "sha256": "001b41330260a3fe3461ce482f0caa56ab06b49e90c05d4ca7c309a66a844d3d",
+      "mtime": "2026-01-29T12:10:18",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        7230,
+        4658
+      ],
+      "px": [
+        5.0,
+        5.0
+      ],
+      "origin": [
+        794467.4184,
+        2508389.4085
+      ],
+      "nodata": -9999.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    },
+    {
+      "file": "0_论文data/arch_shenzhen.tif",
+      "bytes": 3745348,
+      "sha256": "964dd463fac3e5ad43bc97ea8d33fc9599e6926b644c6a4148c7a6d54061b3a5",
+      "mtime": "2026-01-29T13:34:00",
+      "epsg": 32649,
+      "crs_wkt_name": "WGS 84 / UTM zone 49N|WGS 84|",
+      "size": [
+        1205,
+        776
+      ],
+      "px": [
+        30.00042699061487,
+        30.01114340526047
+      ],
+      "origin": [
+        794467.4183897156,
+        2508387.9647896728
+      ],
+      "nodata": 0.0,
+      "bands": 1,
+      "bits_per_sample": 32,
+      "sample_format": 3,
+      "tag_305_software": null,
+      "tag_306_datetime": null,
+      "tag_270_description": null,
+      "tag_271_make": null,
+      "tag_272_model": null,
+      "has_datetime_tag": false,
+      "aux_xml_present": true,
+      "aux_has_stats": false,
+      "aux_has_SRS": false
+    }
+  ],
+  "vector": [
+    {
+      "file": "2023年县级/2023年初县矢量.shp",
+      "bytes": 60317564,
+      "sha256": "32c9f33d395cecfa0614a6021a6265ffedcc3cf6bf38f42b67926fdd6b7cadb4",
+      "mtime": "2023-01-02T11:06:56",
+      "type": "Polygon",
+      "n": 2852,
+      "bbox": [
+        73.501,
+        3.838,
+        135.089,
+        53.561
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "shp_xml_present": true,
+      "shp_xml_excerpt": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<metadata xml:lang=\"zh\"><Esri><CreaDate>20230102</CreaDate><CreaTime>19065500</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource=\"d:\\soft\\arcgis\\desktop10.6\\ArcToolbox\\Toolboxes\\Data Management Tools.tbx\\CalculateField\" Date=\"20220825\" Time=\"182957\">CalculateField 2021年县矢量 year 2022 VB #</Process><Process ToolSource=\"d:\\soft\\arcgis\\desktop10.6\\ArcToolbox\\Toolboxes\\Data Management Tools.tbx\\CalculateField\" Date=\"20220828\" Time=\"173323\">CalculateField 2022年县矢量 NAME_1 \"Shaanxi\" VB #</Process><Proc",
+      "dbf_fields": [
+        "地名",
+        "区划码",
+        "县级",
+        "县级码",
+        "县级类",
+        "地级",
+        "地级码",
+        "地级类",
+        "省级",
+        "省级码",
+        "省级类",
+        "曾用名",
+        "备注",
+        "ENG_NAME",
+        "VAR_NAME",
+        "code",
+        "NAME_3",
+        "VAR_NAME3",
+        "GID_3",
+        "TYPE_3",
+        "NAME_2",
+        "VAR_NAME2",
+        "GID_2",
+        "TYPE_2",
+        "NAME_1",
+        "VAR_NAME1",
+        "GID_1",
+        "TYPE_1",
+        "year"
+      ]
+    },
+    {
+      "file": "arch shp/深圳建筑.shp",
+      "bytes": 115780276,
+      "sha256": "cae6a58a2fa5506ce6c915ed88ddda561959d4087b0e394d1502e3a94ed64928",
+      "mtime": "2026-01-11T11:18:34",
+      "type": "Polygon",
+      "n": 745213,
+      "bbox": [
+        167357.369,
+        2481896.223,
+        253582.976,
+        2531643.113
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_50N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_50N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "Height",
+        "id"
+      ]
+    },
+    {
+      "file": "road/road 3d/road.shp",
+      "bytes": 784380,
+      "sha256": "b0d417a5702181c2d0d7abd8ad858ffcf656448055cbc458b7c5ae3f9a8c99fa",
+      "mtime": "2026-01-29T13:54:46",
+      "type": "Polyline",
+      "n": 4223,
+      "bbox": [
+        794722.523,
+        2487542.397,
+        829182.912,
+        2506379.161
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_49N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_49N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ]
+    },
+    {
+      "file": "road/road.shp",
+      "bytes": 41796132,
+      "sha256": "acf184b6555393e9aadafc1cf8ec9e1624aff6b2e0f0b0e7166db92d5dcbe04c",
+      "mtime": "2026-01-03T09:24:18",
+      "type": "Polyline",
+      "n": 197834,
+      "bbox": [
+        109.703,
+        20.229,
+        117.204,
+        25.551
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ]
+    },
+    {
+      "file": "road/road_new.shp",
+      "bytes": 31705420,
+      "sha256": "e94879d32ac50e51410e932b1c5d30c781b512a7def3cf506032659f71413bef",
+      "mtime": "2026-01-03T09:33:06",
+      "type": "Polyline",
+      "n": 140029,
+      "bbox": [
+        109.703,
+        20.229,
+        117.204,
+        25.551
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ]
+    },
+    {
+      "file": "szbuildings.shp",
+      "bytes": 20437300,
+      "sha256": "6146cb24cc8a6937c1762d2c548d27b51457d8a1fa5602d06a9940ae77d22eeb",
+      "mtime": "2026-01-28T15:52:50",
+      "type": "Polygon",
+      "n": 119808,
+      "bbox": [
+        794694.058,
+        2486282.987,
+        829241.035,
+        2507335.598
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_49N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_49N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "Height",
+        "id",
+        "Area_m2",
+        "Volume_m3",
+        "Perimeter"
+      ]
+    },
+    {
+      "file": "研究边界/Buildings_Fixed.shp",
+      "bytes": 115774900,
+      "sha256": "0dce441b02496250ae6b857a1de74c12ffb67969cd42c1aa197d716d2b236c83",
+      "mtime": "2026-01-28T15:39:04",
+      "type": "Polygon",
+      "n": 745213,
+      "bbox": [
+        783688.364,
+        2481123.904,
+        870748.046,
+        2531144.61
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_49N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_49N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "Height",
+        "id"
+      ]
+    },
+    {
+      "file": "研究边界/buildings_utm.shp",
+      "bytes": 100,
+      "sha256": "afd62dde4d802deedb2c1bb6513f1db785c815f0893003238b342b58b74cd4c4",
+      "mtime": "2026-01-28T15:33:30",
+      "type": "Polygon",
+      "n": 0,
+      "bbox": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dbf_fields": [
+        "Height",
+        "id"
+      ]
+    },
+    {
+      "file": "研究边界/grid_utm.shp",
+      "bytes": 4566832,
+      "sha256": "7376801d1da60ef4d901a430a91a5660c3bebd8ab24ebaa95e2c51ab31d97f1c",
+      "mtime": "2026-02-11T03:07:01.995297",
+      "type": "Polygon",
+      "n": 32748,
+      "bbox": [
+        794467.418,
+        2485099.318,
+        830617.933,
+        2508389.408
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_49N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_49N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "id",
+        "left",
+        "top",
+        "right",
+        "bottom",
+        "row_index",
+        "col_index",
+        "Grid_ID",
+        "value_fixe",
+        "ID_FIX",
+        "link_id",
+        "final_id"
+      ]
+    },
+    {
+      "file": "研究边界/studyarea.shp",
+      "bytes": 821428,
+      "sha256": "17f9f3d72424c2fc3207d3fbde1cb83f26f824c67318d2c3234d60c935133930",
+      "mtime": "2026-01-28T15:35:12",
+      "type": "Polygon",
+      "n": 299,
+      "bbox": [
+        113.862,
+        22.446,
+        114.215,
+        22.655
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "OBJECTID",
+        "SQNAME",
+        "SQCODE",
+        "JDNAME",
+        "JDCODE",
+        "QUNAME",
+        "QUCODE",
+        "SHAPE.AREA",
+        "SHAPE.LEN"
+      ]
+    },
+    {
+      "file": "研究边界/szbuildings_utm.shp",
+      "bytes": 20437300,
+      "sha256": "6146cb24cc8a6937c1762d2c548d27b51457d8a1fa5602d06a9940ae77d22eeb",
+      "mtime": "2026-01-28T15:45:04",
+      "type": "Polygon",
+      "n": 119808,
+      "bbox": [
+        794694.058,
+        2486282.987,
+        829241.035,
+        2507335.598
+      ],
+      "prj": "PROJCS[\"WGS_1984_UTM_Zone_49N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PR",
+      "prj_name": [
+        "WGS_1984_UTM_Zone_49N",
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "Height",
+        "id"
+      ]
+    },
+    {
+      "file": "边界/广东省深圳市各社区.shp",
+      "bytes": 2816820,
+      "sha256": "73075531a0e161545ae4d0cec1e0da870a95747d2003ee9beecbe5eaa1008582",
+      "mtime": "2021-02-05T07:17:44",
+      "type": "Polygon",
+      "n": 668,
+      "bbox": [
+        113.754,
+        22.397,
+        114.623,
+        22.865
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "dbf_fields": [
+        "OBJECTID",
+        "SQNAME",
+        "SQCODE",
+        "JDNAME",
+        "JDCODE",
+        "QUNAME",
+        "QUCODE",
+        "SHAPE.AREA",
+        "SHAPE.LEN"
+      ]
+    },
+    {
+      "file": "边界/粤港澳大湾区2023/yuegangao2023.shp",
+      "bytes": 1133256,
+      "sha256": "c99b61fb01ff14781064353857b4a3b1e1ee202d53ba20203bffd9d451d317d1",
+      "mtime": "2026-01-02T13:35:46",
+      "type": "Polygon",
+      "n": 23,
+      "bbox": [
+        109.665,
+        20.223,
+        117.303,
+        25.52
+      ],
+      "prj": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Deg",
+      "prj_name": [
+        "GCS_WGS_1984"
+      ],
+      "central_meridian": [],
+      "shp_xml_present": true,
+      "shp_xml_excerpt": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<metadata xml:lang=\"zh\"><Esri><CreaDate>20260102</CreaDate><CreaTime>21354400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource=\"d:\\soft\\arcgis\\desktop10.6\\ArcToolbox\\Toolboxes\\Data Management Tools.tbx\\CalculateField\" Date=\"20220828\" Time=\"190505\">CalculateField 2022年市矢量 year 2022 VB #</Process><Process ToolSource=\"d:\\soft\\arcgis\\desktop10.6\\ArcToolbox\\Toolboxes\\Data Management Tools.tbx\\CalculateField\" Date=\"20220828\" Time=\"190636\">CalculateField 2022年市矢量 NAME_1 \"Shaanxi\" VB #</Process><Proc",
+      "dbf_fields": [
+        "����",
+        "������",
+        "�ؼ�",
+        "�ؼ���",
+        "�ؼ���",
+        "ʡ��",
+        "ʡ����",
+        "ʡ����",
+        "ENG_NAME",
+        "code",
+        "VAR_NAME",
+        "NAME_2",
+        "VAR_NAME2",
+        "GID_2",
+        "TYPE_2",
+        "NAME_1",
+        "VAR_NAME1",
+        "GID_1",
+        "TYPE_1",
+        "year"
+      ]
+    }
+  ],
+  "text_sources": [
+    {
+      "file": "arch shp/深圳建筑.qmd",
+      "chars": 679,
+      "keyword_hits": [
+        "date"
+      ],
+      "excerpt": " 0 0 false "
+    },
+    {
+      "file": "road/road 3d/road.qmd",
+      "chars": 681,
+      "keyword_hits": [
+        "date"
+      ],
+      "excerpt": " 0 0 false "
+    },
+    {
+      "file": "szbuildings.qmd",
+      "chars": 2339,
+      "keyword_hits": [
+        "date",
+        "unit",
+        "units"
+      ],
+      "excerpt": " dataset PROJCRS[\"WGS 84 / UTM zone 49N\",BASEGEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298."
+    },
+    {
+      "file": "~$过程.docx",
+      "chars": 36,
+      "keyword_hits": [],
+      "excerpt": " "
+    },
+    {
+      "file": "过程.docx",
+      "chars": 48057,
+      "keyword_hits": [
+        "date",
+        "lst",
+        "time"
+      ],
+      "excerpt": " Normal.dotm 1 0 0 0 0 5 false false 0 WPS Office_12.1.0.24657_F1E327BC-269C-435d-A152-05C5408002CA 0 2026-01-28T15:24:23Z zhengquanyi XIAO 2026-01-28T15:29:26Z 2052-12.1.0.24657 eyJoZGlkIjoiM2I3YjJlZjQ3ZGM3OWM2Zjk4OTJmNTI5NGRlYjA0YmMiLCJ1c2VySWQiOiIyODcwODMxMTIifQ== C8336D1F4BE94AF7AFB68B3D2DDD226E_12 选择研究区域 研究区域SHP文件要确定转换点击另存为（SHP）文件，坐标系为 如 EPSG: 32649 或 EPSG: 32650 - UTM Zone 49N/50N 生成grid网格，网格文件 Horizontal overlay 0，vertical overlay 0，上面两个就是网格尺寸。 "
+    },
+    {
+      "file": "2023年县级/2023年初县矢量.shp.xml",
+      "chars": 22382,
+      "keyword_hits": [
+        "date",
+        "time"
+      ],
+      "excerpt": " 20230102 19065500 1.0 TRUE CalculateField 2021年县矢量 year 2022 VB # CalculateField 2022年县矢量 NAME_1 \"Shaanxi\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"怀仁县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"余江县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"马龙县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"济阳县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"邹平县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"株洲县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"宜宾县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"彬县\" VB # CalculateField 2022年\\2022县矢量 曾用名 \"海安"
+    },
+    {
+      "file": "边界/粤港澳大湾区2023/yuegangao2023.shp.xml",
+      "chars": 1290,
+      "keyword_hits": [
+        "date",
+        "time"
+      ],
+      "excerpt": " 20260102 21354400 1.0 TRUE CalculateField 2022年市矢量 year 2022 VB # CalculateField 2022年市矢量 NAME_1 \"Shaanxi\" VB # CalculateField 2022年\\2022市矢量 ENG_NAME [NAME_2] VB # CalculateField 2022年\\2022市矢量 VAR_NAME [VAR_NAME2] VB # CalculateField 2023年\\2023年初市矢量 year 2023 VB # "
+    }
+  ],
+  "keyword_hits": [],
+  "embedded_images": [
+    {
+      "source_docx": "过程.docx",
+      "media": "word/media/image1.png",
+      "saved_as": "stage00_data_audit/reports/evidence/过程__image1.png",
+      "bytes": 116783,
+      "sha256": "ef7ccd98658889a2775d94cbe206f692b6dac2e1ce154866e354e4c0d7590a6f"
+    }
+  ],
+  "arcgis_lineage": [
+    {
+      "file": "2023年县级/2023年初县矢量.shp.xml",
+      "created": "20230102 19065500",
+      "n_processes": 106,
+      "processes": [
+        {
+          "date": "20220825",
+          "time": "182957",
+          "tool": "CalculateField 2021年县矢量 year 2022 VB #"
+        },
+        {
+          "date": "20220828",
+          "time": "173323",
+          "tool": "CalculateField 2022年县矢量 NAME_1 \"Shaanxi\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "181517",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"怀仁县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "181920",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"余江县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "182601",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"马龙县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "212511",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"济阳县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "212838",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"邹平县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "213601",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"株洲县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "215512",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"宜宾县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "220103",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"彬县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "220856",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"海安县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "221352",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"漠河县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "222718",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"京山县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "223232",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"滦县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "224440",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"潜山县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "224846",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"荔浦县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "225224",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"兴仁县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "225654",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"水富县\" VB #"
+        },
+        {
+          "date": "20221221",
+          "time": "230049",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"华亭县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "011805",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"九江县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "012414",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"罗江县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "013615",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"达孜县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "014509",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"那曲县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "015227",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"南郑县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "015733",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"神木县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "103450",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"平泉县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "104207",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"玉环县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "105004",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"临安市\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "110027",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"隆昌县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "110554",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"宁乡县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "111613",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"盘县\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "112256",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"长乐市\" VB #"
+        },
+        {
+          "date": "20221222",
+          "time": "115109",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"即墨市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "104834",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"崇礼县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "104955",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"万全县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "112339",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"肥乡县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "112501",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"永年县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "115517",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"冀州市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "130430",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"大洼县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "130546",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"辽中县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "131643",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"垦利县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "131913",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"定陶县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "132135",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"章丘市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "134527",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"沾益县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "134808",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"晋宁县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "135027",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"泸水县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "141902",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"柳江县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "142535",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"宜州市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "142605",
+          "tool": "CalculateField 2022年\\2022县矢量 地名 \"宜州市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "142618",
+          "tool": "CalculateField 2022年\\2022县矢量 地名 \"宜州区\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "145213",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"遵义县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "151021",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"安县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "155110",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"崇明县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "155559",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"郫县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "160705",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"蓟县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "162317",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"开县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "162433",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"梁平县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "163035",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"武隆县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "165009",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"洪泽县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "173031",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"安塞县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "173205",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"鄠邑区\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "173650",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"户县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "175614",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"赣县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "180325",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"东乡县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "183755",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"奉化市\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "185220",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"许昌县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "185705",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"抚远县\" VB #"
+        },
+        {
+          "date": "20221224",
+          "time": "192005",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"哈密市\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "101728",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"靖西县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "101928",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"武鸣县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "104257",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"新建县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "104841",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"广丰县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "111813",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"平安县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "130257",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"陕县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "132305",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"满城县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "132548",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"清苑县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "132951",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"徐水区\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "133038",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"徐水县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "134402",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"新市区\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "135456",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"北市区、南市区\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "141423",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"抚宁县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "143635",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"潼南县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "144050",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"荣昌县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "151604",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"金坛市\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "152418",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"大丰市\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "161400",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"高要市\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "162204",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"静海县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "162319",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"宁河县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "174741",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"洞头县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "180245",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"密云县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "180402",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"延庆县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "182406",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"堆龙德庆县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "184508",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"林芝县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "185633",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"华县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "203356",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"横山县\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "204004",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"普兰店市\" VB #"
+        },
+        {
+          "date": "20221229",
+          "time": "211342",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"铜陵县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "152524",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"铜官山区、狮子山区\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "154639",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"双流县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "155840",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"康定县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "160146",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"马尔康县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "161258",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"江川县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "161547",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"腾冲县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "162751",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"东宁县\" VB #"
+        },
+        {
+          "date": "20221230",
+          "time": "164622",
+          "tool": "CalculateField 2022年\\2022县矢量 曾用名 \"吐鲁番市\" VB #"
+        },
+        {
+          "date": "20230102",
+          "time": "184037",
+          "tool": "CalculateField 2023年\\2023年初县矢量 year 2023 VB #"
+        }
+      ]
+    },
+    {
+      "file": "边界/粤港澳大湾区2023/yuegangao2023.shp.xml",
+      "created": "20260102 21354400",
+      "n_processes": 5,
+      "processes": [
+        {
+          "date": "20220828",
+          "time": "190505",
+          "tool": "CalculateField 2022年市矢量 year 2022 VB #"
+        },
+        {
+          "date": "20220828",
+          "time": "190636",
+          "tool": "CalculateField 2022年市矢量 NAME_1 \"Shaanxi\" VB #"
+        },
+        {
+          "date": "20221220",
+          "time": "233027",
+          "tool": "CalculateField 2022年\\2022市矢量 ENG_NAME [NAME_2] VB #"
+        },
+        {
+          "date": "20221220",
+          "time": "233035",
+          "tool": "CalculateField 2022年\\2022市矢量 VAR_NAME [VAR_NAME2] VB #"
+        },
+        {
+          "date": "20230102",
+          "time": "184023",
+          "tool": "CalculateField 2023年\\2023年初市矢量 year 2023 VB #"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "n_raster": 11,
+    "n_raster_with_datetime_tag": 0,
+    "n_raster_with_any_acq_metadata": 0,
+    "n_vector": 13,
+    "acquisition_time_recovered": false,
+    "sensor_recovered": false,
+    "retrieval_algorithm_recovered": false
+  }
+}

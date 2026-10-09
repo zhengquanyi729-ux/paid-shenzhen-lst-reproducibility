@@ -1,0 +1,21 @@
+# Convenience environment generated from the certified
+# requirements-lock.txt / runtime_environment.txt.
+# requirements-lock.txt remains the canonical reviewer environment.
+#
+# This file is a convenience only: it mirrors the pinned interpreter and the four
+# direct dependencies of the portable verification layer. For byte-identical
+# reproduction of the reported numbers, use requirements-lock.txt (which also pins
+# the transitive closure and the BLAS backend).
+name: paid-shenzhen-lst
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.12
+  - pip
+  - pip:
+      - numpy==2.2.6
+      - pandas==2.3.3
+      - matplotlib==3.10.8
+      - Pillow==12.1.1
+# No scikit-learn / xgboost: Baseline B is a self-implemented stand-in
+# (see docs/KNOWN_LIMITATIONS.md and PAID/stage05_paper/scripts/bmlib.py).

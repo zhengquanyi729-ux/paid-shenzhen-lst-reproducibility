@@ -1,0 +1,31 @@
+{
+  "version": "stage02-validator-v1",
+  "created": "2026-09-24",
+  "status": "OK",
+  "service": "agents/independent_validator.py",
+  "runs_outside_sandbox": true,
+  "refusal_rules": [
+    "候选未在冻结登记中 → 拒绝",
+    "候选哈希与冻结登记不一致 → 拒绝（防解封后修订）",
+    "validation_runs ≥ 1 → 拒绝重复解封"
+  ],
+  "passes_only": [
+    "已冻结候选"
+  ],
+  "publishes": [
+    "RMSE_C",
+    "ΔRMSE(vs Baseline A)",
+    "空间块置换 p（199 次）",
+    "空间块自助 95% CI（1000 次）",
+    "物理审计判定",
+    "负对照判定"
+  ],
+  "never_returns": [
+    "C 区逐格目标值"
+  ],
+  "binds": {
+    "primary_endpoint": "ΔRMSE>0（优于 Baseline A）且经 199 次空间块置换检验 p<0.05，且 95% 置信区间不跨 0，且物理审计通过，且负对照（空间置换/随机目标）未通过。",
+    "block_permutation": 199,
+    "multiplicity": "Holm–Bonferroni（family = 冻结候选集）；同时报告未校正 p。"
+  }
+}

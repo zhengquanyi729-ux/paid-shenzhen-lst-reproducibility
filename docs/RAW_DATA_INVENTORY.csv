@@ -1,0 +1,19 @@
+dataset,filename_or_layer,type,crs_or_support,approx_size,redistribution_status,reason_withheld,shipped_substitute
+shenzhen_source,DEM_30m_Final.tif,raster,EPSG:32650 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,"frozen analysis-ready values (data/shenzhen/zone_A_open.csv, zone_B_devval.csv, zone_C_analysis_ready.csv)"
+shenzhen_source,LST_30m_Final new.tif,raster,EPSG:32650 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,NDVI_30m_Final.tif,raster,EPSG:32650 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,archi_30m_Final.tif,raster,EPSG:32650 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,road_30m_Final.tif,raster,EPSG:32650 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,DEM_shenzhen.tif,raster,EPSG:32649 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,LST_shenzhen.tif,raster,EPSG:32649 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,NVDI_shenzhen.tif,raster,EPSG:32649 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed (filename misspelled in source),same
+shenzhen_source,Road_shenzhen.tif,raster,EPSG:32649 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,arch_shenzhen.tif,raster,EPSG:32649 / 30 m,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,SVF_Shenzhen.tif,raster,EPSG:32649 / 5 m,~135 MB,NOT redistributed,author archive; rights unconfirmed; largest single layer,same
+shenzhen_source,grid_utm.shp,vector,EPSG:32649 / 100 m grid,unknown,NOT redistributed,author archive; rights unconfirmed,"frozen split data/shenzhen/analysis_split.csv (32,748 cells)"
+shenzhen_source,studyarea.shp,vector,EPSG:32649 / 299 community polygons,unknown,NOT redistributed,author archive; rights unconfirmed,"study-area boundary JSON reports/shenzhen_admin_studyarea.json (RLE)"
+shenzhen_source,building layers + road/,vector,EPSG:32649,unknown,NOT redistributed,author archive; rights unconfirmed,same
+shenzhen_source,data_原始.csv,table,100 m / 32,687 rows x 9 cols,unknown,NOT redistributed,author archive; rights unconfirmed,"reconciled into the frozen analysis-ready tables (see DATA_PROVENANCE.md §1)"
+changchun_source,"changchun(Arch+NDWI+LST+NDVI+DEM+GDP+pop).dbf",table,500 m fishnet,part of ~6.1 GB,Reviewer-only (licence unconfirmed),third-party dataset; licence not confirmed,"slim table data/changchun/changchun_analysis_ready.csv (100,676 rows)"
+changchun_source,"研究范围渔网500/changchun.dbf",table,500 m fishnet (row/col indices),part of ~6.1 GB,Reviewer-only (licence unconfirmed),third-party dataset; licence not confirmed,row_index/col_index recovered into the slim table
+changchun_source,B3/B4/B5 satellite GeoTIFFs,raster,500 m aggregation source,~6.1 GB total,NOT redistributed,size + unconfirmed third-party licence,derived columns in the slim table

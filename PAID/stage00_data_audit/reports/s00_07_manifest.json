@@ -1,0 +1,645 @@
+{
+  "n_data": 99,
+  "n_outputs": 28,
+  "data_bytes": 896619848,
+  "output_bytes": 2652834,
+  "data_files": [
+    {
+      "path": "0_论文data/DEM_shenzhen.tif",
+      "size": 1872092,
+      "sha256": "12fbbdedf32cf3377322d53edea2a751f40e70852930fe1f651a52e893ec7531"
+    },
+    {
+      "path": "0_论文data/DEM_shenzhen.tif.aux.xml",
+      "size": 409,
+      "sha256": "dad37d47fad08998b95bebd7f293e934762218a65bd4e78175e38d9b419ef28d"
+    },
+    {
+      "path": "0_论文data/LST_shenzhen.tif",
+      "size": 3745354,
+      "sha256": "c943a80402e68e70c8daf8901ed889aed826827a09aa3be82150192c0a841824"
+    },
+    {
+      "path": "0_论文data/LST_shenzhen.tif.aux.xml",
+      "size": 420,
+      "sha256": "c582c574395cdf24308ee5e9990bfd2cb46e9aeed8a9da7b8283e18ed26e35f8"
+    },
+    {
+      "path": "0_论文data/NVDI_shenzhen.tif",
+      "size": 7485686,
+      "sha256": "025d840ca953dafa10ae2cb6cc93ddc98fcb10f2f0e2e31af57fbbe4cc52d4cb"
+    },
+    {
+      "path": "0_论文data/NVDI_shenzhen.tif.aux.xml",
+      "size": 999174,
+      "sha256": "acd603665ba17eba3ae1663e6212e7aa34c62597946ef3de0e1668958a930c28"
+    },
+    {
+      "path": "0_论文data/Road_shenzhen.tif",
+      "size": 3745354,
+      "sha256": "3918a82bdaf94e78a92a04b2e08a1f5002ca561e9ed91d00755a54a38148b1bc"
+    },
+    {
+      "path": "0_论文data/Road_shenzhen.tif.aux.xml",
+      "size": 422,
+      "sha256": "194f3e38dd5d33af9f83841b90efc0037c2ea7e2d21f2dcce12eac44346b4dd8"
+    },
+    {
+      "path": "0_论文data/SVF_Shenzhen.tif",
+      "size": 134765986,
+      "sha256": "001b41330260a3fe3461ce482f0caa56ab06b49e90c05d4ca7c309a66a844d3d"
+    },
+    {
+      "path": "0_论文data/SVF_Shenzhen.tif.aux.xml",
+      "size": 425,
+      "sha256": "5c47fdda058c95fdee2ae46896a3269355f181ceb7aa8c032b4ad2ff4bc03f70"
+    },
+    {
+      "path": "0_论文data/arch_shenzhen.tif",
+      "size": 3745348,
+      "sha256": "964dd463fac3e5ad43bc97ea8d33fc9599e6926b644c6a4148c7a6d54061b3a5"
+    },
+    {
+      "path": "0_论文data/arch_shenzhen.tif.aux.xml",
+      "size": 427,
+      "sha256": "71a9ccb53b264a3866b29d4f1ee738357d01decc796f4988392b204eb4002dee"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.cpg",
+      "size": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.dbf",
+      "size": 14748654,
+      "sha256": "3482ff67cdcb16b667e7dfb8e2ef1f6d107a49719856f22207bdee70aa7a0391"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.sbn",
+      "size": 27740,
+      "sha256": "0fd4b65b802b301a8000b3047d088fcaa4012b8fb32aae929370daa566505db1"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.sbx",
+      "size": 1316,
+      "sha256": "f9e9bd44cbdca20c2c9e3c0b428b28d15930a92031affd84d88fadf58a71efa9"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.shp",
+      "size": 60317564,
+      "sha256": "32c9f33d395cecfa0614a6021a6265ffedcc3cf6bf38f42b67926fdd6b7cadb4"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.shp.xml",
+      "size": 24474,
+      "sha256": "8f720358df8a1e448a9f554fbb3f1213090ee007f4d38c836a1ff8bbf9b696a2"
+    },
+    {
+      "path": "2023年县级/2023年初县矢量.shx",
+      "size": 22916,
+      "sha256": "9137352f32878ddd02adfdad43921387394661e3f9be750925c2fb5b8267f709"
+    },
+    {
+      "path": "DEM_30m_Final.tif",
+      "size": 10231552,
+      "sha256": "226fe256792369b5d2734ac658ff4eed0fed809ea92f92b0623e7a6a16234f7a"
+    },
+    {
+      "path": "DEM_30m_Final.tif.aux.xml",
+      "size": 410,
+      "sha256": "894a651366b9b2fa30223dbb9273c98da6a35837a7e01ccf3dfd474302b20f95"
+    },
+    {
+      "path": "LST_30m_Final new.tif",
+      "size": 19080994,
+      "sha256": "97958256383e015af8b2f8a9b2eb7a52c759231fe9b80af947942179fe0e71e0"
+    },
+    {
+      "path": "LST_30m_Final new.tif.aux.xml",
+      "size": 421,
+      "sha256": "540a10ff62e2991b9bd6dd2497abfff9a3c584cc71c5568ec37011ee502897c7"
+    },
+    {
+      "path": "NDVI_30m_Final.tif",
+      "size": 42984086,
+      "sha256": "f412fb70f2051afe301b4a237160095e8bb37704b8d1b7a9274ffff4ae16623c"
+    },
+    {
+      "path": "NDVI_30m_Final.tif.aux.xml",
+      "size": 998350,
+      "sha256": "29b112c1dd9a79c75ae877074f1d2c36ea041e095ed85dd891a76b7b039ce40a"
+    },
+    {
+      "path": "arch shp/深圳建筑.cpg",
+      "size": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "arch shp/深圳建筑.dbf",
+      "size": 36515535,
+      "sha256": "9417f70c51cd34e0bef2cf21c726047f5ce66ed9c4dcce457e0ea2692201feb8"
+    },
+    {
+      "path": "arch shp/深圳建筑.prj",
+      "size": 402,
+      "sha256": "99a5a32f41f7df7e52e869dca1b2df8b2009ba20c28dbf95e61dc9c891dffd38"
+    },
+    {
+      "path": "arch shp/深圳建筑.qmd",
+      "size": 679,
+      "sha256": "2b22b5a0891c6303909101f66678fc126f18ac39e0f2dea27e812fe8e6990fd1"
+    },
+    {
+      "path": "arch shp/深圳建筑.shp",
+      "size": 115780276,
+      "sha256": "cae6a58a2fa5506ce6c915ed88ddda561959d4087b0e394d1502e3a94ed64928"
+    },
+    {
+      "path": "arch shp/深圳建筑.shx",
+      "size": 5961804,
+      "sha256": "9516938abadb2208200a19f9c6dcf67e55af0d3b8b97cc6fda0a305876cb110b"
+    },
+    {
+      "path": "archi_30m_Final.tif",
+      "size": 19070688,
+      "sha256": "d4ce7b9273e97869e175126ec328d9c14bf050aa738cf2708ea9de7b17bf9b70"
+    },
+    {
+      "path": "archi_30m_Final.tif.aux.xml",
+      "size": 431,
+      "sha256": "3ef8f923e461fc6110ebd31166b60e1a93bf1b1cef5d4ad259464c6596b53cac"
+    },
+    {
+      "path": "data_原始.csv",
+      "size": 3618912,
+      "sha256": "5502dcc14f266fb2ef3c1c35782b372a7b9d09ff9e7b9e7a4192a9e5239878e2"
+    },
+    {
+      "path": "road/road 3d/road.cpg",
+      "size": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "road/road 3d/road.dbf",
+      "size": 773163,
+      "sha256": "6e44a5c6227370c1841cfb493aab576784842ff9ac04140b447a9050e0c969b3"
+    },
+    {
+      "path": "road/road 3d/road.prj",
+      "size": 402,
+      "sha256": "f091cc5695962ce8d7807e3c43aa152ee62e419212c0fab878c56782910f2080"
+    },
+    {
+      "path": "road/road 3d/road.qmd",
+      "size": 681,
+      "sha256": "f517bd98e07bb094ea9164fbfffbdb162882a1434f8f515f94afd029ee148030"
+    },
+    {
+      "path": "road/road 3d/road.shp",
+      "size": 784380,
+      "sha256": "b0d417a5702181c2d0d7abd8ad858ffcf656448055cbc458b7c5ae3f9a8c99fa"
+    },
+    {
+      "path": "road/road 3d/road.shx",
+      "size": 33884,
+      "sha256": "02ca62fe2df1aed42c8e2880afdc5c9744e6c90c0f9c999c742ef1e285c04bf7"
+    },
+    {
+      "path": "road/road.dbf",
+      "size": 36203976,
+      "sha256": "a4bf7a1fe40377cf026cc09986cd06a63b7d6a8e20c21e228d25b932161a1f2c"
+    },
+    {
+      "path": "road/road.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "road/road.sbn",
+      "size": 1892732,
+      "sha256": "ab33722f37587edd1668abb59bc3987e71a346cfadcf157ce0c85c4c6aabb4b1"
+    },
+    {
+      "path": "road/road.sbx",
+      "size": 48364,
+      "sha256": "d61e37badcc57ddabe2eb047db98041620eb8b313ee05acf71febdc786d0f631"
+    },
+    {
+      "path": "road/road.shp",
+      "size": 41796132,
+      "sha256": "acf184b6555393e9aadafc1cf8ec9e1624aff6b2e0f0b0e7166db92d5dcbe04c"
+    },
+    {
+      "path": "road/road.shx",
+      "size": 1582772,
+      "sha256": "876cecfd4264305bffb5479940f68467a0ff109796784c25ff818694e932e4d6"
+    },
+    {
+      "path": "road/road_new.dbf",
+      "size": 25625661,
+      "sha256": "bc7e6c0262195b88e19d21e2fb7c6fc1e62caa3acce9f2f7587c458459c7660b"
+    },
+    {
+      "path": "road/road_new.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "road/road_new.sbn",
+      "size": 1425740,
+      "sha256": "0e9176c62fb8b9cf19cb73ffc23dd7ce941d9ee7d2a03e5c9a8b89da4917dc70"
+    },
+    {
+      "path": "road/road_new.sbx",
+      "size": 43812,
+      "sha256": "3d8d8cc13b4f957b0035caffabff96cf3597f1e2ae7b961b6012db433bad5276"
+    },
+    {
+      "path": "road/road_new.shp",
+      "size": 31705420,
+      "sha256": "e94879d32ac50e51410e932b1c5d30c781b512a7def3cf506032659f71413bef"
+    },
+    {
+      "path": "road/road_new.shx",
+      "size": 1120332,
+      "sha256": "fef3c622ce597b93c8d6b91ab0ca4cbf11e835477b7cb877854b25375889ae0d"
+    },
+    {
+      "path": "road_30m_Final.tif",
+      "size": 20452388,
+      "sha256": "5f3175f2c7a1717eb30fe6faa6052bf8272a68610e27b4cd232a12ee41d86ade"
+    },
+    {
+      "path": "road_30m_Final.tif.aux.xml",
+      "size": 419,
+      "sha256": "297aa4de4fd58e09a922a563741f8e21233f67f95c784040f0376714e42b802c"
+    },
+    {
+      "path": "shenzhendem.tif.aux.xml",
+      "size": 409,
+      "sha256": "dad37d47fad08998b95bebd7f293e934762218a65bd4e78175e38d9b419ef28d"
+    },
+    {
+      "path": "szbuildings.cpg",
+      "size": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "szbuildings.dbf",
+      "size": 9824450,
+      "sha256": "a20c0f0b01f661414999491f5debb8f583a33263d4a03be6888f94cd70f87ed7"
+    },
+    {
+      "path": "szbuildings.prj",
+      "size": 402,
+      "sha256": "f091cc5695962ce8d7807e3c43aa152ee62e419212c0fab878c56782910f2080"
+    },
+    {
+      "path": "szbuildings.qmd",
+      "size": 2342,
+      "sha256": "dbeaff4cd42748eaba89e97eb366bf20b824e915678aebbb423f8207cfcad66f"
+    },
+    {
+      "path": "szbuildings.shp",
+      "size": 20437300,
+      "sha256": "6146cb24cc8a6937c1762d2c548d27b51457d8a1fa5602d06a9940ae77d22eeb"
+    },
+    {
+      "path": "szbuildings.shx",
+      "size": 958564,
+      "sha256": "be0d3d761a501d77a45e95e17fcbcb474275d99441d54a1630a7f087bd4cac26"
+    },
+    {
+      "path": "~$过程.docx",
+      "size": 162,
+      "sha256": "c83e24279c7d9640ecca2be11fae3f62449de2297c9f88b7fe611c5b0d678c77"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.cpg",
+      "size": 3,
+      "sha256": "33251177a22e1f69e95c670a1e82a465b0d42a51bbfcc06ac794d0ffdc816591"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.dbf",
+      "size": 36515535,
+      "sha256": "737959c48f1017205a8433c618c66290ab4bb111b250303be74db566b1257349"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.prj",
+      "size": 402,
+      "sha256": "f091cc5695962ce8d7807e3c43aa152ee62e419212c0fab878c56782910f2080"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.qix",
+      "size": 13255000,
+      "sha256": "affa6939b3e320da82ee1940c1f8a0c2417d59b315da5d0568ae60f205215489"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.shp",
+      "size": 115774900,
+      "sha256": "0dce441b02496250ae6b857a1de74c12ffb67969cd42c1aa197d716d2b236c83"
+    },
+    {
+      "path": "研究边界/Buildings_Fixed.shx",
+      "size": 5961804,
+      "sha256": "0953bf51087dcb03ac3fa84d7cc1cbff3e2961fae1c37a43d86dbe0ddd3ee1d1"
+    },
+    {
+      "path": "研究边界/buildings_utm.dbf",
+      "size": 98,
+      "sha256": "7890108f1ccce50d7aa16fbaa2933797528649cf4bc93aab21d491204cd3a09b"
+    },
+    {
+      "path": "研究边界/buildings_utm.shp",
+      "size": 100,
+      "sha256": "afd62dde4d802deedb2c1bb6513f1db785c815f0893003238b342b58b74cd4c4"
+    },
+    {
+      "path": "研究边界/grid_utm.cpg",
+      "size": 3,
+      "sha256": "33251177a22e1f69e95c670a1e82a465b0d42a51bbfcc06ac794d0ffdc816591"
+    },
+    {
+      "path": "研究边界/grid_utm.dbf",
+      "size": 6812002,
+      "sha256": "81bc260d008410d4e85280cfe6ca7eecb71a4c4ced00ce79ca9f056b7d757fba"
+    },
+    {
+      "path": "研究边界/grid_utm.prj",
+      "size": 402,
+      "sha256": "f091cc5695962ce8d7807e3c43aa152ee62e419212c0fab878c56782910f2080"
+    },
+    {
+      "path": "研究边界/grid_utm.shp",
+      "size": 4566832,
+      "sha256": "7376801d1da60ef4d901a430a91a5660c3bebd8ab24ebaa95e2c51ab31d97f1c"
+    },
+    {
+      "path": "研究边界/grid_utm.shx",
+      "size": 262084,
+      "sha256": "380cb9d477e2996a18ce85aa183725d988f7f0f45454ac48385fefb80c8b7bc4"
+    },
+    {
+      "path": "研究边界/studyarea.cpg",
+      "size": 3,
+      "sha256": "33251177a22e1f69e95c670a1e82a465b0d42a51bbfcc06ac794d0ffdc816591"
+    },
+    {
+      "path": "研究边界/studyarea.dbf",
+      "size": 232645,
+      "sha256": "fc040b3410eb83d2e9ae81dfbaf924b2f9b0dba877dab68dce938bb2d4970c9b"
+    },
+    {
+      "path": "研究边界/studyarea.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "研究边界/studyarea.shp",
+      "size": 821428,
+      "sha256": "17f9f3d72424c2fc3207d3fbde1cb83f26f824c67318d2c3234d60c935133930"
+    },
+    {
+      "path": "研究边界/studyarea.shx",
+      "size": 2492,
+      "sha256": "1f5a13856f3d52151f222890957cbc7310e2c82e4a802e0eb6e2011c38781527"
+    },
+    {
+      "path": "研究边界/szbuildings_utm.cpg",
+      "size": 3,
+      "sha256": "33251177a22e1f69e95c670a1e82a465b0d42a51bbfcc06ac794d0ffdc816591"
+    },
+    {
+      "path": "研究边界/szbuildings_utm.dbf",
+      "size": 5870690,
+      "sha256": "65c6e39e46fcc7c20de4ac84a30d78fdd3f310fb5997f5e20f10f5878bc78e7c"
+    },
+    {
+      "path": "研究边界/szbuildings_utm.prj",
+      "size": 402,
+      "sha256": "f091cc5695962ce8d7807e3c43aa152ee62e419212c0fab878c56782910f2080"
+    },
+    {
+      "path": "研究边界/szbuildings_utm.shp",
+      "size": 20437300,
+      "sha256": "6146cb24cc8a6937c1762d2c548d27b51457d8a1fa5602d06a9940ae77d22eeb"
+    },
+    {
+      "path": "研究边界/szbuildings_utm.shx",
+      "size": 958564,
+      "sha256": "be0d3d761a501d77a45e95e17fcbcb474275d99441d54a1630a7f087bd4cac26"
+    },
+    {
+      "path": "边界/广东省深圳市各社区.cpg",
+      "size": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "边界/广东省深圳市各社区.dbf",
+      "size": 519358,
+      "sha256": "771d989ae90c40f6c703608ff28d24bcf7a80cc2a302b900ed99d10cc6a83d6d"
+    },
+    {
+      "path": "边界/广东省深圳市各社区.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "边界/广东省深圳市各社区.shp",
+      "size": 2816820,
+      "sha256": "73075531a0e161545ae4d0cec1e0da870a95747d2003ee9beecbe5eaa1008582"
+    },
+    {
+      "path": "边界/广东省深圳市各社区.shx",
+      "size": 5444,
+      "sha256": "8f575eac4ce9cfc5c840008abf8fcff66feb0646e9a323d31dcda3acf0f4a1ce"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.dbf",
+      "size": 78253,
+      "sha256": "93b5f4f2f296db0afa00d262a91f53dbdddd7dc5684893ececd5c13ea97bdccd"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.prj",
+      "size": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.sbn",
+      "size": 340,
+      "sha256": "4d90c6106f4869c2f41e44f31f51af8de9dc025456c03533753a048bd7870ffe"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.sbx",
+      "size": 132,
+      "sha256": "dd43bec074cf06389a6bc12154e097727b81a02e98ef97c9a0d4217fbc7dde09"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.shp",
+      "size": 1133256,
+      "sha256": "c99b61fb01ff14781064353857b4a3b1e1ee202d53ba20203bffd9d451d317d1"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.shp.xml",
+      "size": 1334,
+      "sha256": "0a41acd1529ea5d3b1d5645fc8329684e336371e95159d9283af944dc0c3578b"
+    },
+    {
+      "path": "边界/粤港澳大湾区2023/yuegangao2023.shx",
+      "size": 284,
+      "sha256": "b868a50e97dbb2bbea05118047df37eb041ee67b5fc8bfc01e3ddb96dc0c8ce7"
+    },
+    {
+      "path": "过程.docx",
+      "size": 128852,
+      "sha256": "7cf5283645f405d95418b05c7fab96b5f36dcf391be904078b7383178974e633"
+    }
+  ],
+  "output_files": [
+    {
+      "path": "mask/analysis_mask.csv",
+      "size": 635980,
+      "sha256": "71a4bc02a9958f8c08cdb5526ac17f2bb3897e729573a0d84a4f2c67694ce9c8"
+    },
+    {
+      "path": "mask/grid_extent.json",
+      "size": 168,
+      "sha256": "717ad10dab444d39a4d9956bf61a59d59c0d0ae7aa425394103383652d327a94"
+    },
+    {
+      "path": "mask/grid_validity.csv",
+      "size": 1176856,
+      "sha256": "c3defe85bb21b4618ce3392f5266d6d524b97b44a2040873c4f6d38e1bfde96a"
+    },
+    {
+      "path": "mask/valid_ids_main.txt",
+      "size": 179961,
+      "sha256": "3e23d71672108a1139fefcbf5a865060fc90d102e88fbaf0db3c097bf3e9cbed"
+    },
+    {
+      "path": "mask/valid_ids_relaxed.txt",
+      "size": 182607,
+      "sha256": "1c13092a9db2ab1518573323760a3fa659096ca61af4d1b233e6728427162d69"
+    },
+    {
+      "path": "reports/S00_quality_report.md",
+      "size": 7750,
+      "sha256": "9258518e8b564318328680a96e77d9a8c799646c220d6bc8ea11d48724b36a05"
+    },
+    {
+      "path": "reports/evidence/过程__image1.png",
+      "size": 116783,
+      "sha256": "ef7ccd98658889a2775d94cbe206f692b6dac2e1ce154866e354e4c0d7590a6f"
+    },
+    {
+      "path": "reports/figures/s00_06_mask_map.png",
+      "size": 105839,
+      "sha256": "421936e9be647645d72f78287db1e81585605e9ccbf8e0b44e22fd80f7c1644e"
+    },
+    {
+      "path": "reports/s00_01_metadata.json",
+      "size": 43433,
+      "sha256": "0afeafc4d7c645914977a2616027de810939564b252fad485043cc62ae2b2bb6"
+    },
+    {
+      "path": "reports/s00_01_metadata.md",
+      "size": 5626,
+      "sha256": "5027cc18349df272659e7423d163eacdd0df3854d5ceb2afae0d300428cda4f4"
+    },
+    {
+      "path": "reports/s00_02_crs.json",
+      "size": 18442,
+      "sha256": "c2c1871d1c61d612569a224ae84cbdd865785ec4ecc5dd23c5ae2198ebee036d"
+    },
+    {
+      "path": "reports/s00_02_crs.md",
+      "size": 7393,
+      "sha256": "04e5f96b779db51e60de7e95e8d10e5bdbd29abeab65f34d2a2edd712eaf8884"
+    },
+    {
+      "path": "reports/s00_03_lst_zero.json",
+      "size": 1995,
+      "sha256": "a19d31d5cc034574a8d75f5aa279a09dcee67bf2b2e9ff4a2d7ef6cba0cc4e67"
+    },
+    {
+      "path": "reports/s00_03_lst_zero.md",
+      "size": 3019,
+      "sha256": "279474939d70107bc7051f73447e5d3ffc6d5bdb2b948d89f4ef3b1f61d723ac"
+    },
+    {
+      "path": "reports/s00_04_missing.json",
+      "size": 49598,
+      "sha256": "d12da7da33cec6f92e71dc5ff5c36e1470d564d85f4fca0a252b3a3556ede1f6"
+    },
+    {
+      "path": "reports/s00_04_missing.md",
+      "size": 4493,
+      "sha256": "0c50203e09fd61edf7cddfe3a8e9bd400bceb14fbb94fd18c3db4c24f3bce797"
+    },
+    {
+      "path": "reports/s00_05_vector.json",
+      "size": 4420,
+      "sha256": "2b0d48a306c98d86611466859531f03e9d7a622e722d79799edf8ea9c7e1bc67"
+    },
+    {
+      "path": "reports/s00_05_vector.md",
+      "size": 3864,
+      "sha256": "fc1c11868531cac4d110c5a42c4bc47c98990dd9c521a7cb2b1d0c96772b6d08"
+    },
+    {
+      "path": "reports/s00_06_mask.json",
+      "size": 767,
+      "sha256": "ba0ac8cb287a9de0017b6a61e2d6c3ac59377bc6a649b035f08b05507af92b72"
+    },
+    {
+      "path": "reports/s00_06_mask.md",
+      "size": 1651,
+      "sha256": "cb45846f8e699b2cabae54cd568d7f90bafe52aca79a9af2744788812d955239"
+    },
+    {
+      "path": "reports/s00_07_manifest.json",
+      "size": 20553,
+      "sha256": "8e4fd03d6edf92d006d14738a0f618493fcb0bd5c5128a7c5de1fbaf4aa720a7"
+    },
+    {
+      "path": "scripts/s00_01_metadata.py",
+      "size": 12709,
+      "sha256": "945cfc02273d45b2b92ed17ff8dba39ca78b54003c31d20bfb85756ffbbef8a6"
+    },
+    {
+      "path": "scripts/s00_02_crs.py",
+      "size": 12401,
+      "sha256": "ed051c75f67f69ddd6d1904c7716866f54c766f07affc7474329e9d008318a17"
+    },
+    {
+      "path": "scripts/s00_03_lst_zero.py",
+      "size": 13047,
+      "sha256": "0e2a28cf450472870759d9e6ebe414b476b9423bcdd8816a24edd968902aae92"
+    },
+    {
+      "path": "scripts/s00_04_missing.py",
+      "size": 17862,
+      "sha256": "0ad239bb7ef79f278087ffa5c8e1243ad6a5efc352451ce223714afec128d502"
+    },
+    {
+      "path": "scripts/s00_05_vector.py",
+      "size": 13580,
+      "sha256": "52aefcaaf9681031187cf79849707144f787eaf0bd0b87ed20cb348e47872ec1"
+    },
+    {
+      "path": "scripts/s00_06_mask.py",
+      "size": 8703,
+      "sha256": "df5eccd5cef132eccf7b9f225607795d7047a20a28e4610740c42340f68f4fe3"
+    },
+    {
+      "path": "scripts/s00_07_manifest.py",
+      "size": 3334,
+      "sha256": "a228dbb1219fa707a7e5e4f863e74333c715be4ab34294ee70a977d1e1324db7"
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "version": "stage04-validation-v1",
+  "created": "2026-09-24T13:12:08",
+  "approved": [
+    {
+      "id": "S03-H10-GREEDY",
+      "role": "discovery_candidate",
+      "why": "A、B 两区同向改善（ΔA=+0.2016, ΔB=+0.1222），复杂度 14 的中间解；A 区稳健性检查 p=0.005。"
+    },
+    {
+      "id": "S03-H01-LIN7",
+      "role": "reference_placebo",
+      "why": "冻结 Baseline A 规格本身，验证区 ΔRMSE 按定义为 0，**应当被验证服务判为不通过**——用于确认验证服务能识别零效应（判别力自检）。"
+    }
+  ],
+  "n_C_main": 2987,
+  "n_C_alt": 791,
+  "buffer": {
+    "R15": 3407,
+    "R25": 5603
+  },
+  "vault_plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+  "ndvi_tercile_thresholds": [
+    0.3808291606881003,
+    0.6838724497291776
+  ],
+  "note": "单次解封；完整协议分析在同一轮内完成；失败同样完整发布。",
+  "candidates": {
+    "S03-H10-GREEDY": {
+      "primary_endpoint": {
+        "statistic": "RMSE_C 与 ΔRMSE(vs Baseline A)",
+        "rmse_baselineA": 2.841519144671417,
+        "rmse_candidate": 2.462447828502684,
+        "delta_rmse": 0.37907131616873313,
+        "perm_p": 0.005,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.4017685729179077,
+        "ci95_delta": [
+          0.27606720135897206,
+          0.48135827934876635
+        ],
+        "n_bootstrap": 1000
+      },
+      "conditions": {
+        "delta_rmse_pos": true,
+        "perm_p_lt_0.05": true,
+        "ci_excludes_zero": true,
+        "physics_audit_pass": true,
+        "negative_controls_not_fooled": true
+      },
+      "passed": true,
+      "independent_audit": {
+        "verdict": "pass",
+        "items": {
+          "PA3_overreach": true,
+          "PA4_no_direction": true,
+          "PA5_measurement_boundary": true,
+          "PA7_term_scale": true
+        },
+        "max_term_scale": 8.708904363489681,
+        "limit": 1000.0,
+        "hits": {
+          "over": [],
+          "dir": []
+        }
+      },
+      "independent_controls": {
+        "verdict": "not_fooled",
+        "rmse_real": 2.4203020828004322,
+        "controls": {
+          "NC1_row_shuffle": 6.080074302997821,
+          "NC2_block_permute": 5.987145378046562,
+          "NC3_random_target": 6.096665880050887
+        },
+        "perm_corr_sanity": 0.09158662128524633,
+        "floor_note": "NC1–NC3 为地板式体检，检验力弱（仅能淘汰零技巧模型）。"
+      },
+      "self_reported": {
+        "physics_audit": "pass",
+        "falsification": "not_fooled",
+        "note": "发现侧自报值，仅供对照；判定仅采用 independent_audit / independent_controls。"
+      },
+      "cross_check": {
+        "delta_rmse_self": 0.37907131616873313,
+        "delta_rmse_validator": 0.37907131616873313,
+        "perm_p_self": 0.005,
+        "perm_p_validator": 0.005,
+        "agree_delta": true
+      },
+      "strata_ndvi": {
+        "low_veg": {
+          "n": 1008,
+          "rmse_baselineA": 3.40021181693106,
+          "rmse_candidate": 3.162884898761291,
+          "delta_rmse": 0.23732691816976859,
+          "ci95_delta": [
+            0.11128203372349346,
+            0.36888427251771494
+          ],
+          "ci_excludes_zero": true
+        },
+        "mid_veg": {
+          "n": 1637,
+          "rmse_baselineA": 2.5638452740444193,
+          "rmse_candidate": 2.0589383562121135,
+          "delta_rmse": 0.5049069178323058,
+          "ci95_delta": [
+            0.3498055694332713,
+            0.6438331474497286
+          ],
+          "ci_excludes_zero": true
+        },
+        "high_veg": {
+          "n": 342,
+          "rmse_baselineA": 2.2316830005922377,
+          "rmse_candidate": 1.7841357607713841,
+          "delta_rmse": 0.44754723982085354,
+          "ci95_delta": [
+            0.27562799524265613,
+            0.6221273949426982
+          ],
+          "ci_excludes_zero": true
+        }
+      },
+      "measurement_error": {
+        "sd_0.5K": {
+          "n_draws": 20,
+          "delta_mean": 0.3718308098272443,
+          "delta_min": 0.3663309234966379,
+          "delta_max": 0.37841373151833,
+          "delta_interval_width": 0.012082808021692149,
+          "p_median": 0.01,
+          "frac_p_lt_0p05": 1.0,
+          "frac_delta_pos": 1.0
+        },
+        "sd_1.0K": {
+          "n_draws": 20,
+          "delta_mean": 0.3534920867350722,
+          "delta_min": 0.3418363422498718,
+          "delta_max": 0.3690712601840671,
+          "delta_interval_width": 0.027234917934195302,
+          "p_median": 0.01,
+          "frac_p_lt_0p05": 1.0,
+          "frac_delta_pos": 1.0
+        }
+      },
+      "criterion_sensitivity_R25": {
+        "n_C": 791,
+        "delta_rmse": 0.13749907680515072,
+        "perm_p": 0.085,
+        "sign_consistent_with_R15": true
+      },
+      "pseudo_row_shuffled": {
+        "rmse": 2.6151049474045602,
+        "rmse_baselineA": 2.841519144671417,
+        "rmse_candidate": 2.462447828502684,
+        "rmse_constant_floor": 2.6027643903588022,
+        "delta_rmse_pseudo_vs_baseline": 0.22641419726685674,
+        "pseudo_beats_baseline": true,
+        "candidate_beats_pseudo": true,
+        "note": "打乱 A 区目标行序后重拟合得到的伪候选（预测≈常数）。pseudo_beats_baseline=True 只说明 Baseline A 在 C 区迁移性弱，不构成对候选的支持；关键判据是 candidate_beats_pseudo。"
+      }
+    },
+    "S03-H01-LIN7": {
+      "primary_endpoint": {
+        "statistic": "RMSE_C 与 ΔRMSE(vs Baseline A)",
+        "rmse_baselineA": 2.841519144671417,
+        "rmse_candidate": 2.841519144671417,
+        "delta_rmse": 0.0,
+        "perm_p": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.4017685729179077,
+        "ci95_delta": [
+          0.0,
+          0.0
+        ],
+        "n_bootstrap": 1000
+      },
+      "conditions": {
+        "delta_rmse_pos": false,
+        "perm_p_lt_0.05": false,
+        "ci_excludes_zero": false,
+        "physics_audit_pass": true,
+        "negative_controls_not_fooled": true
+      },
+      "passed": false,
+      "independent_audit": {
+        "verdict": "pass",
+        "items": {
+          "PA3_overreach": true,
+          "PA4_no_direction": true,
+          "PA5_measurement_boundary": true,
+          "PA7_term_scale": true
+        },
+        "max_term_scale": 13.376694045419306,
+        "limit": 1000.0,
+        "hits": {
+          "over": [],
+          "dir": []
+        }
+      },
+      "independent_controls": {
+        "verdict": "not_fooled",
+        "rmse_real": 2.54250853893637,
+        "controls": {
+          "NC1_row_shuffle": 5.483515214186221,
+          "NC2_block_permute": 5.4423080420094925,
+          "NC3_random_target": 5.492800910941213
+        },
+        "perm_corr_sanity": 0.09158662128524633,
+        "floor_note": "NC1–NC3 为地板式体检，检验力弱（仅能淘汰零技巧模型）。"
+      },
+      "self_reported": {
+        "physics_audit": "pass",
+        "falsification": "not_fooled",
+        "note": "发现侧自报值，仅供对照；判定仅采用 independent_audit / independent_controls。"
+      },
+      "cross_check": {
+        "delta_rmse_self": 0.0,
+        "delta_rmse_validator": 0.0,
+        "perm_p_self": 1.0,
+        "perm_p_validator": 1.0,
+        "agree_delta": true
+      },
+      "strata_ndvi": {
+        "low_veg": {
+          "n": 1008,
+          "rmse_baselineA": 3.40021181693106,
+          "rmse_candidate": 3.40021181693106,
+          "delta_rmse": 0.0,
+          "ci95_delta": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        "mid_veg": {
+          "n": 1637,
+          "rmse_baselineA": 2.5638452740444193,
+          "rmse_candidate": 2.5638452740444193,
+          "delta_rmse": 0.0,
+          "ci95_delta": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        "high_veg": {
+          "n": 342,
+          "rmse_baselineA": 2.2316830005922377,
+          "rmse_candidate": 2.2316830005922377,
+          "delta_rmse": 0.0,
+          "ci95_delta": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        }
+      },
+      "measurement_error": {
+        "sd_0.5K": {
+          "n_draws": 20,
+          "delta_mean": 0.0,
+          "delta_min": 0.0,
+          "delta_max": 0.0,
+          "delta_interval_width": 0.0,
+          "p_median": 1.0,
+          "frac_p_lt_0p05": 0.0,
+          "frac_delta_pos": 0.0
+        },
+        "sd_1.0K": {
+          "n_draws": 20,
+          "delta_mean": 0.0,
+          "delta_min": 0.0,
+          "delta_max": 0.0,
+          "delta_interval_width": 0.0,
+          "p_median": 1.0,
+          "frac_p_lt_0p05": 0.0,
+          "frac_delta_pos": 0.0
+        }
+      },
+      "criterion_sensitivity_R25": {
+        "n_C": 791,
+        "delta_rmse": 0.0,
+        "perm_p": 1.0,
+        "sign_consistent_with_R15": true
+      },
+      "pseudo_row_shuffled": {
+        "rmse": 2.6152315789067675,
+        "rmse_baselineA": 2.841519144671417,
+        "rmse_candidate": 2.841519144671417,
+        "rmse_constant_floor": 2.6027643903588022,
+        "delta_rmse_pseudo_vs_baseline": 0.22628756576464948,
+        "pseudo_beats_baseline": true,
+        "candidate_beats_pseudo": false,
+        "note": "打乱 A 区目标行序后重拟合得到的伪候选（预测≈常数）。pseudo_beats_baseline=True 只说明 Baseline A 在 C 区迁移性弱，不构成对候选的支持；关键判据是 candidate_beats_pseudo。"
+      }
+    }
+  },
+  "multiplicity": {
+    "family_size": 4,
+    "family": "冻结候选集（3 发现候选 + 1 安慰剂）",
+    "note": "Holm–Bonferroni。本轮仅解封 2 个（保守方案），其余保留解封预算；family_size 按预注册的冻结集取 4（更保守）。",
+    "stepdown": [
+      {
+        "id": "S03-H10-GREEDY",
+        "p_uncorrected": 0.005,
+        "holm_threshold": 0.0125,
+        "reject": true
+      },
+      {
+        "id": "S03-H01-LIN7",
+        "p_uncorrected": 1.0,
+        "holm_threshold": 0.016666666666666666,
+        "reject": false
+      }
+    ]
+  }
+}

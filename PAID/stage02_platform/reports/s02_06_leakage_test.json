@@ -1,0 +1,112 @@
+{
+  "version": "stage02-leakage-v1",
+  "created": "2026-09-24",
+  "verdict": "PASS",
+  "n_checks": 10,
+  "checks": [
+    {
+      "id": "LK1",
+      "desc": "沙箱可见 CSV 不含任何 C 区 Grid_ID",
+      "ok": true,
+      "detail": "offenders=[]"
+    },
+    {
+      "id": "LK2",
+      "desc": "沙箱样本恰为 A∪B 子集（行数=分区规模，且与 C 无交集）",
+      "ok": true,
+      "detail": "A=19184 B=6182 C=2987；mismatch=[]"
+    },
+    {
+      "id": "LK3",
+      "desc": "沙箱输入为 Stage 01 公共来源的原样副本（无注入 C 内容）",
+      "ok": true,
+      "detail": "drifted=[]"
+    },
+    {
+      "id": "LK4",
+      "desc": "守卫内直读敏感目标全部被拒",
+      "ok": true,
+      "detail": "denied=['LK10_symlink', 'LK8_hardlink_open', 'LK8_numpy_fromfile', 'LK9_tmp_copy', 'direct_enc', 'direct_key', 'full_csv', 'full_raster', 'listdir_locked', 'listdir_vault', 'locked_C', 'normalized_path', 'numpy_fromfile', 'numpy_loadtxt', 'read_reports', 'relative_dotdot'] leaked=[]"
+    },
+    {
+      "id": "LK5",
+      "desc": "绕行尝试（相对/归一化路径、numpy、listdir、glob、reports）均未取得信息",
+      "ok": true,
+      "detail": "denied=['LK10_symlink', 'LK8_hardlink_open', 'LK8_numpy_fromfile', 'LK9_tmp_copy', 'direct_enc', 'direct_key', 'full_csv', 'full_raster', 'listdir_locked', 'listdir_vault', 'locked_C', 'normalized_path', 'numpy_fromfile', 'numpy_loadtxt', 'read_reports', 'relative_dotdot'] contained(抛错被吞但为空)=['glob_locked', 'glob_vault'] leaked=[]"
+    },
+    {
+      "id": "LK6",
+      "desc": "无密钥不可解密；密文不含明文片段；有密钥可还原",
+      "ok": true,
+      "detail": "wrong_key_rejected=True plaintext_fragment_in_cipher=False plaintext_head=b'Grid_ID,LST_'"
+    },
+    {
+      "id": "LK7",
+      "desc": "验证服务只发布聚合结论，且沙箱不可读 reports",
+      "ok": true,
+      "detail": "never_returns=['C 区逐格目标值'] sandbox_reports_denied=True"
+    },
+    {
+      "id": "LK8",
+      "desc": "白名单内预置硬链接（文件名无敏感词）无法读取——按 inode 身份拒绝",
+      "ok": true,
+      "detail": "denied=['LK8_hardlink_open', 'LK8_numpy_fromfile'] leaked=[]"
+    },
+    {
+      "id": "LK9",
+      "desc": "白名单之外的改名副本（/tmp）无法读取——读白名单拒绝",
+      "ok": true,
+      "detail": "denied=True"
+    },
+    {
+      "id": "LK10",
+      "desc": "指向锁定真值的符号链接无法读取（realpath 落回拒绝前缀）",
+      "ok": true,
+      "detail": "denied=True"
+    }
+  ],
+  "probe": {
+    "res": {
+      "denied": [
+        "direct_enc",
+        "direct_key",
+        "locked_C",
+        "full_csv",
+        "full_raster",
+        "relative_dotdot",
+        "normalized_path",
+        "numpy_fromfile",
+        "numpy_loadtxt",
+        "listdir_vault",
+        "listdir_locked",
+        "read_reports",
+        "LK8_hardlink_open",
+        "LK8_numpy_fromfile",
+        "LK9_tmp_copy",
+        "LK10_symlink"
+      ],
+      "leaked": [],
+      "contained": [
+        "glob_vault",
+        "glob_locked"
+      ]
+    },
+    "status": {
+      "opens": 209,
+      "denials": 18,
+      "fits": 0,
+      "verdict": "leak_probe_done"
+    }
+  },
+  "C_stats_hidden": {
+    "mean": 39.016,
+    "sd": 2.569,
+    "min": 29.443,
+    "max": 48.609
+  },
+  "coincidence_note": {
+    "observed_4dp_matches": 449,
+    "expected_by_chance": 360.3,
+    "note": "LST 连续、量程约 19.2 ℃；4 位小数下有 ~191663 个可分辨区间，A∪B 与 C 的偶然重合期望约 360 次，与实测 449 同量级。故「数值子串匹配」不是有效泄漏判据；有效判据是 LK1（ID 归属）与 LK3（输入为原样副本）。"
+  }
+}

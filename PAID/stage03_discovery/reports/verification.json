@@ -1,0 +1,55 @@
+{
+  "version": "stage03-verify-v1",
+  "verdict": "FAIL:V4",
+  "n_checks": 8,
+  "checks": [
+    {
+      "id": "V1",
+      "desc": "原始登记 SHA-256",
+      "ok": true,
+      "detail": "sha256=59cd43fd3a4e57d1…"
+    },
+    {
+      "id": "V2",
+      "desc": "冻结↔解封哈希握手",
+      "ok": true,
+      "detail": "S03-H11-REFINE:ok; S03-H10-GREEDY:ok; S03-H10P-GREEDY-MIN:ok; S03-H01-LIN7:ok"
+    },
+    {
+      "id": "V3",
+      "desc": "拒绝逻辑（篡改/未登记）",
+      "ok": true,
+      "detail": "tamper=True unknown=True"
+    },
+    {
+      "id": "V4",
+      "desc": "解封预算完好（runs=0）",
+      "ok": false,
+      "detail": "{\"S03-H11-REFINE\": 0, \"S03-H10-GREEDY\": 1, \"S03-H10P-GREEDY-MIN\": 0, \"S03-H01-LIN7\": 1}"
+    },
+    {
+      "id": "V5",
+      "desc": "预算合规",
+      "ok": true,
+      "detail": "fits=3151/5000 rounds={'R1_agenda': 12, 'R2_greedy': 2, 'R3_refine': 1} n_frozen=4/8"
+    },
+    {
+      "id": "V6",
+      "desc": "开发指标可复现",
+      "ok": true,
+      "detail": "BaselineA=3.157653; S03-H11-REFINE:2.913858/ok; S03-H10-GREEDY:2.956039/ok; S03-H10P-GREEDY-MIN:3.065547/ok; S03-H01-LIN7:3.157653/ok"
+    },
+    {
+      "id": "V7",
+      "desc": "必报项完整",
+      "ok": true,
+      "detail": "S03-H11-REFINE:ok; S03-H10-GREEDY:ok; S03-H10P-GREEDY-MIN:ok; S03-H01-LIN7:ok"
+    },
+    {
+      "id": "V8",
+      "desc": "防火墙回归（Stage 02 泄漏）",
+      "ok": true,
+      "detail": "verdict=PASS n_checks=10 rc=0"
+    }
+  ]
+}

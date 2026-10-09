@@ -1,0 +1,76 @@
+{
+  "version": "stage03-freeze-v1",
+  "created": "2026-09-24T13:05:55",
+  "source": {
+    "raw_registry": "/sessions/friendly-awesome-turing/mnt/AI_lst/PAID/stage02_platform/sandbox_root/work/s03/candidate_registry.json",
+    "raw_registry_sha256": "59cd43fd3a4e57d1c95bf94d705c4f38f270d78f0c459ce741a47bcca9db3a29",
+    "run_tag": "S03-canonical",
+    "ran_at": "2026-09-24T13:05:52"
+  },
+  "budget": {
+    "per_round_max_candidates": 50,
+    "total_fit_budget": 5000,
+    "freeze_max": 8,
+    "greedy_prescreen": "全部项池（无预筛）",
+    "refine_prescreen": 12,
+    "refine_max_evals": 120,
+    "note": "遵守 Stage 01 冻结预算；Rounds 1–3 全部在守卫下运行。"
+  },
+  "baselineA_dev_cv_rmse": 3.1576525409870713,
+  "selection_rule": [
+    "R1 入选=status passed_dev_gain（审计通过+反例未通过+优于 Baseline A）",
+    "R2 按 A 区 CV 升序取前 freeze_max=8",
+    "R3 额外冻结 Baseline A 作为安慰剂/参考（ΔRMSE 应为 0 → 应判不通过）"
+  ],
+  "n_frozen": 4,
+  "frozen": [
+    {
+      "id": "S03-H11-REFINE",
+      "role": "discovery_candidate",
+      "rank": 1,
+      "canon_hash": "629ed98b060d8e0f41f9bcfc7c18d6421e9f66d9172589b26f3fe1e539162207",
+      "validation_runs": 0,
+      "why": "A 区空间分块 CV RMSE=2.9139，优于冻结 Baseline A 3.1577（Δ=+0.2438）；通过物理审计与反例测试。",
+      "expression": "exp(NDVI) + DEM + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)",
+      "claim": "在贪心候选基础上做加/换项修订所得的组合，对 LST 的描述优于其起点。"
+    },
+    {
+      "id": "S03-H10-GREEDY",
+      "role": "discovery_candidate",
+      "rank": 2,
+      "canon_hash": "1715541451024868f13a4933d5a9f7e76240db923abb00bd5672497075f974df",
+      "validation_runs": 1,
+      "why": "A 区空间分块 CV RMSE=2.9560，优于冻结 Baseline A 3.1577（Δ=+0.2016）；通过物理审计与反例测试。",
+      "expression": "exp(NDVI) + exp(DEM) + SVF + Road_Dens + (NDVI * DEM)",
+      "claim": "由项池按 A 区空间分块 CV 逐步选出的 5 项组合，对 LST 的描述优于更简模型。",
+      "last_result": {
+        "passed": true,
+        "delta_rmse": 0.37907131616873313
+      }
+    },
+    {
+      "id": "S03-H10P-GREEDY-MIN",
+      "role": "discovery_candidate",
+      "rank": 3,
+      "canon_hash": "5e8bcc5de6d8ebf60ca01794654a8cf4d7f872fcf37efb9b25931162bd8d7f36",
+      "validation_runs": 0,
+      "why": "A 区空间分块 CV RMSE=3.0655，优于冻结 Baseline A 3.1577（Δ=+0.0921）；通过物理审计与反例测试。",
+      "expression": "exp(NDVI) + exp(DEM)",
+      "claim": "贪心路径上最早优于冻结基线的 2 项组合（同增益下的最简模型）。"
+    },
+    {
+      "id": "S03-H01-LIN7",
+      "role": "reference_placebo",
+      "rank": 0,
+      "canon_hash": "7a7e172b70cb56481c6ae23afc7a507362a2902a09be1055fafc61596e294aaf",
+      "validation_runs": 1,
+      "why": "冻结 Baseline A 规格（7 协变量线性）。作为**安慰剂/参考**：其验证区 ΔRMSE 按定义为 0，应当被验证服务判为不通过。",
+      "expression": "NDVI + DEM + SVF + Road_Dens + X_BD + X_BH + X_VolDens",
+      "claim": "LST 可由 7 个预指定形态变量的线性组合描述（作为后续候选的参照模型）。",
+      "last_result": {
+        "passed": false,
+        "delta_rmse": 0.0
+      }
+    }
+  ]
+}

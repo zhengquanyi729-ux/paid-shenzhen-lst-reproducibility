@@ -1,0 +1,18 @@
+{
+  "version": "stage02-validator-v1",
+  "created": "2026-09-24",
+  "rule": "仅登记 canon_hash = sha256(canonical({id,claim,expression,model}))；每个候选 validation_runs ≤ 1；哈希不一致即拒绝解封。",
+  "frozen": [
+    {
+      "id": "SMOKE-0001",
+      "canon_hash": "f60cc3fa32ff2ecd4f893c4ea58b4d656e4939b37072dc0584cad12df9d53e8f",
+      "frozen_at": "2026-09-24",
+      "validation_runs": 1,
+      "note": "平台冒烟占位（Baseline A 规格）",
+      "last_result": {
+        "passed": false,
+        "delta_rmse": 0.0
+      }
+    }
+  ]
+}

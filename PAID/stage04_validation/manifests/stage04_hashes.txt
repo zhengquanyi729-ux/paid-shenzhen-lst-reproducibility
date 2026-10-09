@@ -1,0 +1,12 @@
+# Stage 04 产物 SHA-256 清单（相对 PAID/；不含本清单自身）
+# 生成于 2026-09-24 13:14:31；Stage 03 冻结候选的解封状态另见 stage03_discovery/registry/frozen_candidates.json
+8b16345c7c1294f6e08697d27add022703c78ddedd9442436b76f11f60f19a19       10167  stage04_validation/reports/s04_validation_results.json
+3c76ba01a57757d005c17a4bf9ed953cf91082bc9d82f5278986b9aade6a6bbd        1393  stage04_validation/registry/approved_unseal.json
+d8b4f16dd8f8864dcccf4a5f41503f80c1c9d10c5ccef6a0467617dd495e3535         386  stage04_validation/registry/pre_unseal_snapshot.json
+21edc44b5f40de993322618efa1edcfa05a50231529779e3b4c8c4063785e601       13218  stage04_validation/STAGE04_REPORT.md
+0c015e11de383d5ac9f043ca6ae73f0892da6e23e3de9b5090dea210aec7caaf       17349  stage04_validation/scripts/s04_01_validate.py
+376224a35d4e19f8421b21983d3ef43c02e7c3eb49590219d0f4cf4d160ddf6a       22720  stage04_validation/scripts/s04_02_report.py
+9acacb83e66182726beeb7cd2886aa734d666c36bff31659294967028765c9d9        7502  stage04_validation/scripts/s04_03_verify.py
+
+# append-only 实验日志（含全部开发期迭代，故不逐行入清单）
+b10cc702a49fe3eaea06bff1e06a8fe0ac9d0fa55e3a1bd082e8763e61715488      523415  stage02_platform/logs/experiment_log.jsonl  (lines=1259)

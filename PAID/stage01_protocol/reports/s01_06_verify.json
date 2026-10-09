@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "id": "V1",
+      "desc": "Moran's I of detrended residual ≈ 0.886",
+      "ok": true,
+      "detail": "recomputed I=0.8860 (expect 0.8860)"
+    },
+    {
+      "id": "V2",
+      "desc": "去相关尺度 R = 15 格（1.5 km）",
+      "ok": true,
+      "detail": "R_cells=15, R_m=1500, base_k_at_0p2={'low_veg': 15, 'mid_veg': 11}"
+    },
+    {
+      "id": "V3a",
+      "desc": "分区规模 A/B/C = 19184/6182/2987",
+      "ok": true,
+      "detail": "A=19184 B=6182 C=2987"
+    },
+    {
+      "id": "V3b",
+      "desc": "C 缓冲后连通分量 = 1",
+      "ok": true,
+      "detail": "n_components=1"
+    },
+    {
+      "id": "V4",
+      "desc": "C↔A∪B = 16 ≥ R=15 且三区互不重叠",
+      "ok": true,
+      "detail": "d(C,A∪B)=16, overlap=0"
+    },
+    {
+      "id": "V4b",
+      "desc": "锁定区格均属主样本",
+      "ok": true,
+      "detail": "locked ⊆ main = True"
+    },
+    {
+      "id": "V5a",
+      "desc": "zone_C_targets 仅 ID + 目标列",
+      "ok": true,
+      "detail": "cols=['Grid_ID', 'LST_mean']"
+    },
+    {
+      "id": "V5b",
+      "desc": "zone_C_targets 行数 = 2987 且全为 locked",
+      "ok": true,
+      "detail": "n=2987"
+    },
+    {
+      "id": "V5c",
+      "desc": "zone_A 全为 discovery 且与 C 无交集",
+      "ok": true,
+      "detail": "n=19184"
+    },
+    {
+      "id": "V5d",
+      "desc": "zone_B 全为 dev_validation 且与 C 无交集",
+      "ok": true,
+      "detail": "n=6182"
+    },
+    {
+      "id": "V6",
+      "desc": "stage01_hashes.txt 全部哈希一致（排除本脚本自身产物）",
+      "ok": true,
+      "detail": "mismatched=[]"
+    },
+    {
+      "id": "V7",
+      "desc": "验证协议覆盖 Table 13 七类检验",
+      "ok": true,
+      "detail": "n_coverage=7"
+    },
+    {
+      "id": "V8",
+      "desc": "code_manifest 哈希与实际脚本一致且条目数正确",
+      "ok": true,
+      "detail": "n_files=15, problems=[]"
+    }
+  ],
+  "version": "stage01-verify-v1",
+  "verdict": "PASS",
+  "n_checks": 13
+}

@@ -1,0 +1,147 @@
+{
+  "id": "SMOKE-0001",
+  "created": "2026-09-24",
+  "agent": "Discovery Agent",
+  "model_version": "PAID-Agent-v0（Stage 02 平台骨架，无语料级目标先验注入）",
+  "code_version": "stage02-platform-v1",
+  "claim": "（平台占位，非科学发现）LST_mean 可用预注册协变量的线性组合描述；本条目仅用于验证登记—冻结—解封链路。",
+  "expression": {
+    "form": "linear",
+    "terms": [
+      "NDVI_mean",
+      "DEM_mean",
+      "SVF_mean",
+      "Road_Dens",
+      "X_BD",
+      "X_BH",
+      "X_VolDens"
+    ],
+    "standardize": true,
+    "intercept": true
+  },
+  "variables": {
+    "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+    "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+    "SVF_mean": "见 constraints/DATA_DICTIONARY.md",
+    "Road_Dens": "见 constraints/DATA_DICTIONARY.md",
+    "X_BD": "见 constraints/DATA_DICTIONARY.md",
+    "X_BH": "见 constraints/DATA_DICTIONARY.md",
+    "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+  },
+  "domain": "深圳研究区、单一时相、100 m 网格；A 发现区",
+  "dev_evidence": {
+    "A": {
+      "n": 19184,
+      "rmse": 2.914880975503129,
+      "r2": 0.6046492370008301
+    },
+    "B": {
+      "n": 6182,
+      "rmse": 2.54250853893637,
+      "r2": 0.6654821319435571
+    }
+  },
+  "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+  "physics_audit": {
+    "items": [
+      {
+        "id": "PA1",
+        "desc": "量纲一致/无量纲化",
+        "ok": true,
+        "detail": "线性表达式作用于 A 区标准化协变量 → 无量纲"
+      },
+      {
+        "id": "PA2",
+        "desc": "几何合法性（X_BD 为覆盖率且 ≤1）",
+        "ok": false,
+        "detail": "X_BD 实测 max=1.77，超 [0,1]；口径未确认，须登记假设、不得当作合法覆盖率使用（DG-2/PC-3）"
+      },
+      {
+        "id": "PA3",
+        "desc": "无能量残差/机制越界",
+        "ok": true,
+        "detail": "未出现缺失输入的能量断言"
+      },
+      {
+        "id": "PA4",
+        "desc": "系统提示词无方向预设",
+        "ok": true,
+        "detail": "禁令条款存在=True，断言式措辞命中=[]"
+      },
+      {
+        "id": "PA5",
+        "desc": "测量边界（不混淆 SVF 与 LST 支持尺度）",
+        "ok": true,
+        "detail": "未把 5 m SVF 当作 5 m LST，未把重采样当作新观测"
+      },
+      {
+        "id": "PA6",
+        "desc": "主终点解封前冻结",
+        "ok": true,
+        "detail": "主终点已声明=True，解封结果尚未写入=True"
+      }
+    ],
+    "verdict": "pass",
+    "caveats": [
+      "X_BD 口径未确认：相关候选的适用域须限定，且须登记口径假设"
+    ]
+  },
+  "unseal_result": null,
+  "status": "audited",
+  "model": {
+    "form": "linear",
+    "terms": [
+      "NDVI_mean",
+      "DEM_mean",
+      "SVF_mean",
+      "Road_Dens",
+      "X_BD",
+      "X_BH",
+      "X_VolDens"
+    ],
+    "mu": {
+      "NDVI_mean": 0.5010015730589953,
+      "DEM_mean": 11.086418122264401,
+      "SVF_mean": 0.8441220857342994,
+      "Road_Dens": 4.238883143987457,
+      "X_BD": 0.11144330994103951,
+      "X_BH": 11.946338510381343,
+      "X_VolDens": 6.297557360602585
+    },
+    "sd": {
+      "NDVI_mean": 0.24560196652968624,
+      "DEM_mean": 2.7322719651813,
+      "SVF_mean": 0.16907687437673352,
+      "Road_Dens": 9.47829572874205,
+      "X_BD": 0.15232831722093992,
+      "X_BH": 16.20854794398755,
+      "X_VolDens": 11.258199172983835
+    },
+    "beta": [
+      38.59605856787971,
+      -1.8729567060735737,
+      1.4163720210380153,
+      -0.7512773143920151,
+      0.6137138459228921,
+      0.5459556386403083,
+      0.14787080763923108,
+      -0.25761639268073994
+    ],
+    "intercept": true,
+    "n_fit": 19184
+  },
+  "falsification": {
+    "rmse_real": 2.54250853893637,
+    "controls": {
+      "NC1_row_shuffle": 5.483515214186221,
+      "NC2_block_permute": 5.464164167989063,
+      "NC3_random_target": 5.488882190997662
+    },
+    "control_passed": {
+      "NC1_row_shuffle": true,
+      "NC2_block_permute": true,
+      "NC3_random_target": true
+    },
+    "verdict": "not_fooled"
+  }
+}

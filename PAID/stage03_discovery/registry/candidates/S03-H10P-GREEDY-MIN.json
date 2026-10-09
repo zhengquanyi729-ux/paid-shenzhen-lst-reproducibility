@@ -1,0 +1,247 @@
+{
+  "id": "S03-H10P-GREEDY-MIN",
+  "created": "2026-09-24",
+  "agent": "Discovery Agent",
+  "model_version": "stage03-symreg-v1",
+  "code_version": "stage03-discovery-v1",
+  "hypothesis": "贪心最简前缀（2 项）",
+  "claim": "贪心路径上最早优于冻结基线的 2 项组合（同增益下的最简模型）。",
+  "expression": {
+    "form": "expr",
+    "terms": [
+      {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "NDVI_mean"
+        }
+      },
+      {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "DEM_mean"
+        }
+      }
+    ],
+    "standardize": true,
+    "intercept": true,
+    "complexity": 6,
+    "expr": "exp(NDVI) + exp(DEM)"
+  },
+  "variables": {
+    "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+    "NDVI_mean": "见 constraints/DATA_DICTIONARY.md"
+  },
+  "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+  "dev_evidence": {
+    "dev_metric": "A 区空间分块 CV RMSE (℃)",
+    "cv_rmse": 3.065546667668994,
+    "per_fold_rmse": [
+      2.7747524373754944,
+      2.71662011385273,
+      2.6360049176520395,
+      3.1860485088036214,
+      3.874480350518165
+    ],
+    "worst_fold_rmse": 3.874480350518165,
+    "sd_fold_rmse": 0.45952175525199396,
+    "mae_A": 2.0789492448188853,
+    "r2_A": 0.6111947931816109,
+    "rmse_A": 2.8906504045260935,
+    "pred_range_A": [
+      30.47813487575969,
+      48.910222881576
+    ],
+    "term_scale_max": 8.708904363489681,
+    "term_scale_by_term": {
+      "term0:exp(NDVI)": 4.750364723816409,
+      "term1:exp(DEM)": 8.708904363489681
+    },
+    "complexity": 6,
+    "n_terms": 2,
+    "ci95_rmse": [
+      2.6762524285359315,
+      3.1415942162452826
+    ],
+    "moran_I_resid": 0.803287885349801,
+    "directions": {
+      "DEM_mean": {
+        "delta_LST_per_SD": 2.3439166764091937,
+        "direction": "+"
+      },
+      "NDVI_mean": {
+        "delta_LST_per_SD": -5.037896073285069,
+        "direction": "-"
+      }
+    },
+    "n_A": 19184,
+    "delta_cv_vs_baselineA": 0.09210587331807707,
+    "beats_baselineA": true
+  },
+  "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+  "physics_audit": {
+    "verdict": "pass",
+    "items": [
+      {
+        "id": "PA1",
+        "name": "量纲与无量纲化",
+        "ok": true,
+        "hard": false,
+        "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+      },
+      {
+        "id": "PA2",
+        "name": "几何合法性（数据定义）",
+        "ok": true,
+        "hard": false,
+        "warn": true,
+        "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+      },
+      {
+        "id": "PA3",
+        "name": "能量守恒/因果过度延伸",
+        "ok": true,
+        "hard": true,
+        "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+      },
+      {
+        "id": "PA4",
+        "name": "无方向预设（§3.2）",
+        "ok": true,
+        "hard": true,
+        "detail": "发现侧提示词与候选主张均无方向性预设。"
+      },
+      {
+        "id": "PA5",
+        "name": "测量边界",
+        "ok": true,
+        "hard": true,
+        "detail": "未把细尺度变量当作同分辨率温度观测。"
+      },
+      {
+        "id": "PA6",
+        "name": "统计诚信（必报项）",
+        "ok": true,
+        "hard": false,
+        "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+      },
+      {
+        "id": "PA7",
+        "name": "数值条件与量纲尺度",
+        "ok": true,
+        "hard": true,
+        "detail": "项尺度有界（max|项|=8.71 ≤ 1000），量纲与标准化尺度一致。"
+      }
+    ],
+    "fail_items": [],
+    "hard_items": [
+      "PA3",
+      "PA4",
+      "PA5",
+      "PA7"
+    ],
+    "info_items": [
+      "PA1",
+      "PA2",
+      "PA6"
+    ],
+    "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+    "cautions": [
+      "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+      "无观测时间/传感器/QA，无法做测量误差传播",
+      "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+    ]
+  },
+  "unseal_result": null,
+  "status": "passed_dev_gain",
+  "search_trace": [
+    {
+      "action": "add",
+      "term": "exp(NDVI_mean)",
+      "term_ast": {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "NDVI_mean"
+        }
+      },
+      "cv_rmse": 3.3705939965348963,
+      "n_terms": 1
+    },
+    {
+      "action": "add",
+      "term": "exp(DEM_mean)",
+      "term_ast": {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "DEM_mean"
+        }
+      },
+      "cv_rmse": 3.065546667668994,
+      "n_terms": 2
+    }
+  ],
+  "parsimony_note": "由 H10-GREEDY 贪心轨迹截取最简前缀（CV 首次 < Baseline A）",
+  "model": {
+    "form": "expr",
+    "terms": [
+      {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "NDVI_mean"
+        }
+      },
+      {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "DEM_mean"
+        }
+      }
+    ],
+    "standardize": true,
+    "intercept": true,
+    "mu": {
+      "DEM_mean": 11.086418122264401,
+      "NDVI_mean": 0.5010015730589953
+    },
+    "sd": {
+      "DEM_mean": 2.7322719651813,
+      "NDVI_mean": 0.24560196652968624
+    },
+    "beta": [
+      40.43666169384538,
+      -2.1434185484719794,
+      0.9972405955195209
+    ],
+    "n_fit": 19184,
+    "complexity": 6
+  },
+  "falsification": {
+    "on": "B 开发验证区",
+    "rmse_real": 2.8836948476586235,
+    "controls": {
+      "NC1_row_shuffle": 5.88309315831725,
+      "NC2_block_permute": 5.893610962880506,
+      "NC3_random_target": 5.907416200895388
+    },
+    "control_passed": {
+      "NC1_row_shuffle": true,
+      "NC2_block_permute": true,
+      "NC3_random_target": true
+    },
+    "verdict": "not_fooled",
+    "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+    "rmse_B_baselineA": 2.54250853893637,
+    "delta_B_vs_baselineA": -0.34118630872225353,
+    "block_perm_p_B": 0.175,
+    "n_perm": 199,
+    "perm_corr_sanity": 0.284894972810665,
+    "skill_significant_B": false,
+    "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+  },
+  "round": "R2_greedy"
+}

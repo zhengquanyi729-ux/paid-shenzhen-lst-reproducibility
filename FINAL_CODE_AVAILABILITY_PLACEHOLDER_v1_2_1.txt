@@ -1,0 +1,42 @@
+CODE AVAILABILITY — PLACEHOLDER (fill every {{TOKEN}} after a real, verified upload)
+=====================================================================================
+
+Tokens used in this file (search-and-replace verbatim):
+  {{CODE_REPOSITORY_URL}}  the public Git repository URL
+  {{CODE_ARCHIVE_DOI}}     the archived-code DOI (e.g. Zenodo archival of the Git release)
+  {{CODE_COMMIT_SHA}}      the exact commit SHA of the released code
+  {{RELEASE_TAG}}          the release tag (e.g. v1.2.1)
+
+IMPORTANT — DO NOT FABRICATE. No DOI, URL or commit SHA is asserted anywhere in this package.
+Replace a token only after the corresponding upload has been performed and independently verified to be
+reachable and hash-matching (see UPLOAD_INSTRUCTIONS_v1_2_1.md and RELEASE_QA_v1_2_1.md).
+
+--- paragraph (drop-in) ------------------------------------------------------
+
+The code required to audit and reproduce the frozen analyses reported in this study is available at
+{{CODE_REPOSITORY_URL}} (release {{RELEASE_TAG}}, commit {{CODE_COMMIT_SHA}}; archived at
+{{CODE_ARCHIVE_DOI}}), organised under PAID/ (Stages 00-05) with a reviewer-portable verification layer
+under release_tools/. The archive preserves the historical PAID Stage 00-05 implementation together
+with the portable reviewer-verification layer. The portable layer verifies the frozen spatial
+partition, the candidate hashes, the Region-C Stage-04 statistics, the R = 25 sensitivity analysis, the
+Stage-05 conventional baselines, the external-replication outputs where the associated data may be
+redistributed, figure-source artefacts and the release manifests, without relying on the original local
+directory structure or the historical AES key. Historical scripts are retained for provenance and are
+not retrospectively altered. The pipeline is deterministic given the frozen seed (20260924). The
+discovery, experiment, falsification and physics-audit roles are implemented as deterministic Python
+functions governed by frozen prompt specifications, and the independent validator recomputes the pass
+conditions in-process as a separate software process; no language-model or network service is called by
+the released code at run time. Baseline B is implemented without external machine-learning libraries
+(PAID/stage05_paper/scripts/bmlib.py). Each stage writes a SHA-256 manifest of its products; a top-level
+MANIFEST_SHA256.csv covers the entire release, verification/verify_manifest.py re-checks it, and
+release_tools/run_all_release.py recomputes the published statistics from the shipped tables alone. The
+complete protocol-deviation audit and the read-only checks that support it are included and
+reproducible. **No model is required to reproduce the reported numerical results from the frozen
+release artefacts.**
+
+--- short form (if the journal wants 2 sentences) ----------------------------
+
+All code (Stages 00-05, the verifiers and the figure scripts) is available at {{CODE_REPOSITORY_URL}}
+(release {{RELEASE_TAG}}, commit {{CODE_COMMIT_SHA}}). The pipeline is deterministic given seed
+20260924 and requires no external model or network access; MANIFEST_SHA256.csv and
+release_tools/run_all_release.py allow the entire release to be re-checked.

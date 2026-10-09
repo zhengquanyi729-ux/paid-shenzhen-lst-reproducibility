@@ -1,0 +1,3684 @@
+{
+  "version": "stage03-registry-v1",
+  "created": "2026-09-24T13:05:55",
+  "baselineA_dev_cv_rmse": 3.1576525409870713,
+  "baselineA_rmse_B": 2.54250853893637,
+  "folds": {
+    "k": 5,
+    "sizes": [
+      2544,
+      5143,
+      3713,
+      4096,
+      3688
+    ]
+  },
+  "rounds": {
+    "R1_agenda": 12,
+    "R2_greedy": 2,
+    "R3_refine": 1
+  },
+  "budget": {
+    "per_round_max_candidates": 50,
+    "total_fit_budget": 5000,
+    "freeze_max": 8,
+    "greedy_prescreen": "全部项池（无预筛）",
+    "refine_prescreen": 12,
+    "refine_max_evals": 120,
+    "note": "遵守 Stage 01 冻结预算；Rounds 1–3 全部在守卫下运行。"
+  },
+  "guard": {
+    "opens": 965,
+    "denials": 0,
+    "fits": 3151,
+    "verdict": "symreg_search_done"
+  },
+  "status_counts": {
+    "passed_dev_gain": 3,
+    "passed_dev_nogain": 10,
+    "rejected_physics": 2
+  },
+  "n_candidates": 15,
+  "frozen_ids": [
+    "S03-H11-REFINE",
+    "S03-H10-GREEDY",
+    "S03-H10P-GREEDY-MIN",
+    "S03-H01-LIN7"
+  ],
+  "candidates": [
+    {
+      "id": "S03-H01-LIN7",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "全部 7 个预指定变量的一次项（参照）",
+      "claim": "LST 可由 7 个预指定形态变量的线性组合描述（作为后续候选的参照模型）。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "var",
+            "name": "DEM_mean"
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "var",
+            "name": "X_BH"
+          },
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 14,
+        "expr": "NDVI + DEM + SVF + Road_Dens + X_BD + X_BH + X_VolDens"
+      },
+      "variables": {
+        "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "Road_Dens": "见 constraints/DATA_DICTIONARY.md",
+        "SVF_mean": "见 constraints/DATA_DICTIONARY.md",
+        "X_BD": "见 constraints/DATA_DICTIONARY.md",
+        "X_BH": "见 constraints/DATA_DICTIONARY.md",
+        "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 3.1576525409870713,
+        "per_fold_rmse": [
+          3.315469870409468,
+          3.100984157344671,
+          2.535201841067078,
+          3.000710664745172,
+          3.794950131510621
+        ],
+        "worst_fold_rmse": 3.794950131510621,
+        "sd_fold_rmse": 0.4113407698662953,
+        "mae_A": 2.1615058207261284,
+        "r2_A": 0.6046492370008301,
+        "rmse_A": 2.914880975503129,
+        "pred_range_A": [
+          30.89394741424772,
+          47.286216365890816
+        ],
+        "term_scale_max": 13.376694045419306,
+        "term_scale_by_term": {
+          "term0:NDVI": 2.964477059031993,
+          "term1:DEM": 2.959594881224727,
+          "term2:SVF": 2.70684133035297,
+          "term3:Road_Dens": 7.530914394914849,
+          "term4:X_BD": 10.884872823973941,
+          "term5:X_BH": 13.084395605485927,
+          "term6:X_VolDens": 13.376694045419306
+        },
+        "complexity": 14,
+        "n_terms": 7,
+        "ci95_rmse": [
+          2.6987942685825796,
+          3.1768972326741802
+        ],
+        "moran_I_resid": 0.8197823621307296,
+        "directions": {
+          "DEM_mean": {
+            "delta_LST_per_SD": 2.8327440420760306,
+            "direction": "+"
+          },
+          "NDVI_mean": {
+            "delta_LST_per_SD": -3.745913412147146,
+            "direction": "-"
+          },
+          "Road_Dens": {
+            "delta_LST_per_SD": 1.2274276918457836,
+            "direction": "+"
+          },
+          "SVF_mean": {
+            "delta_LST_per_SD": -1.5025546287840312,
+            "direction": "-"
+          },
+          "X_BD": {
+            "delta_LST_per_SD": 1.0919112772806192,
+            "direction": "+"
+          },
+          "X_BH": {
+            "delta_LST_per_SD": 0.2957416152784609,
+            "direction": "+"
+          },
+          "X_VolDens": {
+            "delta_LST_per_SD": -0.5152327853614784,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": 0.0,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=13.4 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "var",
+            "name": "DEM_mean"
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "var",
+            "name": "X_BH"
+          },
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "DEM_mean": 11.086418122264401,
+          "NDVI_mean": 0.5010015730589953,
+          "Road_Dens": 4.238883143987457,
+          "SVF_mean": 0.8441220857342994,
+          "X_BD": 0.11144330994103951,
+          "X_BH": 11.946338510381343,
+          "X_VolDens": 6.297557360602585
+        },
+        "sd": {
+          "DEM_mean": 2.7322719651813,
+          "NDVI_mean": 0.24560196652968624,
+          "Road_Dens": 9.47829572874205,
+          "SVF_mean": 0.16907687437673352,
+          "X_BD": 0.15232831722093992,
+          "X_BH": 16.20854794398755,
+          "X_VolDens": 11.258199172983835
+        },
+        "beta": [
+          38.59605856787971,
+          -1.8729567060735737,
+          1.4163720210380153,
+          -0.7512773143920151,
+          0.6137138459228921,
+          0.5459556386403083,
+          0.14787080763923108,
+          -0.25761639268073994
+        ],
+        "n_fit": 19184,
+        "complexity": 14
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.54250853893637,
+        "controls": {
+          "NC1_row_shuffle": 5.483515214186221,
+          "NC2_block_permute": 5.464164167989063,
+          "NC3_random_target": 5.488882190997662
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": 0.0,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H02-QUAD-NDVI",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "NDVI_mean 的二次响应",
+      "claim": "LST 与 NDVI_mean 之间为可测的二次（非线性）关系。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "NDVI + (NDVI * NDVI)"
+      },
+      "variables": {
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 3.2551670444609058,
+        "per_fold_rmse": [
+          2.8980546562618787,
+          2.977252241283452,
+          2.8780501837054873,
+          3.149311769718849,
+          4.196293368149237
+        ],
+        "worst_fold_rmse": 4.196293368149237,
+        "sd_fold_rmse": 0.4975239304345163,
+        "mae_A": 2.262191061781606,
+        "r2_A": 0.5835195752038109,
+        "rmse_A": 2.991760555356938,
+        "pred_range_A": [
+          30.89923959822193,
+          41.81064044366812
+        ],
+        "term_scale_max": 8.788124233526975,
+        "term_scale_by_term": {
+          "term0:NDVI": 2.964477059031993,
+          "term1:(NDVI * NDVI)": 8.788124233526975
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          2.8183023624901558,
+          3.1929136417996316
+        ],
+        "moran_I_resid": 0.7879876581015465,
+        "directions": {
+          "NDVI_mean": {
+            "delta_LST_per_SD": -6.258351532593693,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -0.0975145034738345,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=8.79 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "NDVI_mean": 0.5010015730589953
+        },
+        "sd": {
+          "NDVI_mean": 0.24560196652968624
+        },
+        "beta": [
+          40.571383359835096,
+          -3.1291757662968442,
+          -1.9753247919553605
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.689195193320292,
+        "controls": {
+          "NC1_row_shuffle": 5.836121529661919,
+          "NC2_block_permute": 5.873137517824661,
+          "NC3_random_target": 5.874104153908108
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.14668665438392203,
+        "block_perm_p_B": 0.005,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": true,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H02-QUAD-XBD",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "X_BD 的二次响应",
+      "claim": "LST 与 X_BD 之间为可测的二次（非线性）关系。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "X_BD"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "X_BD + (X_BD * X_BD)"
+      },
+      "variables": {
+        "X_BD": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.440526562453225,
+        "per_fold_rmse": [
+          4.705405565407157,
+          4.358018110941761,
+          4.045043386376724,
+          4.325811973563349,
+          4.853356180562669
+        ],
+        "worst_fold_rmse": 4.853356180562669,
+        "sd_fold_rmse": 0.2882769925164834,
+        "mae_A": 3.1691560297282146,
+        "r2_A": 0.26864413309580915,
+        "rmse_A": 3.9645500955136606,
+        "pred_range_A": [
+          5.758700381002356,
+          43.322584648280504
+        ],
+        "term_scale_max": 118.48045639408645,
+        "term_scale_by_term": {
+          "term0:X_BD": 10.884872823973941,
+          "term1:(X_BD * X_BD)": 118.48045639408645
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          3.775307508993632,
+          4.199460657642067
+        ],
+        "moran_I_resid": 0.8468295907239044,
+        "directions": {
+          "X_BD": {
+            "delta_LST_per_SD": 6.125471314909731,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.2828740214661534,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=118 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "X_BD"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "X_BD": 0.11144330994103951
+        },
+        "sd": {
+          "X_BD": 0.15232831722093992
+        },
+        "beta": [
+          39.159342439451855,
+          3.062735657454868,
+          -0.563283871572147
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 3.053917125615125,
+        "controls": {
+          "NC1_row_shuffle": 4.94753805358768,
+          "NC2_block_permute": 4.986612431990373,
+          "NC3_random_target": 4.927507677834002
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.5114085866787552,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H02-QUAD-XVOL",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "X_VolDens 的二次响应",
+      "claim": "LST 与 X_VolDens 之间为可测的二次（非线性）关系。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "X_VolDens"
+              },
+              {
+                "op": "var",
+                "name": "X_VolDens"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "X_VolDens + (X_VolDens * X_VolDens)"
+      },
+      "variables": {
+        "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.611191598712112,
+        "per_fold_rmse": [
+          5.1025710424597195,
+          4.087449509716409,
+          4.243416543322871,
+          4.6658346316075825,
+          5.199937821313759
+        ],
+        "worst_fold_rmse": 5.199937821313759,
+        "sd_fold_rmse": 0.4447002893575027,
+        "mae_A": 3.357192573338056,
+        "r2_A": 0.19972888074467388,
+        "rmse_A": 4.1471343708277875,
+        "pred_range_A": [
+          18.646912869468565,
+          45.43026397226138
+        ],
+        "term_scale_max": 178.93594358475633,
+        "term_scale_by_term": {
+          "term0:X_VolDens": 13.376694045419306,
+          "term1:(X_VolDens * X_VolDens)": 178.93594358475633
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          3.972929030256397,
+          4.360937724786936
+        ],
+        "moran_I_resid": 0.857241387758588,
+        "directions": {
+          "X_VolDens": {
+            "delta_LST_per_SD": 5.889679324717235,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.4535390577250404,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=179 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "X_VolDens"
+              },
+              {
+                "op": "var",
+                "name": "X_VolDens"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "X_VolDens": 6.297557360602585
+        },
+        "sd": {
+          "X_VolDens": 11.258199172983835
+        },
+        "beta": [
+          38.929557037492366,
+          2.9448396623586177,
+          -0.33349846961264556
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 3.6145860317963656,
+        "controls": {
+          "NC1_row_shuffle": 4.656619358012651,
+          "NC2_block_permute": 4.829799069142319,
+          "NC3_random_target": 4.6379440109323955
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -1.0720774928599957,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H02-QUAD-SVF",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "SVF_mean 的二次响应",
+      "claim": "LST 与 SVF_mean 之间为可测的二次（非线性）关系。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              },
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "SVF + (SVF * SVF)"
+      },
+      "variables": {
+        "SVF_mean": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.19397545638112,
+        "per_fold_rmse": [
+          4.072233332324955,
+          4.931128201780278,
+          3.233219300297674,
+          3.632671272821239,
+          4.578914033643611
+        ],
+        "worst_fold_rmse": 4.931128201780278,
+        "sd_fold_rmse": 0.6148286424820423,
+        "mae_A": 2.871269953298585,
+        "r2_A": 0.36355284269489796,
+        "rmse_A": 3.6983730063337665,
+        "pred_range_A": [
+          35.54770335308186,
+          42.207539760392685
+        ],
+        "term_scale_max": 7.326989987707037,
+        "term_scale_by_term": {
+          "term0:SVF": 2.70684133035297,
+          "term1:(SVF * SVF)": 7.326989987707037
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          3.473776737536462,
+          3.9660541544151218
+        ],
+        "moran_I_resid": 0.8845312322796984,
+        "directions": {
+          "SVF_mean": {
+            "delta_LST_per_SD": -7.087310427733215,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.0363229153940483,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=7.33 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              },
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "SVF_mean": 0.8441220857342994
+        },
+        "sd": {
+          "SVF_mean": 0.16907687437673352
+        },
+        "beta": [
+          40.05348029586544,
+          -3.5436552138666038,
+          -1.4574217279857296
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.4585830356578104,
+        "controls": {
+          "NC1_row_shuffle": 5.181237469486191,
+          "NC2_block_permute": 5.239720343728858,
+          "NC3_random_target": 5.196634573626247
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": 0.08392550327855952,
+        "block_perm_p_B": 0.99,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H03-BUILD3",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "建筑覆盖 / 高度 / 体量三项",
+      "claim": "LST 与建筑覆盖、平均高度、体量密度三项联合相关。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "var",
+            "name": "X_BH"
+          },
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "X_BD + X_BH + X_VolDens"
+      },
+      "variables": {
+        "X_BD": "见 constraints/DATA_DICTIONARY.md",
+        "X_BH": "见 constraints/DATA_DICTIONARY.md",
+        "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.4080449422599335,
+        "per_fold_rmse": [
+          4.656411428928261,
+          4.410855050231347,
+          3.8762637709119523,
+          4.269471539763448,
+          4.8594385274939835
+        ],
+        "worst_fold_rmse": 4.8594385274939835,
+        "sd_fold_rmse": 0.3368193017695232,
+        "mae_A": 3.1528217344451517,
+        "r2_A": 0.2760260599833011,
+        "rmse_A": 3.9444912949049487,
+        "pred_range_A": [
+          34.08949220112065,
+          55.90547961994938
+        ],
+        "term_scale_max": 13.376694045419306,
+        "term_scale_by_term": {
+          "term0:X_BD": 10.884872823973941,
+          "term1:X_BH": 13.084395605485927,
+          "term2:X_VolDens": 13.376694045419306
+        },
+        "complexity": 6,
+        "n_terms": 3,
+        "ci95_rmse": [
+          3.7599863465533385,
+          4.171479927097156
+        ],
+        "moran_I_resid": 0.837913531757469,
+        "directions": {
+          "X_BD": {
+            "delta_LST_per_SD": 3.7322948946614076,
+            "direction": "+"
+          },
+          "X_BH": {
+            "delta_LST_per_SD": 2.602799108313535,
+            "direction": "+"
+          },
+          "X_VolDens": {
+            "delta_LST_per_SD": -0.9666752809180679,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.2503924012728622,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=13.4 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "var",
+            "name": "X_BH"
+          },
+          {
+            "op": "var",
+            "name": "X_VolDens"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "X_BD": 0.11144330994103951,
+          "X_BH": 11.946338510381343,
+          "X_VolDens": 6.297557360602585
+        },
+        "sd": {
+          "X_BD": 0.15232831722093992,
+          "X_BH": 16.20854794398755,
+          "X_VolDens": 11.258199172983835
+        },
+        "beta": [
+          38.596058567879716,
+          1.8661474473307047,
+          1.3013995541567702,
+          -0.48333764045903593
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 3.112370718920353,
+        "controls": {
+          "NC1_row_shuffle": 4.913284990618836,
+          "NC2_block_permute": 4.981162276655669,
+          "NC3_random_target": 4.889266922341728
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.5698621799839829,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H04-VEG-BUILD",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "植被—建筑交互",
+      "claim": "NDVI 与建筑覆盖的联合项对 LST 的解释优于各自单独的线性项。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 8,
+        "expr": "NDVI + X_BD + (NDVI * X_BD)"
+      },
+      "variables": {
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "X_BD": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 3.6520963147844063,
+        "per_fold_rmse": [
+          3.548250651891079,
+          2.702130572320193,
+          3.5068433615031753,
+          3.983019243145728,
+          4.529028426666717
+        ],
+        "worst_fold_rmse": 4.529028426666717,
+        "sd_fold_rmse": 0.6021331600473844,
+        "mae_A": 2.4728764974194255,
+        "r2_A": 0.47230108556070904,
+        "rmse_A": 3.3676165523304706,
+        "pred_range_A": [
+          33.656059659435044,
+          48.67623756198802
+        ],
+        "term_scale_max": 15.717444435275533,
+        "term_scale_by_term": {
+          "term0:NDVI": 2.964477059031993,
+          "term1:X_BD": 10.884872823973941,
+          "term2:(NDVI * X_BD)": 15.717444435275533
+        },
+        "complexity": 8,
+        "n_terms": 3,
+        "ci95_rmse": [
+          3.1357261913786685,
+          3.6360701895741614
+        ],
+        "moran_I_resid": 0.8187847460756971,
+        "directions": {
+          "NDVI_mean": {
+            "delta_LST_per_SD": -4.2108894525108145,
+            "direction": "-"
+          },
+          "X_BD": {
+            "delta_LST_per_SD": 3.2448078347064206,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -0.49444377379733506,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=15.7 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "NDVI_mean": 0.5010015730589953,
+          "X_BD": 0.11144330994103951
+        },
+        "sd": {
+          "NDVI_mean": 0.24560196652968624,
+          "X_BD": 0.15232831722093992
+        },
+        "beta": [
+          38.91730975408274,
+          -2.105444726255407,
+          1.622403917353209,
+          0.6961013539228079
+        ],
+        "n_fit": 19184,
+        "complexity": 8
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.8746586053395817,
+        "controls": {
+          "NC1_row_shuffle": 5.4391430186953915,
+          "NC2_block_permute": 5.448840367703052,
+          "NC3_random_target": 5.466689430133116
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.33215006640321176,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H05-SVF-BUILD",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "天空可视度—建筑交互",
+      "claim": "SVF 与建筑覆盖的联合项对 LST 的解释优于各自单独的线性项。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 8,
+        "expr": "SVF + X_BD + (SVF * X_BD)"
+      },
+      "variables": {
+        "SVF_mean": "见 constraints/DATA_DICTIONARY.md",
+        "X_BD": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.23521792356822,
+        "per_fold_rmse": [
+          4.225405565539695,
+          4.78612886167543,
+          3.4187705523562593,
+          3.810827934748138,
+          4.598638799461551
+        ],
+        "worst_fold_rmse": 4.78612886167543,
+        "sd_fold_rmse": 0.5019452366907544,
+        "mae_A": 2.9250706995838427,
+        "r2_A": 0.3449561925848128,
+        "rmse_A": 3.7520162249722673,
+        "pred_range_A": [
+          35.85816191643337,
+          56.411072642055544
+        ],
+        "term_scale_max": 10.884872823973941,
+        "term_scale_by_term": {
+          "term0:SVF": 2.70684133035297,
+          "term1:X_BD": 10.884872823973941,
+          "term2:(SVF * X_BD)": 6.811546732276758
+        },
+        "complexity": 8,
+        "n_terms": 3,
+        "ci95_rmse": [
+          3.5400615556501545,
+          4.004560893350254
+        ],
+        "moran_I_resid": 0.8721629871407197,
+        "directions": {
+          "SVF_mean": {
+            "delta_LST_per_SD": -4.475631471736802,
+            "direction": "-"
+          },
+          "X_BD": {
+            "delta_LST_per_SD": 2.252782393769806,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.0775653825811484,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=10.9 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "SVF_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "SVF_mean": 0.8441220857342994,
+          "X_BD": 0.11144330994103951
+        },
+        "sd": {
+          "SVF_mean": 0.16907687437673352,
+          "X_BD": 0.15232831722093992
+        },
+        "beta": [
+          39.55351584311948,
+          -2.237815735868401,
+          1.1263911968849059,
+          1.1981928418986842
+        ],
+        "n_fit": 19184,
+        "complexity": 8
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.6332417391234193,
+        "controls": {
+          "NC1_row_shuffle": 5.098265511117734,
+          "NC2_block_permute": 5.167390012168789,
+          "NC3_random_target": 5.106804494508834
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.09073320018704933,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H06-ROAD-VEG",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "道路密度—植被交互",
+      "claim": "道路密度与 NDVI 的联合项对 LST 的解释优于各自单独的线性项。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "Road_Dens"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 8,
+        "expr": "Road_Dens + NDVI + (Road_Dens * NDVI)"
+      },
+      "variables": {
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "Road_Dens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 3.7703660675257025,
+        "per_fold_rmse": [
+          3.7619028438275306,
+          2.791151382204984,
+          3.468466271516807,
+          4.152231091094348,
+          4.696785068364832
+        ],
+        "worst_fold_rmse": 4.696785068364832,
+        "sd_fold_rmse": 0.640949231842466,
+        "mae_A": 2.4942865956360323,
+        "r2_A": 0.4466773654341504,
+        "rmse_A": 3.448408867042326,
+        "pred_range_A": [
+          33.67239800979376,
+          46.99803362445049
+        ],
+        "term_scale_max": 10.40367132989519,
+        "term_scale_by_term": {
+          "term0:Road_Dens": 7.530914394914849,
+          "term1:NDVI": 2.964477059031993,
+          "term2:(Road_Dens * NDVI)": 10.40367132989519
+        },
+        "complexity": 8,
+        "n_terms": 3,
+        "ci95_rmse": [
+          3.2077665253121417,
+          3.7196460430026947
+        ],
+        "moran_I_resid": 0.8345450164731515,
+        "directions": {
+          "NDVI_mean": {
+            "delta_LST_per_SD": -5.604999630813397,
+            "direction": "-"
+          },
+          "Road_Dens": {
+            "delta_LST_per_SD": 1.7189750208474521,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -0.6127135265386312,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=10.4 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "Road_Dens"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "NDVI_mean": 0.5010015730589953,
+          "Road_Dens": 4.238883143987457
+        },
+        "sd": {
+          "NDVI_mean": 0.24560196652968624,
+          "Road_Dens": 9.47829572874205
+        },
+        "beta": [
+          38.64790666267995,
+          0.859487510423724,
+          -2.8024998154067005,
+          0.32174468759948144
+        ],
+        "n_fit": 19184,
+        "complexity": 8
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 3.1646465109239146,
+        "controls": {
+          "NC1_row_shuffle": 5.306406743767266,
+          "NC2_block_permute": 5.362173424153898,
+          "NC3_random_target": 5.34826760344572
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.6221379719875446,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H07-VEGBLD-RATIO",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "植被/建筑 比值项",
+      "claim": "植被与建筑覆盖之比构成的组合项与 LST 相关。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "div",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "(NDVI / X_BD) + X_BD"
+      },
+      "variables": {
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "X_BD": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 4.5106048585461975,
+        "per_fold_rmse": [
+          4.9102359536448805,
+          4.16429624489915,
+          4.106696228252701,
+          4.527377181195354,
+          5.027304554167115
+        ],
+        "worst_fold_rmse": 5.027304554167115,
+        "sd_fold_rmse": 0.37505927203469447,
+        "mae_A": 3.281476208947319,
+        "r2_A": 0.2363902557837837,
+        "rmse_A": 4.051028195557082,
+        "pred_range_A": [
+          34.82015122757507,
+          63.11026380072016
+        ],
+        "term_scale_max": 4932.292064944845,
+        "term_scale_by_term": {
+          "term0:(NDVI / X_BD)": 4932.292064944845,
+          "term1:X_BD": 10.884872823973941
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          3.8753350314230794,
+          4.273118159388912
+        ],
+        "moran_I_resid": 0.845221013394662,
+        "directions": {
+          "NDVI_mean": {
+            "delta_LST_per_SD": -0.009202474596972827,
+            "direction": "-"
+          },
+          "X_BD": {
+            "delta_LST_per_SD": 4.504222502142141,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.3529523175591263,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "fail",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": false,
+            "hard": true,
+            "detail": "项尺度越界（max|项| > 1000，跨 3 个数量级，系数不可解释）：{'term0:(NDVI / X_BD)': 4932.292064944845}"
+          }
+        ],
+        "fail_items": [
+          "PA7"
+        ],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "rejected_physics",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "div",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "X_BD"
+              }
+            ]
+          },
+          {
+            "op": "var",
+            "name": "X_BD"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "NDVI_mean": 0.5010015730589953,
+          "X_BD": 0.11144330994103951
+        },
+        "sd": {
+          "NDVI_mean": 0.24560196652968624,
+          "X_BD": 0.15232831722093992
+        },
+        "beta": [
+          38.596617216641725,
+          0.002246137110043831,
+          2.252111251071071
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 4.106209663636793,
+        "controls": {
+          "NC1_row_shuffle": 5.5200135331557085,
+          "NC2_block_permute": 5.552027559023885,
+          "NC3_random_target": 5.510624333601577
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -1.5637011247004233,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H08-VOLDENS-LOG",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "体量密度的对数（log 平方）",
+      "claim": "LST 与体量密度的对数尺度的单调相关。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "log",
+            "arg": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "var",
+                  "name": "X_VolDens"
+                },
+                {
+                  "op": "var",
+                  "name": "X_VolDens"
+                }
+              ]
+            }
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 5,
+        "expr": "log((X_VolDens * X_VolDens))"
+      },
+      "variables": {
+        "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 5.06350328116444,
+        "per_fold_rmse": [
+          6.019849862060293,
+          3.4796406754821336,
+          4.647381603812241,
+          5.586801077374769,
+          5.922451782125724
+        ],
+        "worst_fold_rmse": 6.019849862060293,
+        "sd_fold_rmse": 0.9576093923441359,
+        "mae_A": 3.8608621497320708,
+        "r2_A": 0.0028446566944539953,
+        "rmse_A": 4.629253306945869,
+        "pred_range_A": [
+          37.6778407509251,
+          40.30382711999457
+        ],
+        "term_scale_max": 13.815510557964274,
+        "term_scale_by_term": {
+          "term0:log((X_VolDens * X_VolDens))": 13.815510557964274
+        },
+        "complexity": 5,
+        "n_terms": 1,
+        "ci95_rmse": [
+          4.465317709355263,
+          4.817605037240872
+        ],
+        "moran_I_resid": 0.9402507330958396,
+        "directions": {
+          "X_VolDens": {
+            "delta_LST_per_SD": 0.0,
+            "direction": "0"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -1.9058507401773688,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=13.8 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_nogain",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "log",
+            "arg": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "var",
+                  "name": "X_VolDens"
+                },
+                {
+                  "op": "var",
+                  "name": "X_VolDens"
+                }
+              ]
+            }
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "X_VolDens": 6.297557360602585
+        },
+        "sd": {
+          "X_VolDens": 11.258199172983835
+        },
+        "beta": [
+          38.39464311721705,
+          -0.13819134622403992
+        ],
+        "n_fit": 19184,
+        "complexity": 5
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 4.440863926796484,
+        "controls": {
+          "NC1_row_shuffle": 4.505086640325903,
+          "NC2_block_permute": 4.6891216811428125,
+          "NC3_random_target": 4.5155815540196516
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -1.8983553878601143,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H09-EXP-BUILD",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "建筑覆盖的指数项（受物理审计检验）",
+      "claim": "LST 对建筑覆盖呈指数式响应。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "X_BD"
+            }
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 5,
+        "expr": "exp(X_BD) + SVF"
+      },
+      "variables": {
+        "SVF_mean": "见 constraints/DATA_DICTIONARY.md",
+        "X_BD": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 23.174325220639748,
+        "per_fold_rmse": [
+          4.392947228207795,
+          4.721411456633237,
+          51.884574125229975,
+          3.998792097750764,
+          4.601480928156067
+        ],
+        "worst_fold_rmse": 51.884574125229975,
+        "sd_fold_rmse": 18.983955425688215,
+        "mae_A": 3.025748001260386,
+        "r2_A": 0.31306731696610834,
+        "rmse_A": 3.842258897867871,
+        "pred_range_A": [
+          36.20484472299562,
+          47.72600154417232
+        ],
+        "term_scale_max": 53362.99589509256,
+        "term_scale_by_term": {
+          "term0:exp(X_BD)": 53362.99589509256,
+          "term1:SVF": 2.70684133035297
+        },
+        "complexity": 5,
+        "n_terms": 2,
+        "ci95_rmse": [
+          3.640726237186277,
+          4.079219158310547
+        ],
+        "moran_I_resid": 0.8750875123868505,
+        "directions": {
+          "SVF_mean": {
+            "delta_LST_per_SD": -5.185470933646741,
+            "direction": "-"
+          },
+          "X_BD": {
+            "delta_LST_per_SD": 0.0004507641791633432,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": -20.016672679652675,
+        "beats_baselineA": false
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "fail",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": false,
+            "hard": true,
+            "detail": "项尺度越界（max|项| > 1000，跨 3 个数量级，系数不可解释）：{'term0:exp(X_BD)': 53362.99589509256}"
+          }
+        ],
+        "fail_items": [
+          "PA7"
+        ],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "rejected_physics",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "X_BD"
+            }
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "SVF_mean": 0.8441220857342994,
+          "X_BD": 0.11144330994103951
+        },
+        "sd": {
+          "SVF_mean": 0.16907687437673352,
+          "X_BD": 0.15232831722093992
+        },
+        "beta": [
+          38.59508642201448,
+          0.00019178170580595955,
+          -2.5927354668233726
+        ],
+        "n_fit": 19184,
+        "complexity": 5
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.834419250534964,
+        "controls": {
+          "NC1_row_shuffle": 5.04343654172627,
+          "NC2_block_permute": 5.132358473090319,
+          "NC3_random_target": 5.058314447319522
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.29191071159859394,
+        "block_perm_p_B": 1.0,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R1_agenda"
+    },
+    {
+      "id": "S03-H10-GREEDY",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "贪心前向搜索（5 项，全池）",
+      "claim": "由项池按 A 区空间分块 CV 逐步选出的 5 项组合，对 LST 的描述优于更简模型。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "DEM_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 14,
+        "expr": "exp(NDVI) + exp(DEM) + SVF + Road_Dens + (NDVI * DEM)"
+      },
+      "variables": {
+        "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "Road_Dens": "见 constraints/DATA_DICTIONARY.md",
+        "SVF_mean": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 2.9560392780323155,
+        "per_fold_rmse": [
+          2.4685252830390927,
+          2.8577562151693656,
+          2.525167815320932,
+          2.8185346158678044,
+          3.8234536721430943
+        ],
+        "worst_fold_rmse": 3.8234536721430943,
+        "sd_fold_rmse": 0.48741128747624585,
+        "mae_A": 1.994862011403297,
+        "r2_A": 0.6496214556544242,
+        "rmse_A": 2.744089595252658,
+        "pred_range_A": [
+          31.29621324208606,
+          48.981310696879895
+        ],
+        "term_scale_max": 8.708904363489681,
+        "term_scale_by_term": {
+          "term0:exp(NDVI)": 4.750364723816409,
+          "term1:exp(DEM)": 8.708904363489681,
+          "term2:SVF": 2.70684133035297,
+          "term3:Road_Dens": 7.530914394914849,
+          "term4:(NDVI * DEM)": 8.037209713196914
+        },
+        "complexity": 14,
+        "n_terms": 5,
+        "ci95_rmse": [
+          2.5262977246886456,
+          3.009334791019752
+        ],
+        "moran_I_resid": 0.7914787261769166,
+        "directions": {
+          "DEM_mean": {
+            "delta_LST_per_SD": 1.9475682658315492,
+            "direction": "+"
+          },
+          "NDVI_mean": {
+            "delta_LST_per_SD": -4.4949017287124775,
+            "direction": "-"
+          },
+          "Road_Dens": {
+            "delta_LST_per_SD": 0.7994174213200297,
+            "direction": "+"
+          },
+          "SVF_mean": {
+            "delta_LST_per_SD": -1.569205595095795,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": 0.2016132629547558,
+        "beats_baselineA": true
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=8.71 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_gain",
+      "search_trace": [
+        {
+          "action": "add",
+          "term": "exp(NDVI_mean)",
+          "term_ast": {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          "cv_rmse": 3.3705939965348963,
+          "n_terms": 1
+        },
+        {
+          "action": "add",
+          "term": "exp(DEM_mean)",
+          "term_ast": {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          },
+          "cv_rmse": 3.065546667668994,
+          "n_terms": 2
+        },
+        {
+          "action": "add",
+          "term": "SVF_mean",
+          "term_ast": {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          "cv_rmse": 2.989242827477161,
+          "n_terms": 3
+        },
+        {
+          "action": "add",
+          "term": "Road_Dens",
+          "term_ast": {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          "cv_rmse": 2.967740160901498,
+          "n_terms": 4
+        },
+        {
+          "action": "add",
+          "term": "NDVI_mean*DEM_mean",
+          "term_ast": {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "DEM_mean"
+              }
+            ]
+          },
+          "cv_rmse": 2.9560392780323155,
+          "n_terms": 5
+        }
+      ],
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          },
+          {
+            "op": "var",
+            "name": "SVF_mean"
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "DEM_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "DEM_mean": 11.086418122264401,
+          "NDVI_mean": 0.5010015730589953,
+          "Road_Dens": 4.238883143987457,
+          "SVF_mean": 0.8441220857342994
+        },
+        "sd": {
+          "DEM_mean": 2.7322719651813,
+          "NDVI_mean": 0.24560196652968624,
+          "Road_Dens": 9.47829572874205,
+          "SVF_mean": 0.16907687437673352
+        },
+        "beta": [
+          40.17860559616678,
+          -1.9123966828078567,
+          0.8286105716898432,
+          -0.7846027975478962,
+          0.39970871066001573,
+          -0.4641339769360077
+        ],
+        "n_fit": 19184,
+        "complexity": 14
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.4203020828004322,
+        "controls": {
+          "NC1_row_shuffle": 6.080074302997821,
+          "NC2_block_permute": 6.062948588507338,
+          "NC3_random_target": 6.099329466712629
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": 0.12220645613593772,
+        "block_perm_p_B": 0.005,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": true,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R2_greedy"
+    },
+    {
+      "id": "S03-H10P-GREEDY-MIN",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "贪心最简前缀（2 项）",
+      "claim": "贪心路径上最早优于冻结基线的 2 项组合（同增益下的最简模型）。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 6,
+        "expr": "exp(NDVI) + exp(DEM)"
+      },
+      "variables": {
+        "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 3.065546667668994,
+        "per_fold_rmse": [
+          2.7747524373754944,
+          2.71662011385273,
+          2.6360049176520395,
+          3.1860485088036214,
+          3.874480350518165
+        ],
+        "worst_fold_rmse": 3.874480350518165,
+        "sd_fold_rmse": 0.45952175525199396,
+        "mae_A": 2.0789492448188853,
+        "r2_A": 0.6111947931816109,
+        "rmse_A": 2.8906504045260935,
+        "pred_range_A": [
+          30.47813487575969,
+          48.910222881576
+        ],
+        "term_scale_max": 8.708904363489681,
+        "term_scale_by_term": {
+          "term0:exp(NDVI)": 4.750364723816409,
+          "term1:exp(DEM)": 8.708904363489681
+        },
+        "complexity": 6,
+        "n_terms": 2,
+        "ci95_rmse": [
+          2.6762524285359315,
+          3.1415942162452826
+        ],
+        "moran_I_resid": 0.803287885349801,
+        "directions": {
+          "DEM_mean": {
+            "delta_LST_per_SD": 2.3439166764091937,
+            "direction": "+"
+          },
+          "NDVI_mean": {
+            "delta_LST_per_SD": -5.037896073285069,
+            "direction": "-"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": 0.09210587331807707,
+        "beats_baselineA": true
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=8.71 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_gain",
+      "search_trace": [
+        {
+          "action": "add",
+          "term": "exp(NDVI_mean)",
+          "term_ast": {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          "cv_rmse": 3.3705939965348963,
+          "n_terms": 1
+        },
+        {
+          "action": "add",
+          "term": "exp(DEM_mean)",
+          "term_ast": {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          },
+          "cv_rmse": 3.065546667668994,
+          "n_terms": 2
+        }
+      ],
+      "parsimony_note": "由 H10-GREEDY 贪心轨迹截取最简前缀（CV 首次 < Baseline A）",
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "DEM_mean"
+            }
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "DEM_mean": 11.086418122264401,
+          "NDVI_mean": 0.5010015730589953
+        },
+        "sd": {
+          "DEM_mean": 2.7322719651813,
+          "NDVI_mean": 0.24560196652968624
+        },
+        "beta": [
+          40.43666169384538,
+          -2.1434185484719794,
+          0.9972405955195209
+        ],
+        "n_fit": 19184,
+        "complexity": 6
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.8836948476586235,
+        "controls": {
+          "NC1_row_shuffle": 5.88309315831725,
+          "NC2_block_permute": 5.893610962880506,
+          "NC3_random_target": 5.907416200895388
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": -0.34118630872225353,
+        "block_perm_p_B": 0.175,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": false,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R2_greedy"
+    },
+    {
+      "id": "S03-H11-REFINE",
+      "created": "2026-09-24",
+      "agent": "Discovery Agent",
+      "model_version": "stage03-symreg-v1",
+      "code_version": "stage03-discovery-v1",
+      "hypothesis": "局部修订（5 项）",
+      "claim": "在贪心候选基础上做加/换项修订所得的组合，对 LST 的描述优于其起点。",
+      "expression": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "var",
+            "name": "DEM_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "DEM_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "complexity": 15,
+        "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)"
+      },
+      "variables": {
+        "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+        "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+        "Road_Dens": "见 constraints/DATA_DICTIONARY.md"
+      },
+      "domain": "深圳研究区、单一时相、100 m 网格；A 发现区（B 仅作方法筛选）",
+      "dev_evidence": {
+        "dev_metric": "A 区空间分块 CV RMSE (℃)",
+        "cv_rmse": 2.913858090603497,
+        "per_fold_rmse": [
+          2.6144384978160513,
+          2.9509618143890246,
+          2.393344040574856,
+          2.620815526224531,
+          3.729806273123705
+        ],
+        "worst_fold_rmse": 3.729806273123705,
+        "sd_fold_rmse": 0.46906223633932465,
+        "mae_A": 1.9933233938904156,
+        "r2_A": 0.6615370082085059,
+        "rmse_A": 2.697025977731995,
+        "pred_range_A": [
+          28.402314099883636,
+          45.64865146450395
+        ],
+        "term_scale_max": 8.788124233526975,
+        "term_scale_by_term": {
+          "term0:exp(NDVI)": 4.750364723816409,
+          "term1:DEM": 2.959594881224727,
+          "term2:(NDVI * NDVI)": 8.788124233526975,
+          "term3:Road_Dens": 7.530914394914849,
+          "term4:(NDVI * DEM)": 8.037209713196914
+        },
+        "complexity": 15,
+        "n_terms": 5,
+        "ci95_rmse": [
+          2.512628578023883,
+          2.9174640599631543
+        ],
+        "moran_I_resid": 0.7678593771138318,
+        "directions": {
+          "DEM_mean": {
+            "delta_LST_per_SD": 2.543337133767565,
+            "direction": "+"
+          },
+          "NDVI_mean": {
+            "delta_LST_per_SD": -4.916611063726833,
+            "direction": "-"
+          },
+          "Road_Dens": {
+            "delta_LST_per_SD": 0.48356023116824076,
+            "direction": "+"
+          }
+        },
+        "n_A": 19184,
+        "delta_cv_vs_baselineA": 0.24379445038357428,
+        "beats_baselineA": true
+      },
+      "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+      "physics_audit": {
+        "verdict": "pass",
+        "items": [
+          {
+            "id": "PA1",
+            "name": "量纲与无量纲化",
+            "ok": true,
+            "hard": false,
+            "detail": "全部变量经标准化（无量纲），加减乘除量纲一致。（记录项，结构上不可否决）"
+          },
+          {
+            "id": "PA2",
+            "name": "几何合法性（数据定义）",
+            "ok": true,
+            "hard": false,
+            "warn": true,
+            "detail": "X_BD 上界 1.77（非 [0,1] 覆盖率）、X_BH 上界 224.0 m（非 100 m 格均高）、DEM 3–17 m 偏低：均需作者澄清定义后其物理解释方可成立。（记录项/告警）"
+          },
+          {
+            "id": "PA3",
+            "name": "能量守恒/因果过度延伸",
+            "ok": true,
+            "hard": true,
+            "detail": "未宣称能量闭合或因果机制；观测性关系表述。"
+          },
+          {
+            "id": "PA4",
+            "name": "无方向预设（§3.2）",
+            "ok": true,
+            "hard": true,
+            "detail": "发现侧提示词与候选主张均无方向性预设。"
+          },
+          {
+            "id": "PA5",
+            "name": "测量边界",
+            "ok": true,
+            "hard": true,
+            "detail": "未把细尺度变量当作同分辨率温度观测。"
+          },
+          {
+            "id": "PA6",
+            "name": "统计诚信（必报项）",
+            "ok": true,
+            "hard": false,
+            "detail": "必报项齐全（方向、95% 自助 CI、残差 Moran’s I）。（记录项：字段由 Experiment Agent 必然写入，不构成硬否决）"
+          },
+          {
+            "id": "PA7",
+            "name": "数值条件与量纲尺度",
+            "ok": true,
+            "hard": true,
+            "detail": "项尺度有界（max|项|=8.79 ≤ 1000），量纲与标准化尺度一致。"
+          }
+        ],
+        "fail_items": [],
+        "hard_items": [
+          "PA3",
+          "PA4",
+          "PA5",
+          "PA7"
+        ],
+        "info_items": [
+          "PA1",
+          "PA2",
+          "PA6"
+        ],
+        "note": "审计含 4 项**硬门**（可否决：PA3/PA4/PA5/PA7）与 3 项**记录性检查**（PA1/PA2/PA6，结构上不可否决）。只有硬门参与 verdict。",
+        "cautions": [
+          "X_BD/X_BH/DEM/Road_Dens 的定义与量纲待作者澄清",
+          "无观测时间/传感器/QA，无法做测量误差传播",
+          "Road_Dens/X_BD/X_BH/X_VolDens 强零膨胀/重尾；其比值与指数形式在 A 区小标准差下数值爆炸，须经 PA7 拦截"
+        ]
+      },
+      "unseal_result": null,
+      "status": "passed_dev_gain",
+      "search_trace": [
+        {
+          "action": "replace",
+          "at": 1,
+          "term": "DEM_mean",
+          "cv_rmse": 2.916647730294894,
+          "n_terms": 5,
+          "expr": "exp(NDVI) + DEM + SVF + Road_Dens + (NDVI * DEM)"
+        },
+        {
+          "action": "replace",
+          "at": 2,
+          "term": "NDVI_mean^2",
+          "cv_rmse": 2.913858090603497,
+          "n_terms": 5,
+          "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)"
+        }
+      ],
+      "model": {
+        "form": "expr",
+        "terms": [
+          {
+            "op": "exp",
+            "arg": {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          },
+          {
+            "op": "var",
+            "name": "DEM_mean"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              }
+            ]
+          },
+          {
+            "op": "var",
+            "name": "Road_Dens"
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "var",
+                "name": "NDVI_mean"
+              },
+              {
+                "op": "var",
+                "name": "DEM_mean"
+              }
+            ]
+          }
+        ],
+        "standardize": true,
+        "intercept": true,
+        "mu": {
+          "DEM_mean": 11.086418122264401,
+          "NDVI_mean": 0.5010015730589953,
+          "Road_Dens": 4.238883143987457
+        },
+        "sd": {
+          "DEM_mean": 2.7322719651813,
+          "NDVI_mean": 0.24560196652968624,
+          "Road_Dens": 9.47829572874205
+        },
+        "beta": [
+          42.25283933399148,
+          -2.0918167418135902,
+          1.2716685668837837,
+          -0.598828101490195,
+          0.2417801155841216,
+          -0.6748832596447716
+        ],
+        "n_fit": 19184,
+        "complexity": 15
+      },
+      "falsification": {
+        "on": "B 开发验证区",
+        "rmse_real": 2.4428242442464123,
+        "controls": {
+          "NC1_row_shuffle": 6.005840145262255,
+          "NC2_block_permute": 6.004738946187201,
+          "NC3_random_target": 6.018589792421456
+        },
+        "control_passed": {
+          "NC1_row_shuffle": true,
+          "NC2_block_permute": true,
+          "NC3_random_target": true
+        },
+        "verdict": "not_fooled",
+        "floor_note": "NC1–NC3 为**地板式**体检：NC1/NC3 破坏全部结构，RMSE≈目标标准差，任何优于常数均值预测的模型都会通过；只能淘汰零技巧模型，不能识别过拟合。",
+        "rmse_B_baselineA": 2.54250853893637,
+        "delta_B_vs_baselineA": 0.09968429468995765,
+        "block_perm_p_B": 0.005,
+        "n_perm": 199,
+        "perm_corr_sanity": 0.284894972810665,
+        "skill_significant_B": true,
+        "caveat": "B 区读数仅供开发期参考；B 已参与方法筛选，不作为独立确认。"
+      },
+      "round": "R3_refine"
+    }
+  ]
+}

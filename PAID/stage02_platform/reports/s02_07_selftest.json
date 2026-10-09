@@ -1,0 +1,156 @@
+{
+  "version": "stage02-selftest-v1",
+  "created": "2026-09-24",
+  "status": "PASS",
+  "steps": [
+    {
+      "step": "洁净室：清空沙箱工作树（保留阶段专属子目录）",
+      "ok": true,
+      "detail": "removed=6"
+    },
+    {
+      "step": "Discovery Agent（沙箱内）",
+      "ok": true,
+      "detail": "{\"proposed\": \"SMOKE-0001\", \"out\": \"/sessions/friendly-awesome-turing/mnt/AI_lst/PAID/stage02_platform/sandbox_root/work/cand_0_proposed.json\"}"
+    },
+    {
+      "step": "Experiment Agent（沙箱内）",
+      "ok": true,
+      "detail": "{\"id\": \"SMOKE-0001\", \"rmse_A\": 2.914880975503129, \"rmse_B\": 2.54250853893637}"
+    },
+    {
+      "step": "Falsification Agent（沙箱内）",
+      "ok": true,
+      "detail": "{\"id\": \"SMOKE-0001\", \"rmse_real\": 2.54250853893637, \"controls\": {\"NC1_row_shuffle\": 5.483515214186221, \"NC2_block_permute\": 5.464164167989063, \"NC3_random_target\": 5.488882190997662}, \"verdict\": \"not_fooled\"}"
+    },
+    {
+      "step": "Physics Auditor（沙箱内）",
+      "ok": true,
+      "detail": "{\"id\": \"SMOKE-0001\", \"verdict\": \"pass\", \"items\": {\"PA1\": true, \"PA2\": false, \"PA3\": true, \"PA4\": true, \"PA5\": true, \"PA6\": true}}"
+    },
+    {
+      "step": "冻结候选",
+      "ok": true,
+      "detail": "id=SMOKE-0001 canon=f60cc3fa32ff2ecd"
+    },
+    {
+      "step": "拒绝未冻结候选",
+      "ok": true,
+      "detail": "{\"rc\": 2, \"refused\": true}"
+    },
+    {
+      "step": "拒绝哈希不一致（解封后修订）",
+      "ok": true,
+      "detail": "{\"rc\": 2, \"refused\": true}"
+    },
+    {
+      "step": "Independent Validator 解封并发布（沙箱外）",
+      "ok": true,
+      "detail": "{\"statistic\": \"RMSE_C 与 ΔRMSE(vs Baseline A)\", \"rmse_baselineA\": 2.841519144671417, \"rmse_candidate\": 2.841519144671417, \"delta_rmse\": 0.0, \"perm_p\": 1.0, \"n_perm\": 199, \"perm_corr_sanity\": 0.4017685729179077, \"ci95_delta\": [0.0, 0.0], \"n_bootstrap\": 1000}"
+    },
+    {
+      "step": "拒绝重复解封（validation_runs=1）",
+      "ok": true,
+      "detail": "{\"rc\": 2, \"refused\": true}"
+    },
+    {
+      "step": "通过条件判定单元测试（正/反两例）",
+      "ok": true,
+      "detail": "all-true→True, p-fail→False"
+    }
+  ],
+  "refusals": {
+    "unfrozen": {
+      "rc": 2,
+      "refused": true
+    },
+    "tampered_hash": {
+      "rc": 2,
+      "refused": true
+    },
+    "rerun": {
+      "rc": 2,
+      "refused": true
+    }
+  },
+  "unit_test_pass": true,
+  "frozen_candidate": "SMOKE-0001",
+  "canon_hash": "f60cc3fa32ff2ecd4f893c4ea58b4d656e4939b37072dc0584cad12df9d53e8f",
+  "validation_result": {
+    "candidate": "SMOKE-0001",
+    "canon_hash": "f60cc3fa32ff2ecd4f893c4ea58b4d656e4939b37072dc0584cad12df9d53e8f",
+    "validated_at": "2026-09-24T13:07:28",
+    "n_C": 2987,
+    "vault_plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+    "primary_endpoint": {
+      "statistic": "RMSE_C 与 ΔRMSE(vs Baseline A)",
+      "rmse_baselineA": 2.841519144671417,
+      "rmse_candidate": 2.841519144671417,
+      "delta_rmse": 0.0,
+      "perm_p": 1.0,
+      "n_perm": 199,
+      "perm_corr_sanity": 0.4017685729179077,
+      "ci95_delta": [
+        0.0,
+        0.0
+      ],
+      "n_bootstrap": 1000
+    },
+    "conditions": {
+      "delta_rmse_pos": false,
+      "perm_p_lt_0.05": false,
+      "ci_excludes_zero": false,
+      "physics_audit_pass": true,
+      "negative_controls_not_fooled": true
+    },
+    "passed": false,
+    "independent_audit": {
+      "verdict": "pass",
+      "items": {
+        "PA3_overreach": true,
+        "PA4_no_direction": true,
+        "PA5_measurement_boundary": true,
+        "PA7_term_scale": true
+      },
+      "max_term_scale": 13.376694045419306,
+      "limit": 1000.0,
+      "hits": {
+        "over": [],
+        "dir": []
+      }
+    },
+    "independent_controls": {
+      "verdict": "not_fooled",
+      "rmse_real": 2.54250853893637,
+      "controls": {
+        "NC1_row_shuffle": 5.483515214186221,
+        "NC2_block_permute": 5.4423080420094925,
+        "NC3_random_target": 5.492800910941213
+      },
+      "perm_corr_sanity": 0.09158662128524633,
+      "floor_note": "NC1–NC3 为地板式体检，检验力弱（仅能淘汰零技巧模型）。"
+    },
+    "self_reported": {
+      "physics_audit": "pass",
+      "falsification": "not_fooled",
+      "note": "发现侧自报值，仅供对照；判定仅采用 independent_audit / independent_controls。"
+    },
+    "caveats": [
+      "平台冒烟测试：候选为预注册 Baseline A 占位，非科学发现；结论不得作为研究结果引用"
+    ],
+    "publish_rule": "仅发布聚合结论，不返回 C 区逐格目标值；失败同样完整发布。"
+  },
+  "log": {
+    "ok": true,
+    "n": 1211,
+    "first_bad": null,
+    "head": "f59f65c69f28d826",
+    "tail": "2857ce32645acd2f"
+  },
+  "note": "平台冒烟测试：候选为预注册 Baseline A 占位，非科学发现。",
+  "hash_manifest": {
+    "n_files": 47,
+    "ok": true,
+    "mismatched": []
+  }
+}

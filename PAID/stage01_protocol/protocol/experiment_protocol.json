@@ -1,0 +1,76 @@
+{
+  "version": "stage01-protocols-v1",
+  "created": "2026-09-24",
+  "framework_ref": "Table 12 Experiment protocol；§4.3；Table 13；Table 14",
+  "candidate_cap": {
+    "per_round_max": 50,
+    "total_fit_budget": 5000,
+    "freeze_max": 8,
+    "note": "每轮最多 50 个候选进入开发评估；全项目 fit 预算 5000 次；最终冻结进入 C 区独立验证的候选 ≤ 8 个。"
+  },
+  "dev_metrics": {
+    "primary": "A 发现区空间分块交叉验证 RMSE（℃），分块=连通簇，块数≥5",
+    "secondary": [
+      "MAE",
+      "R²",
+      "AIC/BIC（同族比较）",
+      "表达式复杂度（项数/参数量）"
+    ],
+    "must_report": [
+      "效应方向",
+      "95% 自助置信区间",
+      "残差空间自相关（Moran’s I of residuals）"
+    ]
+  },
+  "stopping_conditions": [
+    "连续 200 次 fit 无开发指标改进",
+    "累计 fit 达 5000 次预算",
+    "冻结候选数达上限 8",
+    "反例/混杂检验使所有候选被否决（允许以「暂无经证伪仍成立的候选」结束）"
+  ],
+  "failure_logging": {
+    "mode": "append-only JSONL，禁止覆盖",
+    "fields": [
+      "candidate_id",
+      "timestamp",
+      "agent",
+      "prompt_sha256",
+      "code_sha256",
+      "expr",
+      "vars",
+      "scale_r",
+      "dev_metric",
+      "dev_metric_value",
+      "status(pass/fail/rejected)",
+      "reason",
+      "counterexamples"
+    ],
+    "path": "logs/experiment_log.jsonl（Stage 02 创建）"
+  },
+  "baselines": {
+    "A": "预先指定变量的线性/GAM",
+    "B": "RF/XGBoost + 可解释性",
+    "C": "预设搜索空间的符号回归",
+    "D": "无物理约束的自主 Agent",
+    "proposed": "具物理约束与防火墙的 PAID Agent",
+    "note": "预测更优不等于获得新规律（§6 Exp.4）。",
+    "frozen_specs": {
+      "A": {
+        "form": "OLS: LST ~ 全部 8 个预指定变量的一次项（LST_mean,NDVI_mean,DEM_mean,SVF_mean,Road_Dens,X_BD,X_BH,X_VolDens），逐一 Z 标准化后拟合；不含交互项、无惩罚。GAM（样条）为并列对照但仅作定性比较。",
+        "fit": "仅在 A 发现区拟合并冻结系数；B 区不做系数更新。",
+        "eval": "在 C 区计算 RMSE 作为 ΔRMSE 的比较基准。",
+        "rationale": "冻结 Baseline A 的形式与拟合域，避免\"通过与一个未定义/过弱基线比较\"侥幸通过。"
+      },
+      "B": {
+        "form": "RF（n_estimators=500）与 XGBoost（max_depth=6, eta=0.1）并列；以 A 区嵌套空间分块 CV 调参。",
+        "eval": "在 C 区计算 RMSE 与 ΔRMSE（不作主终点，仅作公平比较，§6 Exp.4）。"
+      },
+      "C": {
+        "form": "符号回归（预设算子集 + - * / exp log，最大复杂度 15），搜索空间上限 10^4。"
+      },
+      "D": {
+        "form": "同一基础模型、同一工具白名单，但**移除**物理硬约束与防火墙（全量数据可见）的自主 Agent。"
+      }
+    }
+  }
+}

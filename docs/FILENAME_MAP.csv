@@ -1,0 +1,2 @@
+release_path,category,source_path,sha256,bytes_identical,note
+PAID/stage00_data_audit/reports/evidence/process_image1.png,figure,PAID/stage00_data_audit/reports/evidence/过程__image1.png,ef7ccd98658889a2775d94cbe206f692b6dac2e1ce154866e354e4c0d7590a6f,TRUE,"v1.2 ASCII alias of the single non-ASCII v1.1 member; identical bytes (same SHA-256). The historical PAID/ tree and the v1.1 archive keep the original name; this map is the bridge."

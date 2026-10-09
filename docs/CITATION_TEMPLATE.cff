@@ -1,0 +1,37 @@
+# =============================================================================
+# TEMPLATE — this is NOT a final CITATION.cff. Do not treat it as such.
+# -----------------------------------------------------------------------------
+# Move this file to the repository root as `CITATION.cff` only after the author
+# has confirmed, at minimum:
+#   (a) author names / affiliations / ORCIDs,
+#   (b) the final code and data licence, and
+#   (c) the archive / repository identifiers (deposit URL, DOI, commit SHA).
+# Until then the repository intentionally ships NO root CITATION.cff, because a
+# Citation File Format file must not carry fabricated authors or identifiers.
+# =============================================================================
+cff-version: 1.2.0
+message: "If you use this software or these data, please cite the associated manuscript and this package."
+title: "Auditable autonomous symbolic discovery of urban thermal relationships with admissibility constraints and separated validation"
+type: software
+authors:
+  # Replace with the confirmed authors. Do not publish placeholder authors.
+  - family-names: "<author family name>"
+    given-names: "<author given name>"
+    affiliation: "<affiliation>"
+    orcid: "<ORCID, optional>"
+version: "1.2.1"
+date-released: "2026-10-09"
+# `license`, `repository-code` and `doi` are OPTIONAL CFF fields. Leave them out
+# entirely until a real, confirmed value exists — never fill them with a
+# placeholder token or a made-up DOI/URL.
+# license: "<confirm the final code/data licence>"
+# repository-code: "<fill in after a real, verified deposit>"
+# doi: "<fill in after a real, verified deposit>"
+keywords:
+  - urban heat
+  - land surface temperature
+  - symbolic regression
+  - reproducible research
+  - Shenzhen
+  - admissibility constraints
+  - separated validation

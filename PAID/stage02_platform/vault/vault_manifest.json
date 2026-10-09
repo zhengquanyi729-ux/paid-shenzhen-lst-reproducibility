@@ -1,0 +1,28 @@
+{
+  "version": "stage02-vault-v1",
+  "created": "2026-09-24",
+  "framework_ref": "§5.1 / §5.3 / Table 11（C 区）",
+  "algorithm": "AES-256-GCM（认证加密）",
+  "key_path": "stage02_platform/vault/validator_key.bin",
+  "key_origin": "reused",
+  "key_bytes": 32,
+  "ciphertext_path": "stage02_platform/vault/zone_C_targets.enc",
+  "ciphertext_bytes": 339584,
+  "ciphertext_sha256": "ef1d8e6e2b2b8d0ce365666071abb5b5560170c8b7cca31ca338735f7fbc731f",
+  "plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+  "n_rows": 2987,
+  "columns": [
+    "Grid_ID",
+    "LST_mean",
+    "NDVI_mean",
+    "DEM_mean",
+    "SVF_mean",
+    "Road_Dens",
+    "X_BD",
+    "X_BH",
+    "X_VolDens"
+  ],
+  "nonce_derivation": "HMAC-SHA256(key, plaintext_sha256)[:12]（确定性，保证构建可复现）",
+  "key_hash": "e4ec85897627d6ffb946e86c77f4c0d134f0c584721867b321574a64cc58da82",
+  "access_rule": "仅 Independent Validator 进程载入密钥并解密；发现侧沙箱 deny 整个 vault/ 与 stage01_protocol/locked/。哈希≠访问控制：本封装提供密文级隔离。"
+}

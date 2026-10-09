@@ -1,0 +1,22 @@
+{
+  "version": "stage02-agents-v1",
+  "created": "2026-09-24",
+  "status": "OK",
+  "n_agents": 5,
+  "sandboxed": [
+    "Discovery Agent",
+    "Experiment Agent",
+    "Falsification Agent",
+    "Physics Auditor"
+  ],
+  "not_sandboxed": [
+    "Independent Validator"
+  ],
+  "prompt_hashes": {
+    "Discovery Agent": "0f364b060313c4342f75affbf46c7128d875925b8fac8983c0965431d649ff75",
+    "Experiment Agent": "8d67a10dd9d2ba86515b354ef7a79dc13ab30fae748f865c05580bbf74dc5764",
+    "Falsification Agent": "c620f88a098d4c4f856b14508ce353ba396177c64b41cfe7f568a5d1f2f91bab",
+    "Physics Auditor": "a25a467b8639b2391499211275657bfe81264029ce7685f34e32de43398d7899",
+    "Independent Validator": "2a9692f1a31d4fe437ca8a9b35d9701cc60f1752fbd20fe6cc7250cc11b97dc2"
+  }
+}

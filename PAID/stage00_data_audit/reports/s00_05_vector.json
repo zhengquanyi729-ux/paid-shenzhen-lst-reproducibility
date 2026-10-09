@@ -1,0 +1,239 @@
+{
+  "V1_buildings_745k": {
+    "a": {
+      "file": "arch shp/深圳建筑.shp",
+      "n": 745213,
+      "fields": [
+        "Height",
+        "id"
+      ],
+      "epsg": 32650,
+      "bbox_native": [
+        167357.37,
+        2481896.22,
+        253582.98,
+        2531643.11
+      ]
+    },
+    "b": {
+      "file": "研究边界/Buildings_Fixed.shp",
+      "n": 745213,
+      "fields": [
+        "Height",
+        "id"
+      ],
+      "epsg": 32649,
+      "bbox_native": [
+        783688.36,
+        2481123.9,
+        870748.05,
+        2531144.61
+      ]
+    },
+    "common_fields": [
+      "Height",
+      "id"
+    ],
+    "md5_common_height_id": {
+      "a": "18fed3565bcd1af04cbac2d024c35ee0",
+      "b": "658211121fe575ceeeba04de2ca30020"
+    },
+    "height_compare": {
+      "n_a": 745213,
+      "n_b": 745213,
+      "multiset_equal": true,
+      "max_sorted_diff": 0.0,
+      "pos_match_pct": 100.0,
+      "sum_a": 10670122.7,
+      "sum_b": 10670122.7
+    }
+  },
+  "V2_buildings_119k": {
+    "a": {
+      "file": "szbuildings.shp",
+      "n": 119808,
+      "fields": [
+        "Height",
+        "id",
+        "Area_m2",
+        "Volume_m3",
+        "Perimeter"
+      ],
+      "epsg": 32649,
+      "bbox_native": [
+        794694.06,
+        2486282.99,
+        829241.04,
+        2507335.6
+      ]
+    },
+    "b": {
+      "file": "研究边界/szbuildings_utm.shp",
+      "n": 119808,
+      "fields": [
+        "Height",
+        "id"
+      ],
+      "epsg": 32649,
+      "bbox_native": [
+        794694.06,
+        2486282.99,
+        829241.04,
+        2507335.6
+      ]
+    },
+    "common_fields": [
+      "Height",
+      "id"
+    ],
+    "md5_common_height_id": {
+      "a": "737fc6958a0eef254464b34c0c12bf77",
+      "b": "737fc6958a0eef254464b34c0c12bf77"
+    }
+  },
+  "V3_roads": {
+    "road/road.shp": {
+      "file": "road/road.shp",
+      "n": 197834,
+      "fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ],
+      "epsg": 4326,
+      "bbox_native": [
+        109.7,
+        20.23,
+        117.2,
+        25.55
+      ],
+      "n_osm": 197834
+    },
+    "road/road_new.shp": {
+      "file": "road/road_new.shp",
+      "n": 140029,
+      "fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ],
+      "epsg": 4326,
+      "bbox_native": [
+        109.7,
+        20.23,
+        117.2,
+        25.55
+      ],
+      "n_osm": 140029
+    },
+    "road/road 3d/road.shp": {
+      "file": "road/road 3d/road.shp",
+      "n": 4223,
+      "fields": [
+        "osm_id",
+        "code",
+        "fclass",
+        "name",
+        "ref",
+        "oneway",
+        "maxspeed",
+        "layer",
+        "bridge",
+        "tunnel"
+      ],
+      "epsg": 32649,
+      "bbox_native": [
+        794722.52,
+        2487542.4,
+        829182.91,
+        2506379.16
+      ],
+      "n_osm": 4223
+    },
+    "set_relations": {
+      "new_subset_of_old": true,
+      "n_in_new_not_old": 0,
+      "n_in_old_not_new": 57805,
+      "n_3d": 4223,
+      "n_3d_osmid_in_old": 4223,
+      "n_3d_osmid_not_in_old": 0
+    }
+  },
+  "V4_empty": {
+    "file": "研究边界/buildings_utm.shp",
+    "n": 0,
+    "fields": [
+      "Height",
+      "id"
+    ],
+    "epsg": null,
+    "bbox_native": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "V5_value_fixe": {
+    "n": 32748,
+    "fields": [
+      "id",
+      "left",
+      "top",
+      "right",
+      "bottom",
+      "row_index",
+      "col_index",
+      "Grid_ID",
+      "value_fixe",
+      "ID_FIX",
+      "link_id",
+      "final_id"
+    ],
+    "n_star": 16008,
+    "n_empty": 0,
+    "sample_star": [
+      "***********",
+      "***********",
+      "***********",
+      "***********",
+      "***********"
+    ]
+  },
+  "V6_csv_building_cols": {
+    "X_BD": {
+      "corr_with_arch_sum": 0.3329,
+      "corr_with_arch_nonzero_frac": 0.8825,
+      "n": 32687
+    },
+    "X_BH": {
+      "corr_with_arch_sum": 0.1697,
+      "corr_with_arch_nonzero_frac": 0.4778,
+      "n": 32687
+    },
+    "X_VolDens": {
+      "corr_with_arch_sum": 0.557,
+      "corr_with_arch_nonzero_frac": 0.5518,
+      "n": 32687
+    }
+  },
+  "V6_arch_raster": {
+    "frac_nonzero": 0.0428,
+    "max": 4926083.5,
+    "p50": 0.0
+  }
+}

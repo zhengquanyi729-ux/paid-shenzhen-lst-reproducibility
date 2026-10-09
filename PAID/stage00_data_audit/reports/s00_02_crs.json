@@ -1,0 +1,865 @@
+{
+  "rasters": [
+    {
+      "file": "DEM_30m_Final.tif",
+      "kind": "raster",
+      "epsg": 32650,
+      "zone": 50,
+      "native_bbox": [
+        166483.328,
+        2480228.1307,
+        255463.328,
+        2531918.1307
+      ],
+      "width": 2966,
+      "height": 1723,
+      "px_w": 30.0,
+      "px_h": 30.0,
+      "lonlat_bbox": [
+        113.75011383225828,
+        22.395766771352346,
+        114.62451987760687,
+        22.877326663620632
+      ],
+      "area_km2": 4599.376
+    },
+    {
+      "file": "LST_30m_Final new.tif",
+      "kind": "raster",
+      "epsg": 32650,
+      "zone": 50,
+      "native_bbox": [
+        167357.3694,
+        2481903.1133,
+        253577.3694,
+        2531643.1133
+      ],
+      "width": 2874,
+      "height": 1658,
+      "px_w": 30.0,
+      "px_h": 30.0,
+      "lonlat_bbox": [
+        113.75867912573072,
+        22.41104435732063,
+        114.60595224234804,
+        22.874567951296942
+      ],
+      "area_km2": 4288.583
+    },
+    {
+      "file": "NDVI_30m_Final.tif",
+      "kind": "raster",
+      "epsg": 32650,
+      "zone": 50,
+      "native_bbox": [
+        165793.3139688911,
+        2478690.457563955,
+        256123.3139688911,
+        2532210.457563955
+      ],
+      "width": 3011,
+      "height": 1784,
+      "px_w": 30.0,
+      "px_h": 30.0,
+      "lonlat_bbox": [
+        113.74333559278205,
+        22.38176328245852,
+        114.63116226801726,
+        22.880061403784683
+      ],
+      "area_km2": 4834.462
+    },
+    {
+      "file": "archi_30m_Final.tif",
+      "kind": "raster",
+      "epsg": 32650,
+      "zone": 50,
+      "native_bbox": [
+        167357.3694,
+        2481903.1133,
+        253577.3694,
+        2531643.1133
+      ],
+      "width": 2874,
+      "height": 1658,
+      "px_w": 30.0,
+      "px_h": 30.0,
+      "lonlat_bbox": [
+        113.75867912573072,
+        22.41104435732063,
+        114.60595224234804,
+        22.874567951296942
+      ],
+      "area_km2": 4288.583
+    },
+    {
+      "file": "road_30m_Final.tif",
+      "kind": "raster",
+      "epsg": 32650,
+      "zone": 50,
+      "native_bbox": [
+        166483.327967696,
+        2480228.1306583844,
+        255463.327967696,
+        2531918.1306583844
+      ],
+      "width": 2966,
+      "height": 1723,
+      "px_w": 30.0,
+      "px_h": 30.0,
+      "lonlat_bbox": [
+        113.75011383195283,
+        22.395766770970706,
+        114.62451987729965,
+        22.877326663240304
+      ],
+      "area_km2": 4599.376
+    },
+    {
+      "file": "0_论文data/DEM_shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4183897156,
+        2485099.3175071906,
+        830617.9329134065,
+        2508387.9647896728
+      ],
+      "width": 1205,
+      "height": 776,
+      "px_w": 30.00042699061487,
+      "px_h": 30.01114340526047,
+      "lonlat_bbox": [
+        113.86099475854608,
+        22.440265431470838,
+        114.21669595700452,
+        22.656994616304623
+      ],
+      "area_km2": 841.897
+    },
+    {
+      "file": "0_论文data/LST_shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4183897156,
+        2485099.3175071906,
+        830617.9329134065,
+        2508387.9647896728
+      ],
+      "width": 1205,
+      "height": 776,
+      "px_w": 30.00042699061487,
+      "px_h": 30.01114340526047,
+      "lonlat_bbox": [
+        113.86099475854608,
+        22.440265431470838,
+        114.21669595700452,
+        22.656994616304623
+      ],
+      "area_km2": 841.897
+    },
+    {
+      "file": "0_论文data/NVDI_shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4183897156,
+        2485099.3175071906,
+        830617.9329134065,
+        2508387.9647896728
+      ],
+      "width": 1205,
+      "height": 776,
+      "px_w": 30.00042699061487,
+      "px_h": 30.01114340526047,
+      "lonlat_bbox": [
+        113.86099475854608,
+        22.440265431470838,
+        114.21669595700452,
+        22.656994616304623
+      ],
+      "area_km2": 841.897
+    },
+    {
+      "file": "0_论文data/Road_shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4183897156,
+        2485099.3175071906,
+        830617.9329134065,
+        2508387.9647896728
+      ],
+      "width": 1205,
+      "height": 776,
+      "px_w": 30.00042699061487,
+      "px_h": 30.01114340526047,
+      "lonlat_bbox": [
+        113.86099475854608,
+        22.440265431470838,
+        114.21669595700452,
+        22.656994616304623
+      ],
+      "area_km2": 841.897
+    },
+    {
+      "file": "0_论文data/SVF_Shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4184,
+        2485099.4085,
+        830617.4184,
+        2508389.4085
+      ],
+      "width": 7230,
+      "height": 4658,
+      "px_w": 5.0,
+      "px_h": 5.0,
+      "lonlat_bbox": [
+        113.86099477549973,
+        22.44026635161962,
+        114.21669126083745,
+        22.657007642159794
+      ],
+      "area_km2": 841.933
+    },
+    {
+      "file": "0_论文data/arch_shenzhen.tif",
+      "kind": "raster",
+      "epsg": 32649,
+      "zone": 49,
+      "native_bbox": [
+        794467.4183897156,
+        2485099.3175071906,
+        830617.9329134065,
+        2508387.9647896728
+      ],
+      "width": 1205,
+      "height": 776,
+      "px_w": 30.00042699061487,
+      "px_h": 30.01114340526047,
+      "lonlat_bbox": [
+        113.86099475854608,
+        22.440265431470838,
+        114.21669595700452,
+        22.656994616304623
+      ],
+      "area_km2": 841.897
+    }
+  ],
+  "vectors": [
+    {
+      "file": "2023年县级/2023年初县矢量.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 2852,
+      "type": "Polygon",
+      "native_bbox": [
+        73.5,
+        3.84,
+        135.09,
+        53.56
+      ],
+      "lonlat_bbox": [
+        73.501142,
+        3.837902,
+        135.088511,
+        53.560901
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "arch shp/深圳建筑.shp",
+      "kind": "vector",
+      "epsg": 32650,
+      "n": 745213,
+      "type": "Polygon",
+      "native_bbox": [
+        167357.37,
+        2481896.22,
+        253582.98,
+        2531643.11
+      ],
+      "lonlat_bbox": [
+        113.758679,
+        22.410982,
+        114.606008,
+        22.874569
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "road/road 3d/road.shp",
+      "kind": "vector",
+      "epsg": 32649,
+      "n": 4223,
+      "type": "Polyline",
+      "native_bbox": [
+        794722.52,
+        2487542.4,
+        829182.91,
+        2506379.16
+      ],
+      "lonlat_bbox": [
+        113.863924,
+        22.462578,
+        114.20233,
+        22.638826
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "road/road.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 197834,
+      "type": "Polyline",
+      "native_bbox": [
+        109.7,
+        20.23,
+        117.2,
+        25.55
+      ],
+      "lonlat_bbox": [
+        109.702697,
+        20.228919,
+        117.204144,
+        25.550897
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "road/road_new.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 140029,
+      "type": "Polyline",
+      "native_bbox": [
+        109.7,
+        20.23,
+        117.2,
+        25.55
+      ],
+      "lonlat_bbox": [
+        109.702697,
+        20.228919,
+        117.204144,
+        25.550897
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "szbuildings.shp",
+      "kind": "vector",
+      "epsg": 32649,
+      "n": 119808,
+      "type": "Polygon",
+      "native_bbox": [
+        794694.06,
+        2486282.99,
+        829241.04,
+        2507335.6
+      ],
+      "lonlat_bbox": [
+        113.863414,
+        22.451208,
+        114.203095,
+        22.64746
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "研究边界/Buildings_Fixed.shp",
+      "kind": "vector",
+      "epsg": 32649,
+      "n": 745213,
+      "type": "Polygon",
+      "native_bbox": [
+        783688.36,
+        2481123.9,
+        870748.05,
+        2531144.61
+      ],
+      "lonlat_bbox": [
+        113.755653,
+        22.396201,
+        114.611968,
+        22.864173
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "研究边界/buildings_utm.shp",
+      "kind": "vector",
+      "epsg": null,
+      "n": 0,
+      "type": "Polygon",
+      "native_bbox": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lonlat_bbox": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "研究边界/grid_utm.shp",
+      "kind": "vector",
+      "epsg": 32649,
+      "n": 32748,
+      "type": "Polygon",
+      "native_bbox": [
+        794467.42,
+        2485099.32,
+        830617.93,
+        2508389.41
+      ],
+      "lonlat_bbox": [
+        113.860995,
+        22.440265,
+        114.216696,
+        22.657008
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "研究边界/studyarea.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 299,
+      "type": "Polygon",
+      "native_bbox": [
+        113.86,
+        22.45,
+        114.22,
+        22.66
+      ],
+      "lonlat_bbox": [
+        113.86235,
+        22.446409,
+        114.21508,
+        22.655368
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "研究边界/szbuildings_utm.shp",
+      "kind": "vector",
+      "epsg": 32649,
+      "n": 119808,
+      "type": "Polygon",
+      "native_bbox": [
+        794694.06,
+        2486282.99,
+        829241.04,
+        2507335.6
+      ],
+      "lonlat_bbox": [
+        113.863414,
+        22.451208,
+        114.203095,
+        22.64746
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "边界/广东省深圳市各社区.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 668,
+      "type": "Polygon",
+      "native_bbox": [
+        113.75,
+        22.4,
+        114.62,
+        22.86
+      ],
+      "lonlat_bbox": [
+        113.754342,
+        22.397034,
+        114.622863,
+        22.864699
+      ],
+      "area_km2": null
+    },
+    {
+      "file": "边界/粤港澳大湾区2023/yuegangao2023.shp",
+      "kind": "vector",
+      "epsg": 4326,
+      "n": 23,
+      "type": "Polygon",
+      "native_bbox": [
+        109.66,
+        20.22,
+        117.3,
+        25.52
+      ],
+      "lonlat_bbox": [
+        109.664816,
+        20.223273,
+        117.303484,
+        25.519951
+      ],
+      "area_km2": null
+    }
+  ],
+  "checks": {
+    "full_raster_covers_city_boundary": {
+      "full_raster_lonlat": [
+        113.7433,
+        22.3818,
+        114.6312,
+        22.8801
+      ],
+      "shenzhen_boundary_lonlat": [
+        113.7543,
+        22.397,
+        114.6229,
+        22.8647
+      ],
+      "lon_ok": true,
+      "lat_ok": true
+    },
+    "study_raster_inside_full_raster": {
+      "study_lonlat": [
+        113.861,
+        22.4403,
+        114.2167,
+        22.657
+      ],
+      "full_lonlat": [
+        113.7433,
+        22.3818,
+        114.6312,
+        22.8801
+      ],
+      "lon_ok": true,
+      "lat_ok": true
+    },
+    "study_raster_vs_studyarea_shp": {
+      "raster_lonlat": [
+        113.861,
+        22.4403,
+        114.2167,
+        22.657
+      ],
+      "studyarea_lonlat": [
+        113.86235,
+        22.446409,
+        114.21508,
+        22.655368
+      ],
+      "max_abs_diff_deg": 0.0061
+    }
+  },
+  "alignment_pairs": [
+    {
+      "a": "DEM_30m_Final.tif",
+      "b": "LST_30m_Final new.tif",
+      "dx_m": 874.0414,
+      "dy_m": -275.0174,
+      "dx_px": 29.13471,
+      "dy_px": -9.16725,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "DEM_30m_Final.tif",
+      "b": "NDVI_30m_Final.tif",
+      "dx_m": -690.014,
+      "dy_m": 292.3269,
+      "dx_px": -23.00047,
+      "dy_px": 9.74423,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "DEM_30m_Final.tif",
+      "b": "archi_30m_Final.tif",
+      "dx_m": 874.0414,
+      "dy_m": -275.0174,
+      "dx_px": 29.13471,
+      "dy_px": -9.16725,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "DEM_30m_Final.tif",
+      "b": "road_30m_Final.tif",
+      "dx_m": -0.0,
+      "dy_m": -0.0,
+      "dx_px": -0.0,
+      "dy_px": -0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "LST_30m_Final new.tif",
+      "b": "NDVI_30m_Final.tif",
+      "dx_m": -1564.0554,
+      "dy_m": 567.3443,
+      "dx_px": -52.13518,
+      "dy_px": 18.91148,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "LST_30m_Final new.tif",
+      "b": "archi_30m_Final.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "LST_30m_Final new.tif",
+      "b": "road_30m_Final.tif",
+      "dx_m": -874.0414,
+      "dy_m": 275.0174,
+      "dx_px": -29.13471,
+      "dy_px": 9.16725,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "NDVI_30m_Final.tif",
+      "b": "archi_30m_Final.tif",
+      "dx_m": 1564.0554,
+      "dy_m": -567.3443,
+      "dx_px": 52.13518,
+      "dy_px": -18.91148,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "NDVI_30m_Final.tif",
+      "b": "road_30m_Final.tif",
+      "dx_m": 690.014,
+      "dy_m": -292.3269,
+      "dx_px": 23.00047,
+      "dy_px": -9.74423,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "archi_30m_Final.tif",
+      "b": "road_30m_Final.tif",
+      "dx_m": -874.0414,
+      "dy_m": 275.0174,
+      "dx_px": -29.13471,
+      "dy_px": 9.16725,
+      "pixel_aligned": false,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/DEM_shenzhen.tif",
+      "b": "0_论文data/LST_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/DEM_shenzhen.tif",
+      "b": "0_论文data/NVDI_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/DEM_shenzhen.tif",
+      "b": "0_论文data/Road_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/DEM_shenzhen.tif",
+      "b": "0_论文data/SVF_Shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 1.4437,
+      "dx_px": 0.0,
+      "dy_px": 0.04811,
+      "pixel_aligned": false,
+      "resolution_match": false
+    },
+    {
+      "a": "0_论文data/DEM_shenzhen.tif",
+      "b": "0_论文data/arch_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/LST_shenzhen.tif",
+      "b": "0_论文data/NVDI_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/LST_shenzhen.tif",
+      "b": "0_论文data/Road_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/LST_shenzhen.tif",
+      "b": "0_论文data/SVF_Shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 1.4437,
+      "dx_px": 0.0,
+      "dy_px": 0.04811,
+      "pixel_aligned": false,
+      "resolution_match": false
+    },
+    {
+      "a": "0_论文data/LST_shenzhen.tif",
+      "b": "0_论文data/arch_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/NVDI_shenzhen.tif",
+      "b": "0_论文data/Road_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/NVDI_shenzhen.tif",
+      "b": "0_论文data/SVF_Shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 1.4437,
+      "dx_px": 0.0,
+      "dy_px": 0.04811,
+      "pixel_aligned": false,
+      "resolution_match": false
+    },
+    {
+      "a": "0_论文data/NVDI_shenzhen.tif",
+      "b": "0_论文data/arch_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/Road_shenzhen.tif",
+      "b": "0_论文data/SVF_Shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 1.4437,
+      "dx_px": 0.0,
+      "dy_px": 0.04811,
+      "pixel_aligned": false,
+      "resolution_match": false
+    },
+    {
+      "a": "0_论文data/Road_shenzhen.tif",
+      "b": "0_论文data/arch_shenzhen.tif",
+      "dx_m": 0.0,
+      "dy_m": 0.0,
+      "dx_px": 0.0,
+      "dy_px": 0.0,
+      "pixel_aligned": true,
+      "resolution_match": true
+    },
+    {
+      "a": "0_论文data/SVF_Shenzhen.tif",
+      "b": "0_论文data/arch_shenzhen.tif",
+      "dx_m": -0.0,
+      "dy_m": -1.4437,
+      "dx_px": -0.0,
+      "dy_px": -0.28874,
+      "pixel_aligned": false,
+      "resolution_match": false
+    }
+  ],
+  "grid_vs_study_raster": {
+    "grid_native_bbox": [
+      794467.42,
+      2485099.32,
+      830617.93,
+      2508389.41
+    ],
+    "raster_native_bbox": [
+      794467.4183897156,
+      2485099.3175071906,
+      830617.9329134065,
+      2508387.9647896728
+    ],
+    "d_west": -0.002,
+    "d_south": -0.002,
+    "d_east": 0.003,
+    "d_north": -1.445
+  },
+  "aligned_groups": {
+    "EPSG:32650_全市域": [
+      [
+        "DEM_30m_Final.tif",
+        "road_30m_Final.tif"
+      ],
+      [
+        "LST_30m_Final new.tif",
+        "archi_30m_Final.tif"
+      ],
+      [
+        "NDVI_30m_Final.tif"
+      ]
+    ],
+    "EPSG:32649_研究区": [
+      [
+        "0_论文data/DEM_shenzhen.tif",
+        "0_论文data/LST_shenzhen.tif",
+        "0_论文data/NVDI_shenzhen.tif",
+        "0_论文data/Road_shenzhen.tif",
+        "0_论文data/arch_shenzhen.tif"
+      ],
+      [
+        "0_论文data/SVF_Shenzhen.tif"
+      ]
+    ]
+  }
+}

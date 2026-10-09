@@ -1,0 +1,15 @@
+# Stage 03 产物 SHA-256 清单（相对 PAID/；不含本清单自身）
+# 生成于 2026-09-24 13:07:44；发现侧原始登记另见 stage02_platform/sandbox_root/work/s03/（动态运行态）
+fb8f1d76b1f340e7682844069e42cfc8d505ad91d347105dc43f1572f7277186        3218  stage03_discovery/registry/frozen_candidates.json
+25b5d8931a0e855bdbdfbefd1811a8da381d53e2c7bd2f47c1e7ab7e4570e2b5      118701  stage03_discovery/registry/candidate_registry.json
+386b7c12440d3c8eca881cd516e06a3298719f57dff20363d316eda0618d0186        2380  stage03_discovery/registry/experiment_trajectory.json
+1bbc10c533e5b61b1b62cd94a5283a7b6a11226b52df1d53465ae3be332bf8de       23689  stage03_discovery/STAGE03_REPORT.md
+f6e8ab567f130388846f66221103b013d3a6ffb0ca4447d7de682363b2b31f9a        8305  stage03_discovery/registry/candidates/S03-H01-LIN7.json
+e9363253568777df423d89d58684f41d2977ede5a6c71099d9d4a6d8721a39e0        9114  stage03_discovery/registry/candidates/S03-H10-GREEDY.json
+021a9fb899b198a4cd52499331b8f63ed08dbb143e99de279310ecdb2e11d19b        7004  stage03_discovery/registry/candidates/S03-H10P-GREEDY-MIN.json
+60674be65cef2732c2e57d0e1307e0d25b91039ba709217ca2a3c8097cc66aea        8244  stage03_discovery/registry/candidates/S03-H11-REFINE.json
+9dd4cbcd39a20f1b9d1a82d7b414144ea9720d07957b5155dd8015d70ff5fdfa        1520  stage03_discovery/reports/verification.json
+22b179703b0d41da4f9a86e7e0896491dfbac060dc4801950c21034e281eaa2b        5326  stage03_discovery/reports/robustness.json
+
+# append-only 实验日志（含全部开发期迭代，故不逐行入清单）
+26dc8703e392b5f24d129c0678019b9d67ab2018baf337ee6bc4c66d7170d5c9      513043  stage02_platform/logs/experiment_log.jsonl  (lines=1231)

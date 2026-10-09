@@ -1,0 +1,112 @@
+{
+  "version": "stage03-trajectory-v1",
+  "created": "2026-09-24T13:05:55",
+  "run_tag": "S03-canonical",
+  "ran_at": "2026-09-24T13:05:52",
+  "budget": {
+    "per_round_max_candidates": 50,
+    "total_fit_budget": 5000,
+    "freeze_max": 8,
+    "greedy_prescreen": "全部项池（无预筛）",
+    "refine_prescreen": 12,
+    "refine_max_evals": 120,
+    "note": "遵守 Stage 01 冻结预算；Rounds 1–3 全部在守卫下运行。"
+  },
+  "guard_limits": "max_fits=5000（Stage 01 冻结上限）",
+  "folds": {
+    "k": 5,
+    "sizes": [
+      2544,
+      5143,
+      3713,
+      4096,
+      3688
+    ]
+  },
+  "greedy_trace": [
+    {
+      "action": "add",
+      "term": "exp(NDVI_mean)",
+      "term_ast": {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "NDVI_mean"
+        }
+      },
+      "cv_rmse": 3.3705939965348963,
+      "n_terms": 1
+    },
+    {
+      "action": "add",
+      "term": "exp(DEM_mean)",
+      "term_ast": {
+        "op": "exp",
+        "arg": {
+          "op": "var",
+          "name": "DEM_mean"
+        }
+      },
+      "cv_rmse": 3.065546667668994,
+      "n_terms": 2
+    },
+    {
+      "action": "add",
+      "term": "SVF_mean",
+      "term_ast": {
+        "op": "var",
+        "name": "SVF_mean"
+      },
+      "cv_rmse": 2.989242827477161,
+      "n_terms": 3
+    },
+    {
+      "action": "add",
+      "term": "Road_Dens",
+      "term_ast": {
+        "op": "var",
+        "name": "Road_Dens"
+      },
+      "cv_rmse": 2.967740160901498,
+      "n_terms": 4
+    },
+    {
+      "action": "add",
+      "term": "NDVI_mean*DEM_mean",
+      "term_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "op": "var",
+            "name": "NDVI_mean"
+          },
+          {
+            "op": "var",
+            "name": "DEM_mean"
+          }
+        ]
+      },
+      "cv_rmse": 2.9560392780323155,
+      "n_terms": 5
+    }
+  ],
+  "refine_trace": [
+    {
+      "action": "replace",
+      "at": 1,
+      "term": "DEM_mean",
+      "cv_rmse": 2.916647730294894,
+      "n_terms": 5,
+      "expr": "exp(NDVI) + DEM + SVF + Road_Dens + (NDVI * DEM)"
+    },
+    {
+      "action": "replace",
+      "at": 2,
+      "term": "NDVI_mean^2",
+      "cv_rmse": 2.913858090603497,
+      "n_terms": 5,
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)"
+    }
+  ],
+  "refine_seed": "S03-H10-GREEDY"
+}

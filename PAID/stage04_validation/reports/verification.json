@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "id": "V1",
+      "name": "解封登记（批准=1 / 其余=0）",
+      "ok": true,
+      "detail": "approved={'S03-H10-GREEDY': 1, 'S03-H01-LIN7': 1} others={'S03-H11-REFINE': 0, 'S03-H10P-GREEDY-MIN': 0}"
+    },
+    {
+      "id": "V2",
+      "name": "冻结哈希一致（解封未篡改候选）",
+      "ok": true,
+      "detail": "mismatch=[]"
+    },
+    {
+      "id": "V3",
+      "name": "日志链完整且含 2 条正式解封记录",
+      "ok": true,
+      "detail": "verify=True n=1259 unsealed(real)=2"
+    },
+    {
+      "id": "V4",
+      "name": "清单 SHA-256 逐条复算一致",
+      "ok": true,
+      "detail": "checked from stage04_hashes.txt; mismatch=[]"
+    },
+    {
+      "id": "V5",
+      "name": "主终点可复现（重算与发布逐位一致）",
+      "ok": true,
+      "detail": "{\"S03-H10-GREEDY\": {\"passed\": true, \"delta\": 0.37907131616873313, \"p\": 0.005, \"match\": true}, \"S03-H01-LIN7\": {\"passed\": false, \"delta\": 0.0, \"p\": 1.0, \"match\": true}}"
+    },
+    {
+      "id": "V6",
+      "name": "报告关键数字与结果 JSON 一致",
+      "ok": true,
+      "detail": "missing_tokens=[]"
+    },
+    {
+      "id": "V7",
+      "name": "冻结登记仅按授权变更（预算+1 / 其余不动 / 末次结果仅批准项）",
+      "ok": true,
+      "detail": "approved={'S03-H10-GREEDY': 1, 'S03-H01-LIN7': 1} others={'S03-H11-REFINE': 0, 'S03-H10P-GREEDY-MIN': 0} last_result={'S03-H11-REFINE': False, 'S03-H10-GREEDY': True, 'S03-H10P-GREEDY-MIN': False, 'S03-H01-LIN7': True}"
+    }
+  ]
+}

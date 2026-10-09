@@ -1,0 +1,384 @@
+{
+  "version": "stage01-protocols-v1",
+  "created": "2026-09-24",
+  "agent_manifest": {
+    "version": "stage01-protocols-v1",
+    "created": "2026-09-24",
+    "framework_ref": "Table 10 / Table 11 / Table 12 Agent manifest",
+    "system_prompt_policy": {
+      "injected_files": [
+        "constraints/DATA_DICTIONARY.md",
+        "constraints/hard_constraints.json"
+      ],
+      "forbidden": [
+        "禁止在系统提示词中规定 NDVI 必须单调降温（或升温）。",
+        "禁止规定 SVF 必须升温或必须降温。",
+        "禁止规定建筑高度/体量必须产生某一方向的热响应。",
+        "禁止预设最优空间尺度（不得指定唯一 r）。",
+        "禁止预设固定函数形式（不得指定线性/幂律/树模型等）。",
+        "禁止预设单一显著阈值（不得写死如 p<0.05 作为唯一判据）。",
+        "禁止预设特定交互组合或变量清单。",
+        "不得注入旧论文结论、相关矩阵或用于引导特定发现的文献摘要。",
+        "允许：数据字典、计算定义、基础物理知识、预注册的计算工具与搜索预算。"
+      ],
+      "rule": "系统提示词只注入数据字典、硬约束、计算预算与工具白名单；不得注入关系方向、函数形式、最优尺度、单一显著阈值或旧论文结论（§3.2）。",
+      "hash_required": true,
+      "audit": "Physics Auditor 每轮检查提示词是否含禁用方向；prompt_sha256 记入候选登记。"
+    },
+    "model_version": {
+      "note": "Agent 所用基础模型版本须在 Stage 02 平台构建时声明并冻结于 Agent manifest；一旦冻结，M2 发现阶段中途不得更换（更换即视为新一轮，重走防火墙）。",
+      "declared": false
+    },
+    "agents": [
+      {
+        "agent": "Discovery Agent",
+        "page": "open_discovery",
+        "purpose": "自主选择特征、尺度、假设与数学表达式，提出可证伪候选。",
+        "data_access": [
+          "A 发现区"
+        ],
+        "forbidden_access": [
+          "B 开发验证区（调参用，不下发目标）",
+          "C 锁定区目标值",
+          "旧论文结论/相关矩阵"
+        ],
+        "tools": [
+          "numpy",
+          "pandas",
+          "自写统计/特征脚本",
+          "符号回归（白名单内）",
+          "matplotlib"
+        ],
+        "outputs": [
+          "候选科学发现登记表（Table 20 字段）"
+        ]
+      },
+      {
+        "agent": "Experiment Agent",
+        "page": "experiment",
+        "purpose": "编写实验代码、比较允许的方法、测量开发集表现，记录全部运行。",
+        "data_access": [
+          "A 发现区",
+          "B 开发验证区"
+        ],
+        "forbidden_access": [
+          "C 锁定区目标值"
+        ],
+        "tools": [
+          "numpy",
+          "pandas",
+          "符号回归/ML（Table 14 Baseline A–D 口径）"
+        ],
+        "outputs": [
+          "可复算实验脚本",
+          "开发指标表",
+          "append-only 实验日志"
+        ]
+      },
+      {
+        "agent": "Falsification Agent",
+        "page": "falsification",
+        "purpose": "寻找反例、空间混杂、伪相关与负对照；可建议放弃候选。",
+        "data_access": [
+          "A 发现区",
+          "B 开发验证区",
+          "分区掩膜（row/col/zone）"
+        ],
+        "forbidden_access": [
+          "C 锁定区目标值"
+        ],
+        "tools": [
+          "空间置换",
+          "分层/负对照构造",
+          "残差诊断"
+        ],
+        "outputs": [
+          "反例清单",
+          "负对照结果",
+          "混杂诊断"
+        ]
+      },
+      {
+        "agent": "Physics Auditor",
+        "page": "audit",
+        "purpose": "独立审计量纲、几何、可计算物理约束及解释的过度延伸。",
+        "data_access": [
+          "constraints/hard_constraints.json",
+          "constraints/DATA_DICTIONARY.md",
+          "全部分区掩膜"
+        ],
+        "forbidden_access": [
+          "C 锁定区目标值"
+        ],
+        "tools": [
+          "量纲检查",
+          "几何合法性检查",
+          "提示词禁用方向检查"
+        ],
+        "outputs": [
+          "物理审计表（通过/无法检验项 + 理由）"
+        ]
+      },
+      {
+        "agent": "Independent Validator",
+        "page": "validation",
+        "purpose": "独立进程持有 C 区目标值，验证后发布完整通过/失败结果，不执行发现 Agent 的调参请求。",
+        "data_access": [
+          "locked/zone_C_targets.csv",
+          "已冻结候选登记"
+        ],
+        "forbidden_access": [
+          "不得向开发域回传 C 目标值（只发布聚合后的通过/失败与不确定性）"
+        ],
+        "tools": [
+          "验证协议固定脚本"
+        ],
+        "outputs": [
+          "完整通过/失败与不确定性报告"
+        ]
+      }
+    ]
+  },
+  "experiment_protocol": {
+    "version": "stage01-protocols-v1",
+    "created": "2026-09-24",
+    "framework_ref": "Table 12 Experiment protocol；§4.3；Table 13；Table 14",
+    "candidate_cap": {
+      "per_round_max": 50,
+      "total_fit_budget": 5000,
+      "freeze_max": 8,
+      "note": "每轮最多 50 个候选进入开发评估；全项目 fit 预算 5000 次；最终冻结进入 C 区独立验证的候选 ≤ 8 个。"
+    },
+    "dev_metrics": {
+      "primary": "A 发现区空间分块交叉验证 RMSE（℃），分块=连通簇，块数≥5",
+      "secondary": [
+        "MAE",
+        "R²",
+        "AIC/BIC（同族比较）",
+        "表达式复杂度（项数/参数量）"
+      ],
+      "must_report": [
+        "效应方向",
+        "95% 自助置信区间",
+        "残差空间自相关（Moran’s I of residuals）"
+      ]
+    },
+    "stopping_conditions": [
+      "连续 200 次 fit 无开发指标改进",
+      "累计 fit 达 5000 次预算",
+      "冻结候选数达上限 8",
+      "反例/混杂检验使所有候选被否决（允许以「暂无经证伪仍成立的候选」结束）"
+    ],
+    "failure_logging": {
+      "mode": "append-only JSONL，禁止覆盖",
+      "fields": [
+        "candidate_id",
+        "timestamp",
+        "agent",
+        "prompt_sha256",
+        "code_sha256",
+        "expr",
+        "vars",
+        "scale_r",
+        "dev_metric",
+        "dev_metric_value",
+        "status(pass/fail/rejected)",
+        "reason",
+        "counterexamples"
+      ],
+      "path": "logs/experiment_log.jsonl（Stage 02 创建）"
+    },
+    "baselines": {
+      "A": "预先指定变量的线性/GAM",
+      "B": "RF/XGBoost + 可解释性",
+      "C": "预设搜索空间的符号回归",
+      "D": "无物理约束的自主 Agent",
+      "proposed": "具物理约束与防火墙的 PAID Agent",
+      "note": "预测更优不等于获得新规律（§6 Exp.4）。",
+      "frozen_specs": {
+        "A": {
+          "form": "OLS: LST ~ 全部 8 个预指定变量的一次项（LST_mean,NDVI_mean,DEM_mean,SVF_mean,Road_Dens,X_BD,X_BH,X_VolDens），逐一 Z 标准化后拟合；不含交互项、无惩罚。GAM（样条）为并列对照但仅作定性比较。",
+          "fit": "仅在 A 发现区拟合并冻结系数；B 区不做系数更新。",
+          "eval": "在 C 区计算 RMSE 作为 ΔRMSE 的比较基准。",
+          "rationale": "冻结 Baseline A 的形式与拟合域，避免\"通过与一个未定义/过弱基线比较\"侥幸通过。"
+        },
+        "B": {
+          "form": "RF（n_estimators=500）与 XGBoost（max_depth=6, eta=0.1）并列；以 A 区嵌套空间分块 CV 调参。",
+          "eval": "在 C 区计算 RMSE 与 ΔRMSE（不作主终点，仅作公平比较，§6 Exp.4）。"
+        },
+        "C": {
+          "form": "符号回归（预设算子集 + - * / exp log，最大复杂度 15），搜索空间上限 10^4。"
+        },
+        "D": {
+          "form": "同一基础模型、同一工具白名单，但**移除**物理硬约束与防火墙（全量数据可见）的自主 Agent。"
+        }
+      }
+    }
+  },
+  "validation_protocol": {
+    "version": "stage01-protocols-v1",
+    "created": "2026-09-24",
+    "framework_ref": "Table 12 Validation protocol；§5.3；Table 13",
+    "unseal_principle": "哈希≠访问控制；C 区目标值存于发现 Agent 无权读取的独立目录/服务；验证只接受已冻结候选，发布完整通过/失败（§5.3）。",
+    "primary_endpoint": {
+      "target": "锁定区 C 的 LST_mean",
+      "statistic": "候选表达式在 C 区的 RMSE（℃）以及相对 Baseline A 的 ΔRMSE",
+      "pass_rule": "ΔRMSE>0（优于 Baseline A）且经 199 次空间块置换检验 p<0.05，且 95% 置信区间不跨 0，且物理审计通过，且负对照（空间置换/随机目标）未通过。",
+      "note": "主终点在解封前冻结；解封后不得更改模型、指标、假设或停止条件（SI-1）。"
+    },
+    "spatial_inference": {
+      "split": "空间划分为主：C 与 A∪B 最小间距 16 格（1.5 km）≥ R（15 格）。",
+      "block_permutation": 199,
+      "buffer": "仅 C 施加缓冲；A 与 B 同属开发域，不设内部缓冲。",
+      "rationale": "控制相邻格空间泄漏导致的过乐观泛化（Table 13 空间分块/缓冲验证）。"
+    },
+    "multiplicity": {
+      "n_frozen_candidates": "≤ 8",
+      "control": "Holm–Bonferroni（family = 冻结候选集）；同时报告未校正 p。",
+      "note": "控制大量搜索后的偶然显著（Table 13 多重检验）。"
+    },
+    "missing_data": {
+      "handling": "C 区不插补；缺失/无效格显式排除并登记数量。",
+      "excluded_interpolated": true
+    },
+    "negative_controls": [
+      "C 区目标空间置换 199 次",
+      "随机目标列",
+      "打乱行序的伪候选"
+    ],
+    "strata_and_outliers": {
+      "strata": "按 NDVI 三分位（低/中/高植被）分层报告每个候选的效应、RMSE 与置信区间",
+      "locked_share": "C 区三分位构成 [0.338, 0.548, 0.115]（全局 1/3,1/3,1/3），偏斜须在报告中显式呈现",
+      "anomalies": "排除 S00 掩膜认定的异常（LST==0 填充、非物理 NDVI、边界仅 1–2 有效像元的格）；每一候选须报告被排除格数及其对结论的影响。",
+      "rule": "不得以全样本显著掩盖某一分层不成立；任一分层符号相反须如实报告。"
+    },
+    "measurement_error": {
+      "status": "no_qa_metadata",
+      "note": "LST 无观测时间/传感器/QA/不确定度元数据（S00.1），无法做正式测量误差传播。",
+      "sensitivity": [
+        "±0.5 K",
+        "±1.0 K"
+      ],
+      "rule": "对 C 区目标施加 ±0.5 K 与 ±1.0 K 两档扰动重算主检验；效应的符号与显著性须在两档下均保持，且效应量须大于扰动引起的区间宽度，方可宣称稳健。"
+    },
+    "external": {
+      "status": "not_available",
+      "note": "当前数据仅单一时相、单一城市，D 层（新时相/新城市）不可用；L3 外部支持关系须待外部数据补齐后给出，不得以深圳单期结果替代（Table 15/19）。"
+    },
+    "criterion_sensitivity": {
+      "primary_R_cells": 15,
+      "alternative_R_cells": 25,
+      "rule": "主分析采用 R=15 格；以更保守判据（r<0.1，建成层）得到的替代分区 R=25 格作为**预注册的稳健性对照**，在同一批冻结候选上重算，与主结果一并报告；替代分区不改变主分析，也不得据其结果修订候选。"
+    },
+    "table13_coverage": [
+      "空间分块 / 缓冲验证",
+      "负对照及合适的空间置换",
+      "物理及量纲审计",
+      "地表类型分层与异常掩膜",
+      "测量误差传播",
+      "多重检验和候选记录",
+      "外部时相与地区复现"
+    ],
+    "report_rule": "统一报告通过、失败及所有不确定性；失败候选不得删除。"
+  },
+  "code_manifest": {
+    "version": "stage01-protocols-v1",
+    "created": "2026-09-24",
+    "framework_ref": "Table 12 Code manifest",
+    "environment": {
+      "python": "3.10.12",
+      "platform": "Linux",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.8",
+      "docx": "python-docx",
+      "openpyxl": "3.1.5",
+      "note": "无 gdal/rasterio/geopandas/scipy/sklearn；地理 IO 由 lib/geoio.py 纯 Python 实现。"
+    },
+    "data_transform_scripts": [
+      "lib/geoio.py",
+      "lib/config.py",
+      "stage00_data_audit/scripts/s00_*.py",
+      "stage01_protocol/scripts/s01_*.py"
+    ],
+    "candidate_model_code": "Stage 02 生成后追加其哈希（本清单先冻结环境与数据变换脚本）。",
+    "files": [
+      {
+        "path": "lib/config.py",
+        "bytes": 676,
+        "sha256": "f9f8f0cd63c720bc4986ade36f809eccf39055a3d784c0e2183554145a060273"
+      },
+      {
+        "path": "lib/geoio.py",
+        "bytes": 11907,
+        "sha256": "50cc6b0941bedf284e5bc2e48fd253d2654f116307eff3bc304efd9096f4aeb4"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_01_metadata.py",
+        "bytes": 12709,
+        "sha256": "945cfc02273d45b2b92ed17ff8dba39ca78b54003c31d20bfb85756ffbbef8a6"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_02_crs.py",
+        "bytes": 12401,
+        "sha256": "ed051c75f67f69ddd6d1904c7716866f54c766f07affc7474329e9d008318a17"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_03_lst_zero.py",
+        "bytes": 13047,
+        "sha256": "0e2a28cf450472870759d9e6ebe414b476b9423bcdd8816a24edd968902aae92"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_04_missing.py",
+        "bytes": 17862,
+        "sha256": "0ad239bb7ef79f278087ffa5c8e1243ad6a5efc352451ce223714afec128d502"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_05_vector.py",
+        "bytes": 13580,
+        "sha256": "52aefcaaf9681031187cf79849707144f787eaf0bd0b87ed20cb348e47872ec1"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_06_mask.py",
+        "bytes": 8703,
+        "sha256": "df5eccd5cef132eccf7b9f225607795d7047a20a28e4610740c42340f68f4fe3"
+      },
+      {
+        "path": "stage00_data_audit/scripts/s00_07_manifest.py",
+        "bytes": 3334,
+        "sha256": "a228dbb1219fa707a7e5e4f863e74333c715be4ab34294ee70a977d1e1324db7"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_01_spatial_autocorr.py",
+        "bytes": 16935,
+        "sha256": "b008e58c97b8c6603695a049abbf4c109f79009a6dd0f7bec42802ac993cb8e8"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_02_split.py",
+        "bytes": 21261,
+        "sha256": "3ac0bf6d1adcb2ed740bb2f7e6b3895321700fa5a041fc92c55a943993023a48"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_03_constraints.py",
+        "bytes": 21213,
+        "sha256": "be1a05edddc185cb5279a8f19a941473237d1883c913b978560549c663b44c91"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_04_protocols.py",
+        "bytes": 21287,
+        "sha256": "27bb3d7e327d26a6fa31dfc47b2f213ecae6e7309780b491fac58ca83eb330c2"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_05_preregistration.py",
+        "bytes": 13751,
+        "sha256": "09d1da15688670102b99f1df1858395a7bc197421c4663dda934e6d321280155"
+      },
+      {
+        "path": "stage01_protocol/scripts/s01_06_verify.py",
+        "bytes": 10065,
+        "sha256": "f4046b12498071e5ee9dedd2b3a3ab7904d5c0f3aa2d8480e87f4f98d57fa664"
+      }
+    ],
+    "n_files": 15
+  }
+}

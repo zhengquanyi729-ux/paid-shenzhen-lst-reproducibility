@@ -1,0 +1,10 @@
+CODE AVAILABILITY — see FINAL_CODE_AVAILABILITY_PLACEHOLDER_v1_2_1.txt
+=====================================================================
+
+This is a redirect stub. The manuscript-ready code-availability statement now lives in
+`FINAL_CODE_AVAILABILITY_PLACEHOLDER_v1_2_1.txt`, which uses explicit tokens
+(`{{CODE_REPOSITORY_URL}}`, `{{CODE_ARCHIVE_DOI}}`, `{{CODE_COMMIT_SHA}}`, `{{RELEASE_TAG}}`) instead
+of a bracketed marker.
+
+No DOI, URL or commit SHA is asserted anywhere in this package. Replace every token only after a real,
+verified upload (see `UPLOAD_INSTRUCTIONS_v1_2_1.md` and `RELEASE_QA_v1_2_1.md`).

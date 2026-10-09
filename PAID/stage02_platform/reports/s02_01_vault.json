@@ -1,0 +1,12 @@
+{
+  "version": "stage02-vault-v1",
+  "created": "2026-09-24",
+  "status": "OK",
+  "algorithm": "AES-256-GCM（认证加密）",
+  "key_origin": "reused",
+  "ciphertext_bytes": 339584,
+  "ciphertext_sha256": "ef1d8e6e2b2b8d0ce365666071abb5b5560170c8b7cca31ca338735f7fbc731f",
+  "plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+  "n_rows": 2987,
+  "key_hash": "e4ec85897627d6ffb946e86c77f4c0d134f0c584721867b321574a64cc58da82"
+}

@@ -1,0 +1,6 @@
+CASE: C
+Selection contamination: NO
+Endpoint modified after first C access: NO
+Validator verdict logic modified after first C access: UNRESOLVED
+Single-access claim valid: NO
+Locked-from-discovery claim valid: YES

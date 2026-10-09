@@ -1,0 +1,190 @@
+{
+  "prereg_version": "stage01-prereg-v1",
+  "created": "2026-09-24",
+  "n_stage01_files": 36,
+  "files": [
+    {
+      "path": "PREREGISTRATION.md",
+      "bytes": 7734,
+      "sha256": "56f3e79a89d8052c3658bfab27ffc98dc928447eec2a0b511462bb8e93eb70b4"
+    },
+    {
+      "path": "STAGE01_REPORT.md",
+      "bytes": 5988,
+      "sha256": "5d2b933c4b19f1416c9172aa5a74e9555c21ce65e1be0b65eda53f1953ddf844"
+    },
+    {
+      "path": "STAGE01_REVIEW.md",
+      "bytes": 4094,
+      "sha256": "ebd7292997f5eed871d970e35239255375e66eb7cb829530fb751adad372bff4"
+    },
+    {
+      "path": "agent/agent_manifest.json",
+      "bytes": 4677,
+      "sha256": "43f7a7edb2f0fbb70617a85d8a53da9cb20d519dd9810677ebdfc029fc8ed74a"
+    },
+    {
+      "path": "constraints/DATA_DICTIONARY.md",
+      "bytes": 3002,
+      "sha256": "8d1f24358b6822c6268a3213b4779b783ad10cf152d8e17fb43d1edc5bce5ce7"
+    },
+    {
+      "path": "constraints/hard_constraints.json",
+      "bytes": 11828,
+      "sha256": "f158abc20e27061c2ff7c0a61466dd9a041cff74228d9adeed2354000da64334"
+    },
+    {
+      "path": "constraints/no_direction_preset.md",
+      "bytes": 1401,
+      "sha256": "753733ecfa822483345fadee0c0d0ee32ee0ec98cce007d75f6988c3b8da7d0a"
+    },
+    {
+      "path": "locked/README.txt",
+      "bytes": 643,
+      "sha256": "e9ca8946964edc0eb93af3ed3baaf9e807919a79a09027248b88beb55da73369"
+    },
+    {
+      "path": "locked/zone_C_targets.csv",
+      "bytes": 74313,
+      "sha256": "53f5c0ab72040f1b5bfd0fc052a4cf403f00038d008169e063d634e9a4ad0c67"
+    },
+    {
+      "path": "manifest/code_manifest.json",
+      "bytes": 3362,
+      "sha256": "672a8863c885665fbc5c4050dd7bb01ee5c6e042c4a31b25c109d61341cfa128"
+    },
+    {
+      "path": "protocol/experiment_protocol.json",
+      "bytes": 2982,
+      "sha256": "0863aa9f1d82076db2b404be1a0726db93a8aeb90cb8e34e10d1613f0cbfdc43"
+    },
+    {
+      "path": "protocol/validation_protocol.json",
+      "bytes": 3725,
+      "sha256": "a04220a75c4a303be76951d34817843e72edcdb7e2973ab88109288d77e04a75"
+    },
+    {
+      "path": "reports/figures/s01_01_correlogram.png",
+      "bytes": 134778,
+      "sha256": "0b5bb47a592a8ea785121cef205637072ab07111d37df9e8d469b87318c4af72"
+    },
+    {
+      "path": "reports/figures/s01_02_split_map.png",
+      "bytes": 475774,
+      "sha256": "7ba7c15599861d12e96a650fc68003e0d6d88a2926efbf5bf6396741c808a245"
+    },
+    {
+      "path": "reports/s01_01_spatial_autocorr.json",
+      "bytes": 15027,
+      "sha256": "1bc56b07f14ba32916046acf2ac4f5eac345941e0a0480af85011289b201a211"
+    },
+    {
+      "path": "reports/s01_01_spatial_autocorr.md",
+      "bytes": 3893,
+      "sha256": "7728ab304a32052ea2c7ae8464fde7cf5301a9a476f93ecbabefcf48f225536e"
+    },
+    {
+      "path": "reports/s01_02_split.json",
+      "bytes": 3516,
+      "sha256": "8184a743514b7a9fcef18e42a6b0481203d5148dfaf8e9831a8546e1b07837a8"
+    },
+    {
+      "path": "reports/s01_02_split.md",
+      "bytes": 2715,
+      "sha256": "505f3536323531d0ae2c43a79745992f7149870ad61bcaed786f4c3f9321710b"
+    },
+    {
+      "path": "reports/s01_03_constraints.json",
+      "bytes": 11828,
+      "sha256": "f158abc20e27061c2ff7c0a61466dd9a041cff74228d9adeed2354000da64334"
+    },
+    {
+      "path": "reports/s01_03_constraints.md",
+      "bytes": 6135,
+      "sha256": "4a9d673f2085d3b013ea9c0d91bdbab3678b186c6c346cf30145c55db6f642f3"
+    },
+    {
+      "path": "reports/s01_04_protocols.json",
+      "bytes": 15661,
+      "sha256": "f2d5c9f9963a30febfea5dd4a903e954cd6ebd59eb1dbe9578d118b3b4a42f78"
+    },
+    {
+      "path": "reports/s01_04_protocols.md",
+      "bytes": 6286,
+      "sha256": "3fbf212dc7696d206b42aa1776c886733b12b0393585735121026d3167d65ec0"
+    },
+    {
+      "path": "reports/s01_06_verify.json",
+      "bytes": 2045,
+      "sha256": "485037d6bb9a08dddc4981c8e04ac44d399d733d7fdc14e601cda61dbeef84f4"
+    },
+    {
+      "path": "reports/s01_06_verify.md",
+      "bytes": 1406,
+      "sha256": "b288941300eb0f8068f5787221ed0eb46f1871b255fcc36f1766c15e7f8383b2"
+    },
+    {
+      "path": "scripts/s01_01_spatial_autocorr.py",
+      "bytes": 16935,
+      "sha256": "b008e58c97b8c6603695a049abbf4c109f79009a6dd0f7bec42802ac993cb8e8"
+    },
+    {
+      "path": "scripts/s01_02_split.py",
+      "bytes": 21261,
+      "sha256": "3ac0bf6d1adcb2ed740bb2f7e6b3895321700fa5a041fc92c55a943993023a48"
+    },
+    {
+      "path": "scripts/s01_03_constraints.py",
+      "bytes": 21213,
+      "sha256": "be1a05edddc185cb5279a8f19a941473237d1883c913b978560549c663b44c91"
+    },
+    {
+      "path": "scripts/s01_04_protocols.py",
+      "bytes": 21287,
+      "sha256": "27bb3d7e327d26a6fa31dfc47b2f213ecae6e7309780b491fac58ca83eb330c2"
+    },
+    {
+      "path": "scripts/s01_05_preregistration.py",
+      "bytes": 13751,
+      "sha256": "09d1da15688670102b99f1df1858395a7bc197421c4663dda934e6d321280155"
+    },
+    {
+      "path": "scripts/s01_06_verify.py",
+      "bytes": 10065,
+      "sha256": "f4046b12498071e5ee9dedd2b3a3ab7904d5c0f3aa2d8480e87f4f98d57fa664"
+    },
+    {
+      "path": "split/analysis_split.csv",
+      "bytes": 919562,
+      "sha256": "1cc74077b217359418948afed0e0903d3403257d052689cebd36ca7611a47e91"
+    },
+    {
+      "path": "split/split_manifest.json",
+      "bytes": 2709,
+      "sha256": "bc19dcae913d89131cc609d45124aed55061823ba982bc8e5f48d41766e04c30"
+    },
+    {
+      "path": "split/split_manifest.sha256",
+      "bytes": 86,
+      "sha256": "9553614769434e24cec2d89b7a12a02e7cf4d2375adf2c7dcfb122f7491ee618"
+    },
+    {
+      "path": "split/zone_A_open.csv",
+      "bytes": 2034758,
+      "sha256": "ba5b61ee2c15457ff6a3a208372c76ac9324f072703b92552f19be7cb344331f"
+    },
+    {
+      "path": "split/zone_B_devval.csv",
+      "bytes": 642598,
+      "sha256": "7240b2a8fe4562345ffe9c792c454e9f8b993eda8d2aed9b6aa88f25a434386b"
+    }
+  ],
+  "freeze_version": {
+    "split": "stage01-split-v1",
+    "constraints": "stage01-constraints-v1",
+    "agent": "stage01-protocols-v1",
+    "experiment": "stage01-protocols-v1",
+    "validation": "stage01-protocols-v1",
+    "code": "stage01-protocols-v1"
+  }
+}

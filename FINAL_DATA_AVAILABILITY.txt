@@ -1,0 +1,9 @@
+DATA AVAILABILITY — see FINAL_DATA_AVAILABILITY_PLACEHOLDER_v1_2_1.txt
+=====================================================================
+
+This is a redirect stub. The manuscript-ready data-availability statement now lives in
+`FINAL_DATA_AVAILABILITY_PLACEHOLDER_v1_2_1.txt`, which uses explicit tokens
+(`{{DATA_ARCHIVE_DOI}}`, `{{DATA_REVIEWER_LINK}}`) instead of a bracketed marker.
+
+No DOI, URL or reviewer link is asserted anywhere in this package. Replace every token only after a
+real, verified upload (see `UPLOAD_INSTRUCTIONS_v1_2_1.md` and `RELEASE_QA_v1_2_1.md`).

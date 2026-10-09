@@ -1,0 +1,23 @@
+{
+  "source_records": 100676,
+  "valid_LST": 100672,
+  "excluded_non_finite_LST": 4,
+  "columns": [
+    "id",
+    "left",
+    "top",
+    "right",
+    "bottom",
+    "LST_mean",
+    "NDVI_mean",
+    "DEM_mean",
+    "BD",
+    "BVD",
+    "Height_mea",
+    "NDWI_mean",
+    "GDP_mean",
+    "POP_mean",
+    "row_index",
+    "col_index"
+  ]
+}

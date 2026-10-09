@@ -1,0 +1,40 @@
+# ---- OS / editor cruft ----
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# ---- local secrets (never commit) ----
+# local secrets
+.env
+*.key
+*.pem
+*token*
+*credential*
+
+# ---- release archives (the reviewer ZIP must never enter the repo) ----
+# release archives
+PAID_REVIEWER_RELEASE_*.zip
+
+# ---- restricted / large data (not redistributable) ----
+# restricted / large data
+data/changchun/changchun_analysis_ready.csv
+**/changchun_analysis_ready.csv
+**/raw/
+**/raw_data/
+**/source_rasters/
+
+# ---- local build scratch ----
+# local build
+build/
+dist/
+tmp/
+temp/

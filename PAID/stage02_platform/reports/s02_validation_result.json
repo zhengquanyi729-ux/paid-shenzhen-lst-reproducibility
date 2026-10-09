@@ -1,0 +1,64 @@
+{
+  "candidate": "SMOKE-0001",
+  "canon_hash": "f60cc3fa32ff2ecd4f893c4ea58b4d656e4939b37072dc0584cad12df9d53e8f",
+  "validated_at": "2026-09-24T13:07:28",
+  "n_C": 2987,
+  "vault_plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+  "primary_endpoint": {
+    "statistic": "RMSE_C 与 ΔRMSE(vs Baseline A)",
+    "rmse_baselineA": 2.841519144671417,
+    "rmse_candidate": 2.841519144671417,
+    "delta_rmse": 0.0,
+    "perm_p": 1.0,
+    "n_perm": 199,
+    "perm_corr_sanity": 0.4017685729179077,
+    "ci95_delta": [
+      0.0,
+      0.0
+    ],
+    "n_bootstrap": 1000
+  },
+  "conditions": {
+    "delta_rmse_pos": false,
+    "perm_p_lt_0.05": false,
+    "ci_excludes_zero": false,
+    "physics_audit_pass": true,
+    "negative_controls_not_fooled": true
+  },
+  "passed": false,
+  "independent_audit": {
+    "verdict": "pass",
+    "items": {
+      "PA3_overreach": true,
+      "PA4_no_direction": true,
+      "PA5_measurement_boundary": true,
+      "PA7_term_scale": true
+    },
+    "max_term_scale": 13.376694045419306,
+    "limit": 1000.0,
+    "hits": {
+      "over": [],
+      "dir": []
+    }
+  },
+  "independent_controls": {
+    "verdict": "not_fooled",
+    "rmse_real": 2.54250853893637,
+    "controls": {
+      "NC1_row_shuffle": 5.483515214186221,
+      "NC2_block_permute": 5.4423080420094925,
+      "NC3_random_target": 5.492800910941213
+    },
+    "perm_corr_sanity": 0.09158662128524633,
+    "floor_note": "NC1–NC3 为地板式体检，检验力弱（仅能淘汰零技巧模型）。"
+  },
+  "self_reported": {
+    "physics_audit": "pass",
+    "falsification": "not_fooled",
+    "note": "发现侧自报值，仅供对照；判定仅采用 independent_audit / independent_controls。"
+  },
+  "caveats": [
+    "平台冒烟测试：候选为预注册 Baseline A 占位，非科学发现；结论不得作为研究结果引用"
+  ],
+  "publish_rule": "仅发布聚合结论，不返回 C 区逐格目标值；失败同样完整发布。"
+}

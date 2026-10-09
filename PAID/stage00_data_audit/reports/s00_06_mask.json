@@ -1,0 +1,47 @@
+{
+  "mask": {
+    "n_grid": 32748,
+    "n_main": 31760,
+    "n_relaxed": 32246,
+    "n_in_csv": 32687
+  },
+  "funnel": [
+    [
+      "网格总数",
+      32748
+    ],
+    [
+      "在 CSV 中",
+      32687
+    ],
+    [
+      "核心列完整",
+      32444
+    ],
+    [
+      "LST 有栅格支撑",
+      32246
+    ],
+    [
+      "非 LST 零填充（放宽样本）",
+      32246
+    ],
+    [
+      "值可复现（主样本）",
+      31760
+    ]
+  ],
+  "not_reproducible_diag": {
+    "n": 486,
+    "n_valid_frac_lt_0p5": 212,
+    "n_valid_frac_lt_0p2": 90,
+    "n_boundary_partial_in_union": 447
+  },
+  "exclusion_counts": {
+    "core_nan": 243,
+    "not_reproducible": 741,
+    "phantom_no_raster_support": 240,
+    "lst_zero_fill": 13,
+    "not_in_csv": 61
+  }
+}

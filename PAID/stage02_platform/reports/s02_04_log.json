@@ -1,0 +1,47 @@
+{
+  "version": "stage02-log-v1",
+  "created": "2026-09-24",
+  "status": "OK",
+  "log": "stage02_platform/logs/experiment_log.jsonl",
+  "chain_ok": true,
+  "n_records": 282,
+  "head": "f59f65c69f28d826",
+  "tail": "615ff0c1fc5a5247",
+  "tamper_detected": {
+    "modify_field": true,
+    "delete_record": true,
+    "reorder": true,
+    "append_forged": true
+  },
+  "tamper_detail": {
+    "modify_field": {
+      "ok": false,
+      "n": 282,
+      "first_bad": 2,
+      "head": "f59f65c69f28d826",
+      "tail": "615ff0c1fc5a5247"
+    },
+    "delete_record": {
+      "ok": false,
+      "n": 281,
+      "first_bad": 2,
+      "head": "f59f65c69f28d826",
+      "tail": "615ff0c1fc5a5247"
+    },
+    "reorder": {
+      "ok": false,
+      "n": 282,
+      "first_bad": 2,
+      "head": "f59f65c69f28d826",
+      "tail": "615ff0c1fc5a5247"
+    },
+    "append_forged": {
+      "ok": false,
+      "n": 283,
+      "first_bad": 283,
+      "head": "f59f65c69f28d826",
+      "tail": "0000000000000000"
+    }
+  },
+  "policy": "失败候选与负对照结果同样写入本链，禁止删除或覆盖；每轮实验前记录预算与提示词哈希，实验后记录指标与判定。"
+}

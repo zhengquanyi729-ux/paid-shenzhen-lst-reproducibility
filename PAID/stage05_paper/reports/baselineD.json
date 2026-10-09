@@ -1,0 +1,270 @@
+{
+  "run_tag": "S05-BaselineD",
+  "ran_at": "2026-09-24T14:24:52",
+  "spec": "同一基础模型、同一工具白名单，但移除物理硬约束与防火墙（全量数据可见）的自主 Agent",
+  "design": {
+    "arm1": "无预注册项池 / 无复杂度上限 / 不审计；A 区自由形式随机搜索+爬山；选择指标=A 区空间分块 CV",
+    "arm2": "在锁定区 C 上直接选择候选（argmin C-RMSE），演示选择泄漏",
+    "n_population": 351,
+    "n_evaluated": 354,
+    "hill_climb": {
+      "GEN": 15,
+      "KEEP": 5,
+      "MUT": 3
+    },
+    "max_depth": 4,
+    "max_terms": 3,
+    "seed": 20260924,
+    "operator_set": "+ - * / exp log neg inv"
+  },
+  "reference": {
+    "baselineA": {
+      "cv_rmse": 3.1576525409870713,
+      "rmse_B": 2.54250853893637,
+      "rmse_C": 2.841519144671417
+    },
+    "h10_constrained": {
+      "cv_rmse": 2.9560392780323155,
+      "rmse_B": 2.4203020828004322,
+      "rmse_C": 2.462447828502684,
+      "complexity": 14
+    }
+  },
+  "population_summary": {
+    "cv_min": 2.8662858524867607,
+    "cv_median": 3.2714675884948448,
+    "cv_max": 131.04555953248837,
+    "n_audit_pass": 195,
+    "n_audit_fail": 156,
+    "n_pa7_fail": 156,
+    "n_domain_scale_violation": 156,
+    "n_exceed_complexity_cap": 264
+  },
+  "arm1_winner": {
+    "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+    "cv_rmse": 2.8662858524867607,
+    "rmse_B": 2.308153503378049,
+    "rmse_C": 2.6250705160008914,
+    "complexity": 22,
+    "term_scale_max": 11.42138645933854,
+    "audit": "pass",
+    "audit_fail": [],
+    "delta_cv_vs_baselineA": 0.29136668850031056,
+    "delta_B_vs_baselineA": 0.23435503555832105
+  },
+  "arm1_best_audit_pass": {
+    "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+    "cv_rmse": 2.8662858524867607,
+    "rmse_B": 2.308153503378049,
+    "rmse_C": 2.6250705160008914,
+    "complexity": 22
+  },
+  "arm2_firewall_off": {
+    "selected_by_C": {
+      "expr": "log(exp(NDVI)) + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "rmse_C": 2.274735796775271,
+      "cv_rmse": 3.2906502278056746,
+      "rmse_B": 2.6793229177681104,
+      "complexity": 21,
+      "audit": "pass"
+    },
+    "honest_selected_by_A": {
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "rmse_C": 2.6250705160008914,
+      "cv_rmse": 2.8662858524867607
+    },
+    "c_rmse_inflation": 0.35033471922562054,
+    "note": "选择在 C 上使 C 读数\"改善\" 0.3503 ℃，但选中者 A-CV/ B 并不突出 → 增益来自选择泄漏。"
+  },
+  "arm2b_train_on_all": {
+    "c_rmse_in_sample": 2.541415067265589,
+    "c_rmse_honest": 2.6250705160008914,
+    "note": "把 D 最优式在全量 A∪B∪C 上重拟合后，C 上读数退化为训练误差 2.5414 ℃（诚实留出 2.6251 ℃）——看似\"更好\"，实为在测试集上训练。"
+  },
+  "c_sha256": "b4a709e16d7b7542",
+  "top10_by_A_CV": [
+    {
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 2.8662858524867607,
+      "rmse_B": 2.308153503378049,
+      "rmse_C": 2.6250705160008914,
+      "complexity": 22,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + (-DEM) + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 2.8662858524867607,
+      "rmse_B": 2.308153503378049,
+      "rmse_C": 2.6250705160008914,
+      "complexity": 23,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (-(Road_Dens - X_BH)) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 2.8662858524867607,
+      "rmse_B": 2.308153503378049,
+      "rmse_C": 2.6250705160008914,
+      "complexity": 23,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + (-DEM) + (NDVI * NDVI) + (-(Road_Dens - X_BH)) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 2.8662858524867607,
+      "rmse_B": 2.308153503378049,
+      "rmse_C": 2.6250705160008914,
+      "complexity": 24,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (Road_Dens - X_BH) + ((-((NDVI * DEM) + (NDVI + SVF))) * 0.969)",
+      "cv_rmse": 2.8662858524867656,
+      "rmse_B": 2.3081535033780454,
+      "rmse_C": 2.6250705160008834,
+      "complexity": 24,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + DEM + (NDVI * NDVI) + exp(log(Road_Dens)) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 2.8684329842862915,
+      "rmse_B": 2.2761780888558127,
+      "rmse_C": 2.570130426965482,
+      "complexity": 24,
+      "term_scale_max": 8.788124233526975,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + DEM + (-(NDVI * NDVI)) + exp(log(Road_Dens)) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 2.8684329842862915,
+      "rmse_B": 2.2761780888558127,
+      "rmse_C": 2.570130426965482,
+      "complexity": 25,
+      "term_scale_max": 8.788124233526975,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + DEM + (NDVI * NDVI) + (-exp(log(Road_Dens))) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 2.8684329842862915,
+      "rmse_B": 2.2761780888558127,
+      "rmse_C": 2.570130426965482,
+      "complexity": 25,
+      "term_scale_max": 8.788124233526975,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + DEM + (NDVI * NDVI) + exp(log(log(Road_Dens))) + ((NDVI * DEM) + (NDVI + SVF))",
+      "cv_rmse": 2.8697615315115965,
+      "rmse_B": 2.2799335981506013,
+      "rmse_C": 2.576136714184754,
+      "complexity": 23,
+      "term_scale_max": 8.788124233526975,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + DEM + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 2.8723600664425666,
+      "rmse_B": 2.275862012170111,
+      "rmse_C": 2.564532422662829,
+      "complexity": 23,
+      "term_scale_max": 13.815510557964274,
+      "audit": "pass"
+    }
+  ],
+  "top10_by_C": [
+    {
+      "expr": "log(exp(NDVI)) + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 3.2906502278056746,
+      "rmse_B": 2.6793229177681104,
+      "rmse_C": 2.274735796775271,
+      "complexity": 21,
+      "term_scale_max": 13.815510557964274,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + (X_VolDens - (1/(-0.302 * NDVI))) + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) + DEM)",
+      "cv_rmse": 3.2907020184243336,
+      "rmse_B": 2.6792498613852125,
+      "rmse_C": 2.275172970291099,
+      "complexity": 28,
+      "term_scale_max": 27444.507212768636,
+      "audit": "fail"
+    },
+    {
+      "expr": "exp(NDVI) + (exp((NDVI - SVF)) * NDVI) + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)",
+      "cv_rmse": 3.201192806440462,
+      "rmse_B": 2.9766688771083722,
+      "rmse_C": 2.296706043503382,
+      "complexity": 20,
+      "term_scale_max": 18.1362772671989,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + NDVI + (NDVI * NDVI) + (-(Road_Dens - X_BH)) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 3.1287278535953353,
+      "rmse_B": 2.8616581388354443,
+      "rmse_C": 2.303390935207644,
+      "complexity": 23,
+      "term_scale_max": 11.42138645933854,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + log(X_VolDens) + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) / (NDVI / NDVI))",
+      "cv_rmse": 3.126060461328576,
+      "rmse_B": 2.8019386086252625,
+      "rmse_C": 2.310568662633744,
+      "complexity": 26,
+      "term_scale_max": 13.815510557964274,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + (NDVI * NDVI) + log(Road_Dens) + (((NDVI * DEM) + (NDVI + SVF)) / (NDVI / NDVI))",
+      "cv_rmse": 3.1198983230768755,
+      "rmse_B": 2.78440894537602,
+      "rmse_C": 2.312709868486336,
+      "complexity": 23,
+      "term_scale_max": 13.815510557964274,
+      "audit": "pass"
+    },
+    {
+      "expr": "exp(NDVI) + (NDVI * NDVI) + Road_Dens + (NDVI * DEM)",
+      "cv_rmse": 3.193339271556334,
+      "rmse_B": 3.0217953799973767,
+      "rmse_C": 2.318741736045561,
+      "complexity": 13,
+      "term_scale_max": 8.788124233526975,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + (DEM * (X_VolDens * DEM)) + (NDVI * NDVI) + log(Road_Dens) + ((NDVI * DEM) + (NDVI + SVF))",
+      "cv_rmse": 3.092534113714594,
+      "rmse_B": 2.7578631316463467,
+      "rmse_C": 2.326629290286266,
+      "complexity": 25,
+      "term_scale_max": 39.3647945287399,
+      "audit": "pass"
+    },
+    {
+      "expr": "log(exp(NDVI)) + (DEM / X_BD) + (NDVI * NDVI) + exp(log(log(Road_Dens))) + ((NDVI * DEM) + (NDVI + SVF))",
+      "cv_rmse": 3.1237284967751933,
+      "rmse_B": 2.8235685857471804,
+      "rmse_C": 2.329316940277933,
+      "complexity": 25,
+      "term_scale_max": 11100.857994232878,
+      "audit": "fail"
+    },
+    {
+      "expr": "exp(NDVI) + ((-DEM) / log(X_BD)) + (NDVI * NDVI) + (Road_Dens - X_BH) + (-((NDVI * DEM) + (NDVI + SVF)))",
+      "cv_rmse": 3.1354780723874245,
+      "rmse_B": 2.8902587323358686,
+      "rmse_C": 2.3385951811532375,
+      "complexity": 26,
+      "term_scale_max": 2207.161930140312,
+      "audit": "fail"
+    }
+  ],
+  "elapsed_s": 6.2
+}

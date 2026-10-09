@@ -1,0 +1,345 @@
+{
+  "version": "stage01-constraints-v1",
+  "created": "2026-09-24",
+  "n_main": 31760,
+  "source": {
+    "csv": "data/data_原始.csv",
+    "mask": "stage00_data_audit/mask/valid_ids_main.txt"
+  },
+  "measured_domain": {
+    "LST_mean": {
+      "n": 31760,
+      "min": 27.815,
+      "p05": 31.1818,
+      "median": 38.6078,
+      "p95": 44.9635,
+      "max": 65.9165,
+      "zeros": 0,
+      "nan": 0
+    },
+    "NDVI_mean": {
+      "n": 31760,
+      "min": -0.2827,
+      "p05": 0.1439,
+      "median": 0.5076,
+      "p95": 0.8545,
+      "max": 0.8837,
+      "zeros": 0,
+      "nan": 0
+    },
+    "DEM_mean": {
+      "n": 31760,
+      "min": 3.0,
+      "p05": 6.7778,
+      "median": 11.6771,
+      "p95": 15.0,
+      "max": 17.0,
+      "zeros": 0,
+      "nan": 0
+    },
+    "SVF_mean": {
+      "n": 31760,
+      "min": 0.3865,
+      "p05": 0.5501,
+      "median": 0.9145,
+      "p95": 0.9999,
+      "max": 1.0,
+      "zeros": 0,
+      "nan": 0
+    },
+    "Road_Dens": {
+      "n": 31760,
+      "min": 0.0,
+      "p05": 0.0,
+      "median": 0.0,
+      "p95": 23.1745,
+      "max": 75.6191,
+      "zeros": 24449,
+      "nan": 0
+    },
+    "X_BD": {
+      "n": 31760,
+      "min": 0.0,
+      "p05": 0.0,
+      "median": 0.0169,
+      "p95": 0.4175,
+      "max": 1.7695,
+      "zeros": 14220,
+      "nan": 0
+    },
+    "X_BH": {
+      "n": 31760,
+      "min": 0.0,
+      "p05": 0.0,
+      "median": 6.2659,
+      "p95": 43.3484,
+      "max": 224.0254,
+      "zeros": 14220,
+      "nan": 0
+    },
+    "X_VolDens": {
+      "n": 31760,
+      "min": 0.0,
+      "p05": 0.0,
+      "median": 0.4074,
+      "p95": 26.9038,
+      "max": 193.8211,
+      "zeros": 14220,
+      "nan": 0
+    }
+  },
+  "geometry_identity_check": {
+    "n_bd_pos": 17540,
+    "ratio_p05": 1.0404,
+    "ratio_median": 2.0218,
+    "ratio_p95": 11.3024,
+    "identity_holds": false,
+    "corr_bd_vol": 0.6331
+  },
+  "hard_constraints": [
+    {
+      "id": "DV-1",
+      "category": "data_validity",
+      "statement": "主样本 LST_mean 必须落在实测域 [27.815, 65.916] ℃ 内（逐格有效像元均值）。",
+      "status": "enforceable",
+      "check": "range(LST_mean) ⊆ [27.8150, 65.9165]",
+      "basis": "S00.4 像元中心归属 + 有效像元均值；S00.6 主样本",
+      "note": null
+    },
+    {
+      "id": "DV-2",
+      "category": "data_validity",
+      "statement": "NDVI_mean ∈ [-0.2827, 0.8837]（实测域）。",
+      "status": "enforceable",
+      "check": "range(NDVI_mean) ⊆ [-0.2827, 0.8837]",
+      "basis": "主样本实测域",
+      "note": null
+    },
+    {
+      "id": "DV-3",
+      "category": "data_validity",
+      "statement": "SVF_mean ∈ [0.3865, 1.0000]（0=全天空遮蔽，1=无遮蔽）。",
+      "status": "enforceable",
+      "check": "range(SVF_mean) ⊆ [0.3865, 1.0000]",
+      "basis": "主样本实测域",
+      "note": null
+    },
+    {
+      "id": "DV-4",
+      "category": "data_validity",
+      "statement": "分析仅使用主样本 (n=31760)；放宽样本 (n=32246) 仅用于稳健性复核，二者不得混入同一训练/评估切分。",
+      "status": "enforceable",
+      "check": "train/eval rows ⊆ valid_ids_main；稳健性复核 ⊆ valid_ids_relaxed",
+      "basis": "S00.6 掩膜策略",
+      "note": null
+    },
+    {
+      "id": "DV-5",
+      "category": "data_validity",
+      "statement": "缺失值（NaN）不得插补后参与主估计；含缺失的行须显式排除并登记。",
+      "status": "enforceable",
+      "check": "isna(row)==False for used rows",
+      "basis": "S00.6 / 统计诚信",
+      "note": null
+    },
+    {
+      "id": "DV-6",
+      "category": "data_validity",
+      "statement": "全市域 LST==0 判为区外制图填充，一律无效；任何以 0 为真实温度的推断被禁止。",
+      "status": "enforceable",
+      "check": "LST==0 → invalid",
+      "basis": "S00.3 四重证据",
+      "note": null
+    },
+    {
+      "id": "DG-1",
+      "category": "dimension_geometry",
+      "statement": "所有候选项/表达式两侧量纲必须一致或已无量纲化；指数、对数、三角函数的自变量必须无量纲。",
+      "status": "enforceable",
+      "check": "dim(LHS)==dim(RHS)；transcendental arg is dimensionless",
+      "basis": "Table 3 量纲与几何",
+      "note": null
+    },
+    {
+      "id": "DG-2",
+      "category": "dimension_geometry",
+      "statement": "X_BD、X_BH、X_VolDens、Road_Dens 的**口径未确认**，只允许在无量纲化（标准化/排序/比值）后入模，且必须在候选登记中标注口径假设。",
+      "status": "declared_only",
+      "check": "flags definition_uncertainty for these columns",
+      "basis": null,
+      "note": "见 definition_uncertainty：X_BD max=1.770、X_BH max=224.0、几何恒等式 identity_holds=False"
+    },
+    {
+      "id": "DG-3",
+      "category": "dimension_geometry",
+      "statement": "几何派生量（覆盖率、高度、体量密度）必须满足几何合法性（非负、覆盖率不应显著 >1，体量非负）；越界须报告而非截断。",
+      "status": "enforceable",
+      "check": "X_BD>=0, X_BH>=0, X_VolDens>=0, Road_Dens>=0",
+      "basis": "Table 3 几何合法性；注意 X_BD 实测 >1 已登记为口径问题",
+      "note": null
+    },
+    {
+      "id": "DG-4",
+      "category": "dimension_geometry",
+      "statement": "温度运算区分 ℃ 与 K；涉及辐射（如 T⁴、Stefan–Boltzmann）时必须用绝对温度 T_K = T_℃ + 273.15。",
+      "status": "enforceable",
+      "check": "radiation terms use T_K",
+      "basis": "Table 3 温度与辐射",
+      "note": null
+    },
+    {
+      "id": "MB-1",
+      "category": "measurement_boundary",
+      "statement": "LST 观测支持尺度为 30 m 像元；100 m 格为聚合单元。不得把重采样/聚合表述为\"新的温度观测分辨率\"。",
+      "status": "declared_only",
+      "check": null,
+      "basis": "S00.2 / Table 3 测量边界",
+      "note": null
+    },
+    {
+      "id": "MB-2",
+      "category": "measurement_boundary",
+      "statement": "SVF 为 5 m 源，与 30 m LST 不同源；不得视为 5 m 温度观测，使用前须显式重采样并声明。",
+      "status": "declared_only",
+      "check": null,
+      "basis": "S00.2",
+      "note": null
+    },
+    {
+      "id": "MB-3",
+      "category": "measurement_boundary",
+      "statement": "LST 不可当作气温（air temperature）使用。",
+      "status": "declared_only",
+      "check": null,
+      "basis": "Table 3",
+      "note": null
+    },
+    {
+      "id": "MB-4",
+      "category": "measurement_boundary",
+      "statement": "观测时间为单一时相、元数据不可恢复；禁止开展日/夜、季节、热恢复动态推断。",
+      "status": "enforceable",
+      "check": "no time-phase claims",
+      "basis": "S00.1 / §2.2",
+      "note": null
+    },
+    {
+      "id": "PC-1",
+      "category": "physics_consistency",
+      "statement": "能量闭合 Rn + QF = H + LE + G 在当前数据下**无法求解**：无净辐射、人为热、感热、潜热、地热通量任一输入。",
+      "status": "not_computable",
+      "check": null,
+      "basis": "§3.1 注：缺通量不得伪造能量残差。",
+      "note": "禁止构造能量残差或据其宣称物理一致性；该项留待增补通量数据（Table 16 进阶）。"
+    },
+    {
+      "id": "PC-2",
+      "category": "physics_consistency",
+      "statement": "当前只允许执行\"有数据支持\"的物理一致性检查：量纲一致性、几何合法性、取值域、单调性/符号的**事后**审计（非预设）。",
+      "status": "declared_only",
+      "check": null,
+      "basis": "§3.1",
+      "note": null
+    },
+    {
+      "id": "PC-3",
+      "category": "physics_consistency",
+      "statement": "DEM 全域 3–17 m，不符合深圳实际地形（最高约 900 m 级）；在澄清口径前，DEM_mean 不得作为真实海拔或用于坡度/高程物理推断。",
+      "status": "not_computable",
+      "check": null,
+      "basis": "S00.2 与主样本实测域",
+      "note": "DEM_mean 实测 [3.0, 17.0] m；疑为掩膜或重标定，须回溯作者。"
+    },
+    {
+      "id": "SI-1",
+      "category": "statistical_integrity",
+      "statement": "看到锁定区 C 的测试结果后，不得修改同一轮的模型、指标、假设或停止条件。",
+      "status": "enforceable",
+      "check": "protocol hash frozen before unsealing",
+      "basis": "Table 3 / §5.3",
+      "note": null
+    },
+    {
+      "id": "SI-2",
+      "category": "statistical_integrity",
+      "statement": "每轮实验只追加记录，不得覆盖失败结果；失败候选与反例必须保留。",
+      "status": "enforceable",
+      "check": "append-only log",
+      "basis": "§4.3",
+      "note": null
+    },
+    {
+      "id": "SI-3",
+      "category": "statistical_integrity",
+      "statement": "必须处理多重比较；搜索规模（候选数×检验数）须登记，偶然显著须以置换/分层等方法控制。",
+      "status": "enforceable",
+      "check": "search size logged; multiplicity controlled",
+      "basis": "Table 13",
+      "note": null
+    },
+    {
+      "id": "SI-4",
+      "category": "statistical_integrity",
+      "statement": "B 区参与调参后不再视为独立确认；仅 C 区（锁定）与 D（外部）可用于独立确认。",
+      "status": "enforceable",
+      "check": "independent-confirmation source ∈ {C, D}",
+      "basis": "§5.1 Table 11",
+      "note": null
+    }
+  ],
+  "definition_uncertainty": [
+    {
+      "var": "X_BD",
+      "issue": "最大值 1.770 > 1，不是 [0,1] 建筑覆盖率口径。",
+      "evidence": "主样本实测域",
+      "action": "入模前无量纲化，登记口径假设；向作者回溯定义"
+    },
+    {
+      "var": "X_BH",
+      "issue": "最大值 224.0 m，作为 100 m 格\"平均建筑高度\"不合理（疑为最大值或求和）。",
+      "evidence": "主样本实测域",
+      "action": "同上"
+    },
+    {
+      "var": "X_VolDens",
+      "issue": "与 X_BD·X_BH 的几何恒等式未证实：比值 p05/中位/p95 = 1.040/2.022/11.302。",
+      "evidence": "主样本比值分布",
+      "action": "不得假定恒等式；需作者给出体量密度定义"
+    },
+    {
+      "var": "DEM_mean",
+      "issue": "全域 3–17 m；深圳地形可达 ~900 m，疑为掩膜或重标定。",
+      "evidence": "0_论文data/DEM_shenzhen.tif 与 DEM_30m_Final.tif",
+      "action": "禁止高程物理推断，回溯作者"
+    },
+    {
+      "var": "Road_Dens",
+      "issue": "量纲未明（0–75.62，77% 为 0）。",
+      "evidence": "主样本实测域",
+      "action": "仅按无量纲/序数处理"
+    },
+    {
+      "var": "NDVI 研究区栅格",
+      "issue": "文件名拼写为 NVDI_shenzhen.tif。",
+      "evidence": "data/0_论文data/",
+      "action": "记录，不影响数值；登记为命名瑕疵"
+    }
+  ],
+  "no_direction_preset": [
+    "禁止在系统提示词中规定 NDVI 必须单调降温（或升温）。",
+    "禁止规定 SVF 必须升温或必须降温。",
+    "禁止规定建筑高度/体量必须产生某一方向的热响应。",
+    "禁止预设最优空间尺度（不得指定唯一 r）。",
+    "禁止预设固定函数形式（不得指定线性/幂律/树模型等）。",
+    "禁止预设单一显著阈值（不得写死如 p<0.05 作为唯一判据）。",
+    "禁止预设特定交互组合或变量清单。",
+    "不得注入旧论文结论、相关矩阵或用于引导特定发现的文献摘要。",
+    "允许：数据字典、计算定义、基础物理知识、预注册的计算工具与搜索预算。"
+  ],
+  "summary": {
+    "n_rules": 21,
+    "enforceable": 14,
+    "declared_only": 5,
+    "not_computable": 2
+  }
+}

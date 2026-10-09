@@ -1,0 +1,510 @@
+{
+ "question": "study-area area: \"approximately 383 km2\" vs recomputed 318.9 km2 (community faces) / 317.6 km2 (grid)",
+ "verdict": "383 km2 is CORRECT. 318.9 km2 was a recomputation error: the analysis copy of the community layer has truncated geometry for 18 records. 317.6 km2 is a different quantity (valid-data analysis subset, in_main=1).",
+ "A_analysis_copy": {
+  "file": "data/研究边界/studyarea.shp (+ .dbf, GBK)",
+  "n_records": 299,
+  "n_rings": 345,
+  "A1_attr_SHAPE_AREA_sum_km2": 383.192,
+  "A2_geom_shoelace_UTM49N_sum_km2": 318.14,
+  "A3_n_truncated_records": 18,
+  "A3_attr_area_in_truncated_km2": 62.89,
+  "A3_geom_area_in_truncated_km2": 1.0628,
+  "A4_n_truncated_whose_geom_perimeter_lt_half_attribute": 14,
+  "truncated_records": [
+   {
+    "sqname": "龙平",
+    "qu": "龙华",
+    "sqcode": "440309004021",
+    "attr_area_km2": 2.389,
+    "geom_area_km2": 0.0407,
+    "attr_perim_km": 7.94,
+    "geom_perim_km": 2.22,
+    "n_vertices": 57
+   },
+   {
+    "sqname": "兴东",
+    "qu": "宝安",
+    "sqcode": "440306017013",
+    "attr_area_km2": 2.724,
+    "geom_area_km2": 0.2343,
+    "attr_perim_km": 9.81,
+    "geom_perim_km": 5.39,
+    "n_vertices": 143
+   },
+   {
+    "sqname": "洪浪",
+    "qu": "宝安",
+    "sqcode": "440306017003",
+    "attr_area_km2": 0.657,
+    "geom_area_km2": 0.0117,
+    "attr_perim_km": 4.1,
+    "geom_perim_km": 2.87,
+    "n_vertices": 40
+   },
+   {
+    "sqname": "龙井",
+    "qu": "宝安",
+    "sqcode": "440306017004",
+    "attr_area_km2": 0.59,
+    "geom_area_km2": 0.0006,
+    "attr_perim_km": 3.15,
+    "geom_perim_km": 0.2,
+    "n_vertices": 12
+   },
+   {
+    "sqname": "新乐",
+    "qu": "宝安",
+    "sqcode": "440306017007",
+    "attr_area_km2": 1.104,
+    "geom_area_km2": 0.0001,
+    "attr_perim_km": 5.92,
+    "geom_perim_km": 0.21,
+    "n_vertices": 10
+   },
+   {
+    "sqname": "民泰",
+    "qu": "龙华",
+    "sqcode": "440309002009",
+    "attr_area_km2": 4.251,
+    "geom_area_km2": 0.2802,
+    "attr_perim_km": 11.4,
+    "geom_perim_km": 6.27,
+    "n_vertices": 102
+   },
+   {
+    "sqname": "大岭",
+    "qu": "龙华",
+    "sqcode": "440309002017",
+    "attr_area_km2": 3.56,
+    "geom_area_km2": 0.0008,
+    "attr_perim_km": 10.32,
+    "geom_perim_km": 0.14,
+    "n_vertices": 6
+   },
+   {
+    "sqname": "龙塘",
+    "qu": "龙华",
+    "sqcode": "440309002027",
+    "attr_area_km2": 3.917,
+    "geom_area_km2": 0.0328,
+    "attr_perim_km": 13.2,
+    "geom_perim_km": 3.15,
+    "n_vertices": 102
+   },
+   {
+    "sqname": "北站",
+    "qu": "龙华",
+    "sqcode": "440309002021",
+    "attr_area_km2": 4.252,
+    "geom_area_km2": 0.1135,
+    "attr_perim_km": 11.7,
+    "geom_perim_km": 3.58,
+    "n_vertices": 67
+   },
+   {
+    "sqname": "盐田山区",
+    "qu": "盐田",
+    "sqcode": "440308002008",
+    "attr_area_km2": 29.613,
+    "geom_area_km2": 0.0152,
+    "attr_perim_km": 44.85,
+    "geom_perim_km": 0.8,
+    "n_vertices": 15
+   },
+   {
+    "sqname": "民乐",
+    "qu": "龙华",
+    "sqcode": "440309002028",
+    "attr_area_km2": 3.557,
+    "geom_area_km2": 0.0276,
+    "attr_perim_km": 10.65,
+    "geom_perim_km": 1.73,
+    "n_vertices": 34
+   },
+   {
+    "sqname": "凤凰",
+    "qu": "龙岗",
+    "sqcode": "440307014014",
+    "attr_area_km2": 0.714,
+    "geom_area_km2": 0.0077,
+    "attr_perim_km": 6.43,
+    "geom_perim_km": 0.4,
+    "n_vertices": 18
+   },
+   {
+    "sqname": "德兴",
+    "qu": "龙岗",
+    "sqcode": "440307014004",
+    "attr_area_km2": 0.551,
+    "geom_area_km2": 0.0294,
+    "attr_perim_km": 3.45,
+    "geom_perim_km": 1.23,
+    "n_vertices": 47
+   },
+   {
+    "sqname": "金排",
+    "qu": "龙岗",
+    "sqcode": "440307014016",
+    "attr_area_km2": 0.695,
+    "geom_area_km2": 0.0721,
+    "attr_perim_km": 7.22,
+    "geom_perim_km": 2.47,
+    "n_vertices": 97
+   },
+   {
+    "sqname": "南岭村",
+    "qu": "龙岗",
+    "sqcode": "440307012015",
+    "attr_area_km2": 3.302,
+    "geom_area_km2": 0.0453,
+    "attr_perim_km": 16.47,
+    "geom_perim_km": 1.03,
+    "n_vertices": 10
+   },
+   {
+    "sqname": "樟树布",
+    "qu": "龙岗",
+    "sqcode": "440307012018",
+    "attr_area_km2": 0.535,
+    "geom_area_km2": 0.0337,
+    "attr_perim_km": 3.77,
+    "geom_perim_km": 1.26,
+    "n_vertices": 38
+   },
+   {
+    "sqname": "沙湾",
+    "qu": "龙岗",
+    "sqcode": "440307012013",
+    "attr_area_km2": 0.043,
+    "geom_area_km2": 0.0076,
+    "attr_perim_km": 0.94,
+    "geom_perim_km": 0.58,
+    "n_vertices": 8
+   },
+   {
+    "sqname": "南新",
+    "qu": "龙岗",
+    "sqcode": "440307012020",
+    "attr_area_km2": 0.436,
+    "geom_area_km2": 0.1093,
+    "attr_perim_km": 4.54,
+    "geom_perim_km": 1.64,
+    "n_vertices": 40
+   }
+  ],
+  "note": "A ring with 2 vertices has zero area: the delivered geometry is truncated, not simplified. SHAPE.AREA and SHAPE.LEN keep the original ArcGIS values (e.g. 盐田山区 attr 29.61 km2 / 44.85 km perimeter vs delivered 0.015 km2 / 0.80 km)."
+ },
+ "B_authoritative_copy": {
+  "file": "data/边界/广东省深圳市各社区.shp (668 records, UTF-8 dbf)",
+  "n_records": 668,
+  "B1_attr_SHAPE_AREA_sum_of_299_codes_km2": 383.192,
+  "B2_geom_shoelace_sum_of_299_codes_km2": 383.808,
+  "B3_attr_sum_all_668_km2": 1941.86,
+  "n_codes_matched": 299,
+  "B1_vs_A1_delta_km2": 0.0,
+  "worst_records": [
+   {
+    "sqname": "龙平",
+    "sqcode": "440309004021",
+    "attr_km2": 2.389,
+    "master_geom_km2": 2.3925,
+    "delivered_geom_km2": 0.0407
+   },
+   {
+    "sqname": "兴东",
+    "sqcode": "440306017013",
+    "attr_km2": 2.724,
+    "master_geom_km2": 2.7281,
+    "delivered_geom_km2": 0.2343
+   },
+   {
+    "sqname": "洪浪",
+    "sqcode": "440306017003",
+    "attr_km2": 0.657,
+    "master_geom_km2": 0.6577,
+    "delivered_geom_km2": 0.0117
+   },
+   {
+    "sqname": "龙井",
+    "sqcode": "440306017004",
+    "attr_km2": 0.59,
+    "master_geom_km2": 0.5908,
+    "delivered_geom_km2": 0.0006
+   },
+   {
+    "sqname": "新乐",
+    "sqcode": "440306017007",
+    "attr_km2": 1.104,
+    "master_geom_km2": 1.1052,
+    "delivered_geom_km2": 0.0001
+   },
+   {
+    "sqname": "民泰",
+    "sqcode": "440309002009",
+    "attr_km2": 4.251,
+    "master_geom_km2": 4.2578,
+    "delivered_geom_km2": 0.2802
+   },
+   {
+    "sqname": "大岭",
+    "sqcode": "440309002017",
+    "attr_km2": 3.56,
+    "master_geom_km2": 3.5654,
+    "delivered_geom_km2": 0.0008
+   },
+   {
+    "sqname": "龙塘",
+    "sqcode": "440309002027",
+    "attr_km2": 3.917,
+    "master_geom_km2": 3.9233,
+    "delivered_geom_km2": 0.0328
+   },
+   {
+    "sqname": "北站",
+    "sqcode": "440309002021",
+    "attr_km2": 4.252,
+    "master_geom_km2": 4.2589,
+    "delivered_geom_km2": 0.1135
+   },
+   {
+    "sqname": "盐田山区",
+    "sqcode": "440308002008",
+    "attr_km2": 29.613,
+    "master_geom_km2": 29.6706,
+    "delivered_geom_km2": 0.0152
+   },
+   {
+    "sqname": "民乐",
+    "sqcode": "440309002028",
+    "attr_km2": 3.557,
+    "master_geom_km2": 3.563,
+    "delivered_geom_km2": 0.0276
+   },
+   {
+    "sqname": "凤凰",
+    "sqcode": "440307014014",
+    "attr_km2": 0.714,
+    "master_geom_km2": 0.7155,
+    "delivered_geom_km2": 0.0077
+   },
+   {
+    "sqname": "德兴",
+    "sqcode": "440307014004",
+    "attr_km2": 0.551,
+    "master_geom_km2": 0.5519,
+    "delivered_geom_km2": 0.0294
+   },
+   {
+    "sqname": "金排",
+    "sqcode": "440307014016",
+    "attr_km2": 0.695,
+    "master_geom_km2": 0.6958,
+    "delivered_geom_km2": 0.0721
+   },
+   {
+    "sqname": "南岭村",
+    "sqcode": "440307012015",
+    "attr_km2": 3.302,
+    "master_geom_km2": 3.3082,
+    "delivered_geom_km2": 0.0453
+   },
+   {
+    "sqname": "樟树布",
+    "sqcode": "440307012018",
+    "attr_km2": 0.535,
+    "master_geom_km2": 0.5356,
+    "delivered_geom_km2": 0.0337
+   },
+   {
+    "sqname": "沙湾",
+    "sqcode": "440307012013",
+    "attr_km2": 0.043,
+    "master_geom_km2": 0.0432,
+    "delivered_geom_km2": 0.0076
+   },
+   {
+    "sqname": "南新",
+    "sqcode": "440307012020",
+    "attr_km2": 0.436,
+    "master_geom_km2": 0.4364,
+    "delivered_geom_km2": 0.1093
+   }
+  ],
+  "note": "Independent recomputation on the authoritative master copy, same 299 SQCODEs: the attribute sum and the geometry sum agree to 0.2 %, and for every truncated record the master geometry matches its attribute."
+ },
+ "C_grid": {
+  "C1_csv_footprint_cells": 32748,
+  "C1_csv_footprint_km2": 327.48,
+  "C2_in_main_cells": 31760,
+  "C2_in_main_km2": 317.6,
+  "C3_delivered_geom_cells": 31809,
+  "C3_delivered_geom_km2": 318.09,
+  "C3_delivered_cells_not_in_footprint": 0,
+  "C3_iou_delivered_vs_footprint": 0.9713,
+  "C4_true_geom_cells": 35393,
+  "C4_true_geom_km2": 353.93,
+  "C4_cells_missing_from_footprint": 3259,
+  "C4_missing_km2": 32.59,
+  "C4_iou_true_vs_footprint": 0.8924,
+  "C3_note": "delivered geometry is a strict subset of the frozen footprint (0 cells outside) => the footprint was intersected with the truncated studyarea copy, not with the master copy.",
+  "C4_missing_by_community": [
+   {
+    "sqname": "北站",
+    "qu": "龙华",
+    "true_cells": 424,
+    "km2": 4.24,
+    "missing_km2": 4.04
+   },
+   {
+    "sqname": "民泰",
+    "qu": "龙华",
+    "true_cells": 424,
+    "km2": 4.24,
+    "missing_km2": 3.77
+   },
+   {
+    "sqname": "龙塘",
+    "qu": "龙华",
+    "true_cells": 392,
+    "km2": 3.92,
+    "missing_km2": 3.73
+   },
+   {
+    "sqname": "大岭",
+    "qu": "龙华",
+    "true_cells": 358,
+    "km2": 3.58,
+    "missing_km2": 3.57
+   },
+   {
+    "sqname": "民乐",
+    "qu": "龙华",
+    "true_cells": 354,
+    "km2": 3.54,
+    "missing_km2": 3.46
+   },
+   {
+    "sqname": "南岭村",
+    "qu": "龙岗",
+    "true_cells": 326,
+    "km2": 3.26,
+    "missing_km2": 3.16
+   },
+   {
+    "sqname": "兴东",
+    "qu": "宝安",
+    "true_cells": 270,
+    "km2": 2.7,
+    "missing_km2": 2.27
+   },
+   {
+    "sqname": "龙平",
+    "qu": "龙华",
+    "true_cells": 238,
+    "km2": 2.38,
+    "missing_km2": 2.25
+   },
+   {
+    "sqname": "新乐",
+    "qu": "宝安",
+    "true_cells": 115,
+    "km2": 1.15,
+    "missing_km2": 1.06
+   },
+   {
+    "sqname": "凤凰",
+    "qu": "龙岗",
+    "true_cells": 67,
+    "km2": 0.67,
+    "missing_km2": 0.65
+   },
+   {
+    "sqname": "龙井",
+    "qu": "宝安",
+    "true_cells": 57,
+    "km2": 0.57,
+    "missing_km2": 0.53
+   },
+   {
+    "sqname": "洪浪",
+    "qu": "宝安",
+    "true_cells": 60,
+    "km2": 0.6,
+    "missing_km2": 0.51
+   },
+   {
+    "sqname": "樟树布",
+    "qu": "龙岗",
+    "true_cells": 55,
+    "km2": 0.55,
+    "missing_km2": 0.47
+   },
+   {
+    "sqname": "金排",
+    "qu": "龙岗",
+    "true_cells": 68,
+    "km2": 0.68,
+    "missing_km2": 0.46
+   },
+   {
+    "sqname": "德兴",
+    "qu": "龙岗",
+    "true_cells": 54,
+    "km2": 0.54,
+    "missing_km2": 0.45
+   },
+   {
+    "sqname": "南新",
+    "qu": "龙岗",
+    "true_cells": 41,
+    "km2": 0.41,
+    "missing_km2": 0.26
+   },
+   {
+    "sqname": "盐田山区",
+    "qu": "盐田",
+    "true_cells": 6,
+    "km2": 0.06,
+    "missing_km2": 0.02
+   },
+   {
+    "sqname": "沙湾",
+    "qu": "龙岗",
+    "true_cells": 4,
+    "km2": 0.04,
+    "missing_km2": 0.01
+   }
+  ],
+  "C5_missing_cells_LST_valid_pct": 99.8,
+  "C5_missing_cells_LST_valid_median_C": 38.9,
+  "C5_control_in_main_LST_valid_pct": 99.8,
+  "C5_control_in_main_LST_valid_median_C": 38.58,
+  "C5_note": "the cells lost from the footprint carry valid LST at the same rate and same median temperature as the analysed cells => real data inside the study area was inadvertently excluded."
+ },
+ "D_grid_consistency": {
+  "grid_utm_n_records": 32748,
+  "csv_n_rows": 32748,
+  "row_col_sets_identical": true,
+  "only_in_csv": 0,
+  "only_in_grid": 0,
+  "col_index_range": [
+   0,
+   361
+  ],
+  "row_index_range": [
+   0,
+   232
+  ],
+  "col_from_GG_mapping_range": [
+   0.0,
+   361.0
+  ],
+  "row_from_GG_mapping_range": [
+   0.0,
+   232.0
+  ],
+  "note": "grid_utm.shp is the delivered analysis grid; analysis_split.csv is exactly its (row,col) set."
+ },
+ "recommendation": "Keep 383 km2 (it is the authors' own attribute sum, independently reproduced from the master geometry). If a second number is wanted for transparency, cite the valid-data subset (31,760 cells = 317.6 km2). Separately, the analysis grid needs a decision: ~32.6 km2 of valid data inside the study area is missing from grid_utm.shp because the grid was intersected with the truncated boundary copy."
+}

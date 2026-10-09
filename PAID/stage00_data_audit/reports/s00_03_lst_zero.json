@@ -1,0 +1,106 @@
+{
+  "fullcity": {
+    "n_px": 4765092,
+    "lst_zero": 2575522,
+    "lst_zero_pct": 54.05,
+    "lst_nodata_minus9999": 38274,
+    "dem_nodata": 2623978,
+    "dem_nodata_pct": 55.07,
+    "ndvi_zero": 2563288,
+    "ndvi_zero_pct": 53.79,
+    "zero_within_dem_nodata_pct": 99.9,
+    "zero_within_ndvi_zero_pct": 99.5,
+    "dem_nodata_that_are_lst_zero_pct": 98.06,
+    "triple_mask_pct": 53.78,
+    "zero_has_zero_neighbour_pct": 100.0,
+    "zero_random_expectation_pct": 95.54,
+    "point_in_city_test": {
+      "subsample_step": 6,
+      "n_test_points": 265366,
+      "zero_px_inside_city_pct": 0.089,
+      "zero_px_outside_city_pct": 99.911,
+      "noncity_px_that_are_zero_pct": 98.288,
+      "city_px_that_are_zero_pct": 0.107
+    },
+    "nonzero_lst": {
+      "n": 2151296,
+      "min": -4.264,
+      "p50": 38.234,
+      "max": 69.168,
+      "mean": 38.21
+    }
+  },
+  "study": {
+    "n_px": 935080,
+    "lst_zero": 223,
+    "lst_nodata": 581699,
+    "dem_nodata": 582215,
+    "zero_also_dem_nodata_pct": 50.22,
+    "zero_with_arch_pct": 0.0,
+    "zero_ndvi_mean": 0.2538,
+    "nonzero_lst_ndvi_mean": 0.5205,
+    "zero_has_zero_neighbour_pct": 38.12,
+    "zero_pixel_lonlat_sample": [
+      [
+        114.17422,
+        22.55977
+      ],
+      [
+        114.19162,
+        22.5559
+      ],
+      [
+        114.18316,
+        22.55553
+      ],
+      [
+        114.19102,
+        22.55537
+      ],
+      [
+        114.19073,
+        22.55511
+      ],
+      [
+        114.18868,
+        22.55461
+      ],
+      [
+        114.19013,
+        22.55458
+      ],
+      [
+        114.15225,
+        22.55505
+      ],
+      [
+        114.15254,
+        22.55505
+      ],
+      [
+        114.15195,
+        22.55479
+      ],
+      [
+        114.13887,
+        22.5434
+      ],
+      [
+        114.13945,
+        22.54339
+      ],
+      [
+        114.13974,
+        22.54311
+      ],
+      [
+        114.14003,
+        22.54311
+      ],
+      [
+        114.13624,
+        22.54291
+      ]
+    ]
+  }
+}

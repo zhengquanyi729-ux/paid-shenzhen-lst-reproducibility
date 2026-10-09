@@ -1,0 +1,143 @@
+{
+  "version": "stage02-agents-v1",
+  "created": "2026-09-24",
+  "framework_ref": "Table 10 / Table 11 / Table 12 Agent manifest / §3.2 / §4.3 / §5.3",
+  "model_version": "PAID-Agent-v0（Stage 02 平台骨架，无语料级目标先验注入）",
+  "system_prompt_policy": {
+    "injects_target_domain_conclusions": false,
+    "injects_data_dictionary": true,
+    "injects_physics_constraints": true,
+    "injects_compute_budget": true,
+    "injects_tool_whitelist": true,
+    "forbidden_claims": [
+      "NDVI 必须单调降温/升温",
+      "SVF 必须升温或降温",
+      "建筑高度必须产生某一方向响应",
+      "预设唯一最优空间尺度",
+      "预设固定函数形式",
+      "预设单一显著阈值",
+      "预设特定交互组合",
+      "注入旧论文结论/相关矩阵"
+    ],
+    "audit": "Physics Auditor 逐候选审计 PA4（正/负双向检查）；提示词哈希登记如下。"
+  },
+  "agents": [
+    {
+      "agent": "Discovery Agent",
+      "purpose": "自主选择特征、尺度、假设与数学表达式；仅访问开放探索数据。",
+      "data_access": [
+        "A 发现区（sandbox_root/inputs/zone_A_open.csv）"
+      ],
+      "forbidden_access": [
+        "B 开发验证区目标（调参用）",
+        "C 锁定区任何形式（含密文与密钥）",
+        "全域原始数据 data/（含全城 LST 栅格与全表 CSV）",
+        "旧论文结论/相关矩阵"
+      ],
+      "tools": [
+        "pandas",
+        "numpy",
+        "agents/model.py"
+      ],
+      "budget": {
+        "candidates_per_round": 8,
+        "total_fit_budget": 2000
+      },
+      "sandboxed": true,
+      "system_prompt_sha256": "0f364b060313c4342f75affbf46c7128d875925b8fac8983c0965431d649ff75"
+    },
+    {
+      "agent": "Experiment Agent",
+      "purpose": "编写实验代码、比较允许的方法、测量开发集表现；记录全部运行。",
+      "data_access": [
+        "A 发现区",
+        "B 开发验证区"
+      ],
+      "forbidden_access": [
+        "C 锁定区任何形式",
+        "全域原始数据 data/"
+      ],
+      "tools": [
+        "pandas",
+        "numpy",
+        "agents/model.py",
+        "sandbox/log_tool.py"
+      ],
+      "budget": {
+        "candidates_per_round": 8,
+        "total_fit_budget": 2000
+      },
+      "sandboxed": true,
+      "system_prompt_sha256": "8d67a10dd9d2ba86515b354ef7a79dc13ab30fae748f865c05580bbf74dc5764"
+    },
+    {
+      "agent": "Falsification Agent",
+      "purpose": "寻找反例、空间混杂、伪相关与负对照；可建议放弃候选。",
+      "data_access": [
+        "A 发现区",
+        "B 开发验证区",
+        "分区掩膜（Grid_ID→row/col/zone）"
+      ],
+      "forbidden_access": [
+        "C 锁定区任何形式",
+        "全域原始数据 data/"
+      ],
+      "tools": [
+        "pandas",
+        "numpy",
+        "agents/model.py"
+      ],
+      "budget": {
+        "negative_controls": 3,
+        "perms": 199
+      },
+      "sandboxed": true,
+      "system_prompt_sha256": "c620f88a098d4c4f856b14508ce353ba396177c64b41cfe7f568a5d1f2f91bab"
+    },
+    {
+      "agent": "Physics Auditor",
+      "purpose": "独立审计量纲、几何、可计算物理约束及解释的过度延伸。",
+      "data_access": [
+        "hard_constraints.json",
+        "DATA_DICTIONARY.md",
+        "no_direction_preset.md",
+        "分区掩膜"
+      ],
+      "forbidden_access": [
+        "C 锁定区任何形式",
+        "全域原始数据 data/"
+      ],
+      "tools": [
+        "json",
+        "agents/audit.py"
+      ],
+      "budget": {
+        "audits_per_candidate": 1
+      },
+      "sandboxed": true,
+      "system_prompt_sha256": "a25a467b8639b2391499211275657bfe81264029ce7685f34e32de43398d7899"
+    },
+    {
+      "agent": "Independent Validator",
+      "purpose": "独立进程持有锁定测试目标值，验证后发布完整结果，不执行发现方请求的参数更新。",
+      "data_access": [
+        "vault/zone_C_targets.enc + vault/validator_key.bin（C 锁定区，密文级隔离）",
+        "已冻结候选登记"
+      ],
+      "forbidden_access": [
+        "不得向开发域回传 C 目标值（只发布聚合后的通过/失败与不确定性）"
+      ],
+      "tools": [
+        "cryptography",
+        "pandas",
+        "numpy"
+      ],
+      "budget": {
+        "validation_runs": 1,
+        "block_permutation": 199
+      },
+      "sandboxed": false,
+      "system_prompt_sha256": "2a9692f1a31d4fe437ca8a9b35d9701cc60f1752fbd20fe6cc7250cc11b97dc2"
+    }
+  ]
+}

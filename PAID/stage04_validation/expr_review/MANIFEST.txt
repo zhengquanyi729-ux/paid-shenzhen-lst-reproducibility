@@ -1,0 +1,5 @@
+# Stage 04 H10 表达式复盘 产物 SHA-256 清单（相对 PAID/；不含本清单自身）
+# 生成于 2026-09-24 13:18:39；本复盘为只读分析，不改动 Stage 04 冻结结果与账本
+ca964ef8f22ae05df58f9073d2cdab6517d12331e8b8ac3de073480b247b14fb        4622  stage04_validation/expr_review/EXPR_REVIEW.md
+2e021a2252ba3e074695484c740d75b9326e65ac722b2d01cb74958350d566e3        9036  stage04_validation/expr_review/expr_review.json
+eef8660419622e2b5eb5ba09d960232b98184aab5152d7f72c44f728fca21e6a       17517  stage04_validation/expr_review/s04_04_expr_review.py

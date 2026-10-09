@@ -1,0 +1,37 @@
+{
+  "id": "SMOKE-0001",
+  "created": "2026-09-24",
+  "agent": "Discovery Agent",
+  "model_version": "PAID-Agent-v0（Stage 02 平台骨架，无语料级目标先验注入）",
+  "code_version": "stage02-platform-v1",
+  "claim": "（平台占位，非科学发现）LST_mean 可用预注册协变量的线性组合描述；本条目仅用于验证登记—冻结—解封链路。",
+  "expression": {
+    "form": "linear",
+    "terms": [
+      "NDVI_mean",
+      "DEM_mean",
+      "SVF_mean",
+      "Road_Dens",
+      "X_BD",
+      "X_BH",
+      "X_VolDens"
+    ],
+    "standardize": true,
+    "intercept": true
+  },
+  "variables": {
+    "NDVI_mean": "见 constraints/DATA_DICTIONARY.md",
+    "DEM_mean": "见 constraints/DATA_DICTIONARY.md",
+    "SVF_mean": "见 constraints/DATA_DICTIONARY.md",
+    "Road_Dens": "见 constraints/DATA_DICTIONARY.md",
+    "X_BD": "见 constraints/DATA_DICTIONARY.md",
+    "X_BH": "见 constraints/DATA_DICTIONARY.md",
+    "X_VolDens": "见 constraints/DATA_DICTIONARY.md"
+  },
+  "domain": "深圳研究区、单一时相、100 m 网格；A 发现区",
+  "dev_evidence": null,
+  "prereg_test": "见 protocol/validation_protocol.json 主终点（C 区 RMSE 与 ΔRMSE）",
+  "physics_audit": null,
+  "unseal_result": null,
+  "status": "proposed"
+}

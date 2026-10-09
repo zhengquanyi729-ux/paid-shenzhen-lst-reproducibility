@@ -1,0 +1,100 @@
+{
+  "version": "stage01-protocols-v1",
+  "created": "2026-09-24",
+  "framework_ref": "Table 12 Code manifest",
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8",
+    "docx": "python-docx",
+    "openpyxl": "3.1.5",
+    "note": "无 gdal/rasterio/geopandas/scipy/sklearn；地理 IO 由 lib/geoio.py 纯 Python 实现。"
+  },
+  "data_transform_scripts": [
+    "lib/geoio.py",
+    "lib/config.py",
+    "stage00_data_audit/scripts/s00_*.py",
+    "stage01_protocol/scripts/s01_*.py"
+  ],
+  "candidate_model_code": "Stage 02 生成后追加其哈希（本清单先冻结环境与数据变换脚本）。",
+  "files": [
+    {
+      "path": "lib/config.py",
+      "bytes": 676,
+      "sha256": "f9f8f0cd63c720bc4986ade36f809eccf39055a3d784c0e2183554145a060273"
+    },
+    {
+      "path": "lib/geoio.py",
+      "bytes": 11907,
+      "sha256": "50cc6b0941bedf284e5bc2e48fd253d2654f116307eff3bc304efd9096f4aeb4"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_01_metadata.py",
+      "bytes": 12709,
+      "sha256": "945cfc02273d45b2b92ed17ff8dba39ca78b54003c31d20bfb85756ffbbef8a6"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_02_crs.py",
+      "bytes": 12401,
+      "sha256": "ed051c75f67f69ddd6d1904c7716866f54c766f07affc7474329e9d008318a17"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_03_lst_zero.py",
+      "bytes": 13047,
+      "sha256": "0e2a28cf450472870759d9e6ebe414b476b9423bcdd8816a24edd968902aae92"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_04_missing.py",
+      "bytes": 17862,
+      "sha256": "0ad239bb7ef79f278087ffa5c8e1243ad6a5efc352451ce223714afec128d502"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_05_vector.py",
+      "bytes": 13580,
+      "sha256": "52aefcaaf9681031187cf79849707144f787eaf0bd0b87ed20cb348e47872ec1"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_06_mask.py",
+      "bytes": 8703,
+      "sha256": "df5eccd5cef132eccf7b9f225607795d7047a20a28e4610740c42340f68f4fe3"
+    },
+    {
+      "path": "stage00_data_audit/scripts/s00_07_manifest.py",
+      "bytes": 3334,
+      "sha256": "a228dbb1219fa707a7e5e4f863e74333c715be4ab34294ee70a977d1e1324db7"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_01_spatial_autocorr.py",
+      "bytes": 16935,
+      "sha256": "b008e58c97b8c6603695a049abbf4c109f79009a6dd0f7bec42802ac993cb8e8"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_02_split.py",
+      "bytes": 21261,
+      "sha256": "3ac0bf6d1adcb2ed740bb2f7e6b3895321700fa5a041fc92c55a943993023a48"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_03_constraints.py",
+      "bytes": 21213,
+      "sha256": "be1a05edddc185cb5279a8f19a941473237d1883c913b978560549c663b44c91"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_04_protocols.py",
+      "bytes": 21287,
+      "sha256": "27bb3d7e327d26a6fa31dfc47b2f213ecae6e7309780b491fac58ca83eb330c2"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_05_preregistration.py",
+      "bytes": 13751,
+      "sha256": "09d1da15688670102b99f1df1858395a7bc197421c4663dda934e6d321280155"
+    },
+    {
+      "path": "stage01_protocol/scripts/s01_06_verify.py",
+      "bytes": 10065,
+      "sha256": "f4046b12498071e5ee9dedd2b3a3ab7904d5c0f3aa2d8480e87f4f98d57fa664"
+    }
+  ],
+  "n_files": 15
+}

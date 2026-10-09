@@ -1,0 +1,44 @@
+{
+  "version": "stage02-guard-v1",
+  "created": "2026-09-24",
+  "status": "OK",
+  "sandbox_root": "stage02_platform/sandbox_root",
+  "inputs": [
+    "zone_A_open.csv",
+    "zone_B_devval.csv",
+    "hard_constraints.json",
+    "DATA_DICTIONARY.md",
+    "no_direction_preset.md",
+    "spatial_mask.csv（Grid_ID,row,col,role；无目标值）"
+  ],
+  "guard_probe": {
+    "res": {
+      "allowed": [
+        "read zone_A",
+        "write work"
+      ],
+      "denied": [
+        "read vault enc",
+        "read vault key",
+        "read locked C",
+        "read full CSV",
+        "read LST tif",
+        "write stage01",
+        "subprocess"
+      ],
+      "unexpected": []
+    },
+    "status": {
+      "opens": 788,
+      "denials": 7,
+      "fits": 0,
+      "verdict": "probe_done"
+    }
+  },
+  "expect": {
+    "allowed": 2,
+    "denied": 7,
+    "unexpected": 0
+  },
+  "stderr_tail": ""
+}

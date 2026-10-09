@@ -1,0 +1,518 @@
+{
+  "run_tag": "S05-R3-external",
+  "ran_at": "2026-09-24T14:21:35",
+  "dataset": {
+    "city": "长春 Changchun",
+    "period": "2021",
+    "grid": "500 m 渔网",
+    "source": "/sessions/friendly-awesome-turing/mnt/02 changchun/changchun/changchun(Arch+NDWI+LST+NDVI+DEM+GDP+pop).dbf",
+    "n_cells_raw": 100676,
+    "n_cells_used": 100647,
+    "qc": {
+      "drop_nonfinite": 29,
+      "n_raw": 100676,
+      "n_kept": 100647,
+      "n_excluded": 29
+    },
+    "variables_shared": [
+      "NDVI_mean",
+      "DEM_mean",
+      "X_BD",
+      "X_BH",
+      "X_VolDens"
+    ],
+    "variables_missing_vs_shenzhen": [
+      "SVF_mean",
+      "Road_Dens"
+    ],
+    "note": "SVF 与 Road_Dens 在长春数据中不存在，冻结式只能在其可表达投影上检验。"
+  },
+  "spatial_folds": {
+    "k": 5,
+    "sizes": [
+      21256,
+      22027,
+      19386,
+      18823,
+      19155
+    ],
+    "rule": "连通簇（k-means on row_index/col_index, seed 20260924）"
+  },
+  "summary_stats": {
+    "LST_mean": {
+      "mean": 26.677296902071927,
+      "sd": 1.6227023890966001,
+      "min": 11.235664548804753,
+      "p50": 26.535346485807903,
+      "max": 43.11291294779096,
+      "zero_frac": 0.0
+    },
+    "NDVI_mean": {
+      "mean": 0.3973225373502325,
+      "sd": 0.08236731529591772,
+      "min": -0.101349283475429,
+      "p50": 0.41898209475316,
+      "max": 0.541012250737748,
+      "zero_frac": 0.0
+    },
+    "DEM_mean": {
+      "mean": 200.33209310876597,
+      "sd": 37.325404797234164,
+      "min": 129.11160714285714,
+      "p50": 195.9944903581267,
+      "max": 622.1713483146067,
+      "zero_frac": 0.0
+    },
+    "X_BD": {
+      "mean": 0.018134648822120878,
+      "sd": 0.04755561304747848,
+      "min": 0.0,
+      "p50": 0.001,
+      "max": 0.781,
+      "zero_frac": 0.4679324768746212
+    },
+    "X_BH": {
+      "mean": 4.843089873955508,
+      "sd": 5.549270790059772,
+      "min": 0.0,
+      "p50": 6.26671,
+      "max": 82.632185,
+      "zero_frac": 0.41695231849930947
+    },
+    "X_VolDens": {
+      "mean": 0.25147315866344744,
+      "sd": 1.1478979312848283,
+      "min": 0.0,
+      "p50": 0.008,
+      "max": 29.351,
+      "zero_frac": 0.43152801375103084
+    }
+  },
+  "baselineA_star_cv_rmse": 1.2292391766142297,
+  "forms": {
+    "BaselineA* (5 cov, linear)": {
+      "cv_rmse": 1.2292391766142297,
+      "per_fold": [
+        1.1940629470494564,
+        1.073820906707119,
+        1.5839084937304113,
+        0.9736000157282304,
+        1.2493312037328603
+      ],
+      "delta_vs_baselineA": 0.0,
+      "n_terms": 5,
+      "complexity": 10,
+      "expr": "NDVI + DEM + X_BD + X_BH + X_VolDens"
+    },
+    "lin NDVI+DEM (2 var)": {
+      "cv_rmse": 1.637131574350032,
+      "per_fold": [
+        1.5028174931499259,
+        1.367987005501713,
+        2.5507157296203724,
+        1.1926855196401682,
+        1.2008703971273296
+      ],
+      "delta_vs_baselineA": -0.40789239773580244,
+      "n_terms": 2,
+      "complexity": 4,
+      "expr": "NDVI + DEM"
+    },
+    "lin NDVI+DEM+NDVI*DEM": {
+      "cv_rmse": 1.5399149138852175,
+      "per_fold": [
+        1.3292268169287804,
+        1.2611982930589654,
+        2.3629453676397905,
+        1.2392961528484867,
+        1.2288208945223744
+      ],
+      "delta_vs_baselineA": -0.31067573727098785,
+      "n_terms": 3,
+      "complexity": 8,
+      "expr": "NDVI + DEM + (NDVI * DEM)"
+    },
+    "BaselineA* + exp(NDVI)": {
+      "cv_rmse": 1.1991503145930453,
+      "per_fold": [
+        1.1472357023351043,
+        1.0815814589149768,
+        1.6393659469977533,
+        0.9002501263636661,
+        1.1106248988214131
+      ],
+      "delta_vs_baselineA": 0.030088862021184326,
+      "n_terms": 6,
+      "complexity": 13,
+      "expr": "NDVI + DEM + X_BD + X_BH + X_VolDens + exp(NDVI)"
+    },
+    "BaselineA* + H10 nonlin core": {
+      "cv_rmse": 1.2778666356966963,
+      "per_fold": [
+        1.1396065850000527,
+        1.0737492780982119,
+        1.9262415565847961,
+        0.9007150684348811,
+        1.1228164684503061
+      ],
+      "delta_vs_baselineA": -0.048627459082466684,
+      "n_terms": 8,
+      "complexity": 20,
+      "expr": "NDVI + DEM + X_BD + X_BH + X_VolDens + exp(NDVI) + exp(DEM) + (NDVI * DEM)"
+    },
+    "H10P exp(NDVI)+exp(DEM)": {
+      "cv_rmse": 1.83400555900084,
+      "per_fold": [
+        1.449794887386204,
+        1.3708136657471124,
+        3.275347694216273,
+        1.131668232808543,
+        1.0316563628394169
+      ],
+      "delta_vs_baselineA": -0.6047663823866103,
+      "n_terms": 2,
+      "complexity": 6,
+      "expr": "exp(NDVI) + exp(DEM)"
+    },
+    "H10-proj exp(NDVI)+exp(DEM)+NDVI*DEM": {
+      "cv_rmse": 1.5663165053794827,
+      "per_fold": [
+        1.3240863969825436,
+        1.271679262624695,
+        2.56854349717161,
+        1.1566744970285685,
+        1.0459017851004455
+      ],
+      "delta_vs_baselineA": -0.3370773287652531,
+      "n_terms": 3,
+      "complexity": 10,
+      "expr": "exp(NDVI) + exp(DEM) + (NDVI * DEM)"
+    },
+    "H11-proj exp(NDVI)+DEM+NDVI^2+NDVI*DEM": {
+      "cv_rmse": 1.5263883044348852,
+      "per_fold": [
+        1.3272974627799392,
+        1.268694985000364,
+        2.4500332208591544,
+        1.1315678764074995,
+        1.0501054881912166
+      ],
+      "delta_vs_baselineA": -0.2971491278206555,
+      "n_terms": 4,
+      "complexity": 13,
+      "expr": "exp(NDVI) + DEM + (NDVI * NDVI) + (NDVI * DEM)"
+    },
+    "H10-proj+built3": {
+      "cv_rmse": 1.3253962077832384,
+      "per_fold": [
+        1.1725026156099858,
+        1.0872586915196567,
+        2.0376225598842135,
+        0.957829803718062,
+        1.114334183108098
+      ],
+      "delta_vs_baselineA": -0.09615703116900876,
+      "n_terms": 6,
+      "complexity": 16,
+      "expr": "exp(NDVI) + exp(DEM) + (NDVI * DEM) + X_BD + X_BH + X_VolDens"
+    },
+    "pivot NDVI (linear)": {
+      "cv_rmse": 1.6271384981333865,
+      "per_fold": [
+        1.4954050300415385,
+        1.3740594682829506,
+        2.539868018651012,
+        1.196411425889474,
+        1.1503680257335815
+      ],
+      "delta_vs_baselineA": -0.39789932151915686,
+      "n_terms": 1,
+      "complexity": 2,
+      "expr": "NDVI"
+    },
+    "pivot NDVI+NDVI^2": {
+      "cv_rmse": 1.5245669438813612,
+      "per_fold": [
+        1.368811623227254,
+        1.3482239142506234,
+        2.4258237633446402,
+        1.021374630128159,
+        1.0308192518268584
+      ],
+      "delta_vs_baselineA": -0.2953277672671315,
+      "n_terms": 2,
+      "complexity": 6,
+      "expr": "NDVI + (NDVI * NDVI)"
+    },
+    "pivot exp(NDVI)": {
+      "cv_rmse": 1.5725484440638366,
+      "per_fold": [
+        1.4490289396306648,
+        1.371473474502644,
+        2.470846995942144,
+        1.1314904517363855,
+        1.0313986647217879
+      ],
+      "delta_vs_baselineA": -0.343309267449607,
+      "n_terms": 1,
+      "complexity": 3,
+      "expr": "exp(NDVI)"
+    },
+    "pivot exp(DEM)": {
+      "cv_rmse": 1.94189850216387,
+      "per_fold": [
+        1.332987877656119,
+        1.3205373357167092,
+        3.5373253533437596,
+        1.22575383801304,
+        1.3026720029075622
+      ],
+      "delta_vs_baselineA": -0.7126593255496403,
+      "n_terms": 1,
+      "complexity": 3,
+      "expr": "exp(DEM)"
+    },
+    "pivot DEM (linear)": {
+      "cv_rmse": 1.6630879865225512,
+      "per_fold": [
+        1.329954137375034,
+        1.3097842898063476,
+        2.6782096677582734,
+        1.2211090674356175,
+        1.3684610704710722
+      ],
+      "delta_vs_baselineA": -0.43384880990832153,
+      "n_terms": 1,
+      "complexity": 2,
+      "expr": "DEM"
+    }
+  },
+  "directions": {
+    "linear_matched": {
+      "NDVI_mean": {
+        "delta_LST_per_SD": 0.12264373436346432,
+        "direction": "+"
+      },
+      "DEM_mean": {
+        "delta_LST_per_SD": -0.2904130996586076,
+        "direction": "-"
+      },
+      "X_BD": {
+        "delta_LST_per_SD": 1.7413562382012344,
+        "direction": "+"
+      },
+      "X_BH": {
+        "delta_LST_per_SD": 0.7776235458233884,
+        "direction": "+"
+      },
+      "X_VolDens": {
+        "delta_LST_per_SD": -0.0016855790007425412,
+        "direction": "-"
+      }
+    },
+    "h10p_form": {
+      "DEM_mean": {
+        "delta_LST_per_SD": -0.0002774894476615941,
+        "direction": "-"
+      },
+      "NDVI_mean": {
+        "delta_LST_per_SD": -2.0547086343160252,
+        "direction": "-"
+      }
+    }
+  },
+  "bivariate_corr": {
+    "NDVI_mean": {
+      "pearson": -0.29257354415099474,
+      "spearman": -0.3882631441899838
+    },
+    "DEM_mean": {
+      "pearson": -0.06509222532091972,
+      "spearman": -0.014776968277627686
+    },
+    "X_BD": {
+      "pearson": 0.6541971110050925,
+      "spearman": 0.5000079162067929
+    },
+    "X_BH": {
+      "pearson": 0.5306265946208366,
+      "spearman": 0.4202102697123479
+    },
+    "X_VolDens": {
+      "pearson": 0.5728309414671209,
+      "spearman": 0.5012486067691925
+    }
+  },
+  "spatial_holdout": {
+    "BaselineA* (5 cov, linear)": {
+      "rmse": 1.215202452557658,
+      "n_train": 81392,
+      "n_test": 11333,
+      "buffer_cols": 40,
+      "delta_vs_baselineA": 0.0
+    },
+    "lin NDVI+DEM (2 var)": {
+      "rmse": 1.2694504092761787,
+      "n_train": 81392,
+      "n_test": 11333,
+      "buffer_cols": 40,
+      "delta_vs_baselineA": -0.054247956718520784
+    },
+    "H10P exp(NDVI)+exp(DEM)": {
+      "rmse": 1.1614191997869083,
+      "n_train": 81392,
+      "n_test": 11333,
+      "buffer_cols": 40,
+      "delta_vs_baselineA": 0.05378325277074958
+    },
+    "H10-proj exp(NDVI)+exp(DEM)+NDVI*DEM": {
+      "rmse": 1.1591455806259425,
+      "n_train": 81392,
+      "n_test": 11333,
+      "buffer_cols": 40,
+      "delta_vs_baselineA": 0.05605687193171538
+    }
+  },
+  "cross_city_transfer": {
+    "cc_mu": {
+      "NDVI_mean": 0.3973225373502325,
+      "DEM_mean": 200.33209310876597
+    },
+    "cc_sd": {
+      "NDVI_mean": 0.08236731529591772,
+      "DEM_mean": 37.325404797234164
+    },
+    "shenzhen_dem_mu": 11.086418122264401,
+    "cc_dem_range": [
+      129.11160714285714,
+      622.1713483146067
+    ],
+    "pivot_shape": {
+      "terms": "exp(NDVI)",
+      "shenzhen_beta": [
+        42.47150138152721,
+        -2.4713402907425013
+      ],
+      "shenzhen_fit_rmse_A": 3.1368190308942134,
+      "pearson_r": 0.25559112660308125,
+      "spearman_r": 0.3882631441899838,
+      "pred_min": -713.342364471406,
+      "pred_max": 39.99435187188032,
+      "rmse_affine": 1.5688042787018481,
+      "affine_slope": 0.0429448767697921,
+      "affine_degenerate": false
+    },
+    "h10p_shape": {
+      "terms": "exp(NDVI) + exp(DEM)",
+      "shenzhen_beta": [
+        40.43666169384538,
+        -2.1434185484719794,
+        0.9972405955195209
+      ],
+      "shenzhen_fit_rmse_A": 2.8906504045260935,
+      "pearson_r": -0.14398697379636205,
+      "spearman_r": 0.2038601786062974,
+      "pred_min": -613.3691304323362,
+      "pred_max": 10656986275721.877,
+      "rmse_affine": 26.592089204074078,
+      "affine_slope": 2.3478834854014184e-12,
+      "affine_degenerate": true
+    },
+    "h10p_naive": {
+      "terms": "exp(NDVI) + exp(DEM)",
+      "shenzhen_beta": [
+        40.43666169384538,
+        -2.1434185484719794,
+        0.9972405955195209
+      ],
+      "shenzhen_fit_rmse_A": 2.8906504045260935,
+      "pearson_r": 0.37771302442097193,
+      "spearman_r": 0.3882616065916973,
+      "pred_min": 10656986275717.162,
+      "pred_max": 10656986275721.78,
+      "rmse_affine": 1.6227023890959893,
+      "affine_slope": 2.503268392383761e-12,
+      "affine_degenerate": true
+    },
+    "covariate_range_overlap": false,
+    "note": "深圳（沿海、DEM≈11 m）与长春（内陆、DEM≈200 m）协变量分布几乎不重叠，朴素迁移把 exp(DEM) 推入极端外推；形状迁移只迁移标准化空间的形状并重标定。深圳→长春非同期、气候不同，绝对 LST 水平不可比，这里只问关系\"形状\"。"
+  },
+  "greedy_rediscovery": {
+    "pool_size": 55,
+    "n_terms": 5,
+    "expr": "X_BD + X_BH + (NDVI * NDVI) + NDVI + (NDVI * X_BD)",
+    "trace": [
+      {
+        "action": "add",
+        "term": "X_BD",
+        "term_ast": {
+          "op": "var",
+          "name": "X_BD"
+        },
+        "cv_rmse": 1.2485212154704846,
+        "n_terms": 1
+      },
+      {
+        "action": "add",
+        "term": "X_BH",
+        "term_ast": {
+          "op": "var",
+          "name": "X_BH"
+        },
+        "cv_rmse": 1.2088116445316566,
+        "n_terms": 2
+      },
+      {
+        "action": "add",
+        "term": "NDVI_mean^2",
+        "term_ast": {
+          "op": "mul",
+          "args": [
+            {
+              "op": "var",
+              "name": "NDVI_mean"
+            },
+            {
+              "op": "var",
+              "name": "NDVI_mean"
+            }
+          ]
+        },
+        "cv_rmse": 1.1901524930228746,
+        "n_terms": 3
+      },
+      {
+        "action": "add",
+        "term": "NDVI_mean",
+        "term_ast": {
+          "op": "var",
+          "name": "NDVI_mean"
+        },
+        "cv_rmse": 1.16234285363793,
+        "n_terms": 4
+      },
+      {
+        "action": "add",
+        "term": "NDVI_mean*X_BD",
+        "term_ast": {
+          "op": "mul",
+          "args": [
+            {
+              "op": "var",
+              "name": "NDVI_mean"
+            },
+            {
+              "op": "var",
+              "name": "X_BD"
+            }
+          ]
+        },
+        "cv_rmse": 1.122889286531817,
+        "n_terms": 5
+      }
+    ],
+    "complexity": 14,
+    "holdout_rmse": 1.029477593666307,
+    "note": "贪心按长春全域 5 折空间分块 CV 选入；其 CV 读数含选择偏倚，故另给无偏的空间留出（col<=380 训练 / col>=420 测试）。"
+  }
+}

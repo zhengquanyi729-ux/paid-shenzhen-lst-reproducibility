@@ -1,0 +1,36 @@
+DATA AVAILABILITY — PLACEHOLDER (fill every {{TOKEN}} after a real, verified upload)
+=====================================================================================
+
+Tokens used in this file (search-and-replace verbatim):
+  {{DATA_ARCHIVE_DOI}}     the archived data DOI (e.g. a Zenodo/figshare data record)
+  {{DATA_REVIEWER_LINK}}   the reviewer-only link to the full package (editor-managed or token)
+
+IMPORTANT — DO NOT FABRICATE. No DOI, URL or reviewer link is asserted anywhere in this package.
+Replace a token only after the corresponding upload has been performed and independently verified to be
+reachable and hash-matching (see UPLOAD_INSTRUCTIONS_v1_2_1.md and RELEASE_QA_v1_2_1.md).
+
+--- paragraph (drop-in) ------------------------------------------------------
+
+The frozen analysis-ready data and derived artefacts required to audit and reproduce the reported
+analyses are available in the PAID Shenzhen LST reproducibility repository {{DATA_ARCHIVE_DOI}}.
+During peer review they are accessible through {{DATA_REVIEWER_LINK}}. The release contains the
+complete 32,748-cell Shenzhen spatial split (the full 233 x 362 analysis grid, EPSG:32649) and the
+exact frozen analysis-ready covariate and land-surface-temperature tables used for Regions A, B and C,
+together with the candidate registries, the Stage-04 evaluation artefacts, the Stage-05 benchmark
+outputs, figure-source data and the protocol-audit records. The complete Region-C analysis-ready table
+(n = 2,987) is provided solely so that the published locked-region statistic can be recomputed; Region
+C is scientifically spent under Protocol V1 and must not be interpreted as an independent or pristine
+confirmatory holdout. The approximately 857-MB original Shenzhen source-raster archive is not included
+in the core release because redistribution rights and source metadata are incomplete; instead the
+exact frozen analysis-ready values used in the manuscript and a source-data provenance inventory are
+provided. Changchun row-level analysis-ready data are distributed only to the extent permitted by the
+applicable third-party data terms; where redistribution is not permitted, the archive provides the
+analysis code, schema, provenance, hashes and derived outputs instead.
+
+--- short form (if the journal wants 2 sentences) ----------------------------
+
+The frozen spatial split (all 32,748 Shenzhen grid cells) and the exact analysis-ready covariate and
+land-surface-temperature tables used for Regions A, B and C are available at {{DATA_ARCHIVE_DOI}}.
+Raw Shenzhen rasters (approx. 857 MB) and raw Changchun satellite products (approx. 6.1 GB) are not
+redistributed because redistribution rights are unconfirmed; provenance, definitions and the full
+protocol-deviation audit are documented in the repository.

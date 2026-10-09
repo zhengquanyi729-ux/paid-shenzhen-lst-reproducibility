@@ -1,0 +1,311 @@
+{
+  "version": "stage04-expr-review-v1",
+  "created": "2026-09-24T13:18:32",
+  "vault_plaintext_sha256": "b4a709e16d7b75425496fae1cea1ea6c5fd113575fe5f6766ab3389da353eab9",
+  "n_A": 19184,
+  "n_B": 6182,
+  "n_C": 2987,
+  "baselineA_cv": 3.1576525409870713,
+  "note": "C 区已解封；下列 C 区读数为 post-hoc 探索性，非新增确认性检验。",
+  "Q1_anatomy": {
+    "intercept_beta": 40.17860559616678,
+    "pred_var_C": 3.764993135013886,
+    "terms": [
+      {
+        "term": "exp(NDVI)",
+        "vars": [
+          "NDVI_mean"
+        ],
+        "beta": -1.9123966828078567,
+        "dem": false,
+        "contrib_sd": 1.5631679850456937,
+        "pred_var_share": 0.7409202465359519
+      },
+      {
+        "term": "exp(DEM)",
+        "vars": [
+          "DEM_mean"
+        ],
+        "beta": 0.8286105716898432,
+        "dem": true,
+        "contrib_sd": 0.6995200782325794,
+        "pred_var_share": 0.1446889370241393
+      },
+      {
+        "term": "SVF",
+        "vars": [
+          "SVF_mean"
+        ],
+        "beta": -0.7846027975478962,
+        "dem": false,
+        "contrib_sd": 0.6228777406130928,
+        "pred_var_share": 0.2016335821801171
+      },
+      {
+        "term": "Road_Dens",
+        "vars": [
+          "Road_Dens"
+        ],
+        "beta": 0.39970871066001573,
+        "dem": false,
+        "contrib_sd": 0.4679506850151952,
+        "pred_var_share": 0.02658447802763894
+      },
+      {
+        "term": "(NDVI * DEM)",
+        "vars": [
+          "DEM_mean",
+          "NDVI_mean"
+        ],
+        "beta": -0.4641339769360077,
+        "dem": true,
+        "contrib_sd": 0.3387402491644327,
+        "pred_var_share": -0.08448557913033472
+      }
+    ],
+    "dem_terms_share": 0.06020335789380457
+  },
+  "Q2_dem_ablation": {
+    "full(冻结H10)": {
+      "n_terms": 5,
+      "complexity": 14,
+      "terms": "exp(NDVI) + exp(DEM) + SVF + Road_Dens + (NDVI * DEM)",
+      "A_cv": 2.9560392780323155,
+      "delta_A_cv": 0.2016132629547558,
+      "B_rmse": 2.4203020828004322,
+      "delta_B": 0.12220645613593772,
+      "C_rmse": 2.462447828502684,
+      "delta_C": 0.37907131616873313,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.27266679693326507,
+        0.47625219791161916
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "no_dem": {
+      "n_terms": 3,
+      "complexity": 7,
+      "terms": "exp(NDVI) + SVF + Road_Dens",
+      "A_cv": 3.2614111497811065,
+      "delta_A_cv": -0.1037586087940352,
+      "B_rmse": 2.4622767725553514,
+      "delta_B": 0.08023176638101859,
+      "C_rmse": 2.4089664048408896,
+      "delta_C": 0.43255273983052733,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.2127951737723667,
+        0.6419081979333364
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop_expDEM": {
+      "n_terms": 4,
+      "complexity": 11,
+      "terms": "exp(NDVI) + SVF + Road_Dens + (NDVI * DEM)",
+      "A_cv": 3.185623359635743,
+      "delta_A_cv": -0.02797081864867179,
+      "B_rmse": 2.802706674786971,
+      "delta_B": -0.2601981358506009,
+      "C_rmse": 2.396412665216478,
+      "delta_C": 0.44510647945493886,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.2644914239711177,
+        0.6191664079185197
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop_NDVIxDEM": {
+      "n_terms": 4,
+      "complexity": 10,
+      "terms": "exp(NDVI) + exp(DEM) + SVF + Road_Dens",
+      "A_cv": 2.967740160901498,
+      "delta_A_cv": 0.18991238008557332,
+      "B_rmse": 2.502426896160348,
+      "delta_B": 0.040081642776022,
+      "C_rmse": 2.408949738082953,
+      "delta_C": 0.43256940658846377,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.31864259982249143,
+        0.5396222930840147
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "dem_only": {
+      "n_terms": 2,
+      "complexity": 7,
+      "terms": "exp(DEM) + (NDVI * DEM)",
+      "A_cv": 4.171794949039136,
+      "delta_A_cv": -1.0141424080520651,
+      "B_rmse": 5.726807099041758,
+      "delta_B": -3.184298560105388,
+      "C_rmse": 3.456510971727018,
+      "delta_C": -0.6149918270556012,
+      "C_perm_p": 1.0,
+      "C_ci95": [
+        -0.7988151776081627,
+        -0.4179766120098729
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "no_dem+coords": {
+      "n_terms": 5,
+      "complexity": 11,
+      "terms": "exp(NDVI) + SVF + Road_Dens + row + col",
+      "A_cv": 3.162748766811299,
+      "delta_A_cv": -0.005096225824227751,
+      "B_rmse": 3.5679083025200193,
+      "delta_B": -1.0253997635836494,
+      "C_rmse": 2.4050530665418837,
+      "delta_C": 0.4364660781295333,
+      "C_perm_p": 0.02,
+      "C_ci95": [
+        0.30298562308564997,
+        0.5628733995111364
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop[1]exp(NDVI)": {
+      "n_terms": 4,
+      "complexity": 11,
+      "terms": "exp(DEM) + SVF + Road_Dens + (NDVI * DEM)",
+      "A_cv": 3.5920313088508324,
+      "delta_A_cv": -0.4343787678637612,
+      "B_rmse": 3.5851712064213,
+      "delta_B": -1.04266266748493,
+      "C_rmse": 2.9489103834285957,
+      "delta_C": -0.10739123875717871,
+      "C_perm_p": 1.0,
+      "C_ci95": [
+        -0.2783995219132543,
+        0.09776452122637193
+      ],
+      "C_ci_excludes_zero": false,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop[2]exp(DEM)": {
+      "n_terms": 4,
+      "complexity": 11,
+      "terms": "exp(NDVI) + SVF + Road_Dens + (NDVI * DEM)",
+      "A_cv": 3.185623359635743,
+      "delta_A_cv": -0.02797081864867179,
+      "B_rmse": 2.802706674786971,
+      "delta_B": -0.2601981358506009,
+      "C_rmse": 2.396412665216478,
+      "delta_C": 0.44510647945493886,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.2644914239711177,
+        0.6191664079185197
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop[3]SVF": {
+      "n_terms": 4,
+      "complexity": 12,
+      "terms": "exp(NDVI) + exp(DEM) + Road_Dens + (NDVI * DEM)",
+      "A_cv": 3.046889536743295,
+      "delta_A_cv": 0.11076300424377639,
+      "B_rmse": 2.6804885055920056,
+      "delta_B": -0.1379799666556356,
+      "C_rmse": 2.468760293664921,
+      "delta_C": 0.3727588510064961,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.24921822024814677,
+        0.49048473364613754
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop[4]Road_Dens": {
+      "n_terms": 4,
+      "complexity": 12,
+      "terms": "exp(NDVI) + exp(DEM) + SVF + (NDVI * DEM)",
+      "A_cv": 2.9819851800374013,
+      "delta_A_cv": 0.17566736094966995,
+      "B_rmse": 2.4844583428592037,
+      "delta_B": 0.058050196077166216,
+      "C_rmse": 2.5443248313154925,
+      "delta_C": 0.2971943133559245,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.19120416673206247,
+        0.4000440853664261
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    },
+    "drop[5](NDVI * DEM)": {
+      "n_terms": 4,
+      "complexity": 10,
+      "terms": "exp(NDVI) + exp(DEM) + SVF + Road_Dens",
+      "A_cv": 2.967740160901498,
+      "delta_A_cv": 0.18991238008557332,
+      "B_rmse": 2.502426896160348,
+      "delta_B": 0.040081642776022,
+      "C_rmse": 2.408949738082953,
+      "delta_C": 0.43256940658846377,
+      "C_perm_p": 0.005,
+      "C_ci95": [
+        0.31864259982249143,
+        0.5396222930840147
+      ],
+      "C_ci_excludes_zero": true,
+      "perm_corr_sanity": 0.4017685729179077
+    }
+  },
+  "Q2_constant_floor_C_rmse": 2.6027643903588022,
+  "Q3_dem": {
+    "A": {
+      "n": 19184,
+      "min": 3.0,
+      "max": 17.0,
+      "mean": 11.086418122264401,
+      "sd": 2.7322719651813
+    },
+    "B": {
+      "n": 6182,
+      "min": 4.444444444444445,
+      "max": 17.0,
+      "mean": 13.368677540197679,
+      "sd": 1.8927280537804296
+    },
+    "C": {
+      "n": 2987,
+      "min": 5.0,
+      "max": 15.0,
+      "mean": 9.47098292939438,
+      "sd": 2.2590140489279396
+    },
+    "corr_on_A": {
+      "NDVI_mean": -0.32944761108287973,
+      "SVF_mean": -0.3784274383952976,
+      "Road_Dens": 0.17167259665884768,
+      "X_BD": 0.2615311080558928,
+      "X_BH": 0.26669301114794547,
+      "X_VolDens": 0.2250065425633384,
+      "row": 0.6376870341082707,
+      "col": 0.4400322975945748
+    },
+    "dem_on_coords_r2_A": 0.780592689589866
+  },
+  "Q4_spatial_proxy": {
+    "full_delta_C": 0.37907131616873313,
+    "no_dem_delta_C": 0.43255273983052733,
+    "coord_delta_C": 0.4364660781295333,
+    "coord_recovers_frac": 1.1514088761473382,
+    "coord_gain_over_no_dem": 0.003913338299005975,
+    "note": "no_dem 已单独达到该增益，再加平滑坐标的增量接近 0，说明增益**不在**\"DEM/位置代理\"这条通道上，而在非 DEM 的植被项里（见 Q2 单删 exp(NDVI) 的结果）。"
+  }
+}
