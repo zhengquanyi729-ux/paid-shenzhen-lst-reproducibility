@@ -4,6 +4,18 @@ Two analysis-ready tables support the manuscript. **Raw source rasters are not r
 provenance and redistribution status are in `../DATA_PROVENANCE.md`; variable definitions are in
 `../DATA_DICTIONARY.md`.
 
+## Licensing and redistribution
+
+- Shenzhen tables are public for reproducibility.
+- **No blanket CC-BY-4.0 licence is granted.**
+- Upstream-derived fields retain applicable upstream rights.
+- OSM-derived material requires OpenStreetMap attribution where applicable.
+- See `docs/LICENSING.md` and the licensing matrices (`docs/SHENZHEN_LICENSING_MATRIX.csv`,
+  `docs/UPSTREAM_DATA_RIGHTS_MATRIX.csv`, `docs/SHENZHEN_VARIABLE_PROVENANCE.csv`).
+- Changchun row-level data is not included because redistribution permission has not been confirmed.
+
+See `shenzhen/RIGHTS_NOTICE.md` for the Shenzhen-specific rights notice.
+
 ## `shenzhen/`
 
 The Shenzhen study's analysis-ready extracts. The source table is the author-provided

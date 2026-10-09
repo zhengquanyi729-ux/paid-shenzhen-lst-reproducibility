@@ -15,7 +15,8 @@ paid-shenzhen-lst-reproducibility/
 ├── README.md                     this file
 ├── QUICKSTART.md                 fastest path to verifying the key results
 ├── CITATION.cff                  machine-readable citation metadata
-├── LICENSE_STATUS.md             licence status notice (no licence assigned yet)
+├── LICENSES/                     MIT-CODE.txt — MIT License for author-owned source code
+├── LICENSE_STATUS.md             licensing status notice (code resolved; data file-specific)
 ├── environment.yml               conda-style convenience environment
 ├── requirements-lock.txt         the certified, fully pinned environment (canonical)
 ├── MANIFEST_SHA256.csv           SHA-256 of every file in this public tree
@@ -30,7 +31,7 @@ paid-shenzhen-lst-reproducibility/
 └── .gitignore
 ```
 
-A machine-readable `CITATION.cff` is provided at the repository root. DOI and release-date metadata will be added after the first archived release is created. There is still **no `LICENSE` file**; the licence status is stated in `LICENSE_STATUS.md`, and the preparation-period template is kept at `docs/CITATION_TEMPLATE.cff`.
+A machine-readable `CITATION.cff` is provided at the repository root. DOI and release-date metadata will be added after the first archived release is created. **Author-owned source code is licensed under the MIT License. See `LICENSES/MIT-CODE.txt`.** The full licensing statement is in `docs/LICENSING.md`, with file-specific rights notices under `data/` and `figures_source/`. The preparation-period citation template is kept at `docs/CITATION_TEMPLATE.cff`.
 
 `PAID/` holds the **historical implementation** — the frozen Stage 00–05 scripts, agents, libs and renderers as they were actually run. It is kept verbatim as the record of how the frozen products were produced; its scripts import absolute author paths and are **not** meant to be executed by a third party. `release_tools/` holds the **reviewer-portable verifier layer** that replaces them for reproduction: it derives its own root from its file location, needs no absolute path, no key and no network, and recomputes every published number from the shipped tables alone. `verification/` holds `verify_manifest.py`, the release-integrity checker, plus a verification index.
 
@@ -52,7 +53,7 @@ Region C (the locked evaluation region) is described **only as the public packag
 Every reported numerical result is frozen and reproducible from the shipped artefacts. The repository does **not** assert identifiers, licences or public status that do not yet exist:
 
 - **Repository status:** pre-release, public-safe repository. It has not been deposited, released or archived.
-- **Licence:** pending final author confirmation. `LICENSE_STATUS.md` states this; no licence is granted by anything in this repository. The final code licence and data licence are **not yet assigned**.
+- **Licensing:** the **MIT License** (`LICENSES/MIT-CODE.txt`) applies to the author-owned **source code** only. **No blanket data licence is applied:** data and non-code materials are governed by **file-specific rights notices** and upstream terms (`docs/LICENSING.md`, `data/shenzhen/RIGHTS_NOTICE.md`, `figures_source/RIGHTS_NOTICE.md`). The Changchun row-level table remains **excluded**.
 - **Zenodo archive:** not yet deposited.
 - **Release DOI:** not yet assigned, and none is claimed. The repository URL is asserted in `CITATION.cff`; a DOI will be added after the first archived release.
 - **Author metadata:** entered in `CITATION.cff` (authors and contact); CRediT roles and a release date are not yet entered.
@@ -80,9 +81,17 @@ A machine-readable `CITATION.cff` is provided at the repository root, carrying t
 
 This work was supported by The Scientific Research Startup Fund for Shenzhen High-Caliber Personnel of SZPU (No.6026330001K) and The Philosophy and Social Sciences Planning Project of Guangdong Province (Grant Number: GD26YGG16).
 
-## Licence
+## Licensing
 
-Licence: pending final author confirmation. No licence is granted by this repository; see `LICENSE_STATUS.md`.
+Code: **Author-owned source code is licensed under the MIT License. See `LICENSES/MIT-CODE.txt`.**
+
+Data: **No blanket CC-BY-4.0 licence is applied.** See `docs/LICENSING.md` and the file-specific rights notices (`data/shenzhen/RIGHTS_NOTICE.md`, `figures_source/RIGHTS_NOTICE.md`).
+
+OpenStreetMap: where OSM-derived content is present — **© OpenStreetMap contributors**, **ODbL**, https://www.openstreetmap.org/copyright.
+
+Changchun: reviewer-only row-level data is **not included** in the public repository.
+
+**The MIT licence does not apply automatically to data, figures, manuscript text, or third-party-derived materials.** This repository is a **mixed-rights** package: the MIT licence covers code only and must not be read as licensing the data, figures or manuscript. It is **not** correct to describe the repository as a whole as "MIT licensed".
 
 ## Contact
 

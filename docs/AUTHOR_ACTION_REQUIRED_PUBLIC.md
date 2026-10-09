@@ -25,11 +25,16 @@ table is therefore **excluded from this public repository**. See `THIRD_PARTY_DA
 
 ## A-3 — Code and data licence
 
-The final code licence and data licence are **not yet assigned**. No `LICENSE` file exists in this
-repository; the licence status is stated in `LICENSE_STATUS.md`, which grants no rights. The proposed
-terms (MIT for code, CC-BY-4.0 for data) are a **placeholder only**. Confirm the final terms, add a
-real `LICENSE` file, and update `LICENSE_STATUS.md` and the availability statements. **Do not claim a
-final licence here until it is confirmed.**
+**Code: resolved.** The authors have adopted the **MIT License** for author-owned source code only, at
+`LICENSES/MIT-CODE.txt` (there is deliberately **no root `LICENSE`** file). **Data: still open.** No
+blanket data licence is granted; data and non-code materials are governed by file-specific rights
+notices and upstream terms (`docs/LICENSING.md`, `data/shenzhen/RIGHTS_NOTICE.md`,
+`figures_source/RIGHTS_NOTICE.md`). The earlier proposed "CC-BY-4.0 for data" was **not** adopted and
+must not be claimed. **Author-owned source code is licensed under the MIT License. See
+`LICENSES/MIT-CODE.txt`.** The MIT licence does **not** apply automatically to data, figures,
+manuscript text, or third-party-derived materials. Remaining author action is the **data** side
+(upstream terms / redistribution) and confirmation of the final presentation; **do not claim a final
+data licence here until it is confirmed.**
 
 ## A-4 — Author metadata
 
