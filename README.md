@@ -14,6 +14,7 @@ This repository is a **public** companion. It is not the reviewer package: see *
 paid-shenzhen-lst-reproducibility/
 ├── README.md                     this file
 ├── QUICKSTART.md                 fastest path to verifying the key results
+├── CITATION.cff                  machine-readable citation metadata
 ├── LICENSE_STATUS.md             licence status notice (no licence assigned yet)
 ├── environment.yml               conda-style convenience environment
 ├── requirements-lock.txt         the certified, fully pinned environment (canonical)
@@ -29,7 +30,7 @@ paid-shenzhen-lst-reproducibility/
 └── .gitignore
 ```
 
-There is **no root `CITATION.cff` and no `LICENSE` file yet.** A draft citation template lives at `docs/CITATION_TEMPLATE.cff`, and the licence status is stated in `LICENSE_STATUS.md`. Both become final files at the root only after the open author items are confirmed (see *Status* below).
+A machine-readable `CITATION.cff` is provided at the repository root. DOI and release-date metadata will be added after the first archived release is created. There is still **no `LICENSE` file**; the licence status is stated in `LICENSE_STATUS.md`, and the preparation-period template is kept at `docs/CITATION_TEMPLATE.cff`.
 
 `PAID/` holds the **historical implementation** — the frozen Stage 00–05 scripts, agents, libs and renderers as they were actually run. It is kept verbatim as the record of how the frozen products were produced; its scripts import absolute author paths and are **not** meant to be executed by a third party. `release_tools/` holds the **reviewer-portable verifier layer** that replaces them for reproduction: it derives its own root from its file location, needs no absolute path, no key and no network, and recomputes every published number from the shipped tables alone. `verification/` holds `verify_manifest.py`, the release-integrity checker, plus a verification index.
 
@@ -53,9 +54,9 @@ Every reported numerical result is frozen and reproducible from the shipped arte
 - **Repository status:** pre-release, public-safe repository. It has not been deposited, released or archived.
 - **Licence:** pending final author confirmation. `LICENSE_STATUS.md` states this; no licence is granted by anything in this repository. The final code licence and data licence are **not yet assigned**.
 - **Zenodo archive:** not yet deposited.
-- **Release DOI / repository URL:** not yet assigned, and none is claimed. There is no root `CITATION.cff` yet.
-- **Author metadata** (authors, affiliations, ORCID, CRediT, funding): not yet entered.
-- **Citation:** a final `CITATION.cff` will be added after author metadata and archive identifiers are confirmed. Until then, a draft template lives at `docs/CITATION_TEMPLATE.cff`.
+- **Release DOI:** not yet assigned, and none is claimed. The repository URL is asserted in `CITATION.cff`; a DOI will be added after the first archived release.
+- **Author metadata:** entered in `CITATION.cff` (authors and contact); CRediT roles and a release date are not yet entered.
+- **Citation:** a machine-readable `CITATION.cff` is provided at the repository root. DOI and release-date metadata will be added after the first archived release is created. The preparation-period template is kept at `docs/CITATION_TEMPLATE.cff`.
 
 The open items are tracked for the author in `docs/AUTHOR_ACTION_REQUIRED_PUBLIC.md`. They are reported as *author action required*, never as PASS.
 
@@ -73,7 +74,11 @@ The headline numbers and where they live are tabulated in `QUICKSTART.md`. For t
 
 ## Citation
 
-A final `CITATION.cff` will be added after author metadata and archive identifiers are confirmed. Until then, a draft template is provided at `docs/CITATION_TEMPLATE.cff`; it intentionally leaves the authors and the optional identifier fields unfilled, so that no fabricated author or identifier is ever published. The associated manuscript is not yet published; no DOI is asserted here.
+A machine-readable `CITATION.cff` is provided at the repository root, carrying the confirmed author list and the repository URL. DOI and release-date metadata will be added after the first archived release is created; the associated manuscript is not yet published and no DOI is asserted here. The preparation-period template is kept at `docs/CITATION_TEMPLATE.cff`.
+
+## Funding
+
+This work was supported by The Scientific Research Startup Fund for Shenzhen High-Caliber Personnel of SZPU (No.6026330001K) and The Philosophy and Social Sciences Planning Project of Guangdong Province (Grant Number: GD26YGG16).
 
 ## Licence
 
@@ -81,4 +86,4 @@ Licence: pending final author confirmation. No licence is granted by this reposi
 
 ## Contact
 
-Corresponding author — to be completed.
+Corresponding author / repository contact: Quanyi Zheng, Shenzhen Tourism College, Jinan University, Shenzhen (ORCID [0000-0002-2244-6148](https://orcid.org/0000-0002-2244-6148)).

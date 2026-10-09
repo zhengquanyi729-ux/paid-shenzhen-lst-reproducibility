@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software or reproducibility package, please cite it using the metadata below."
+title: "PAID — Shenzhen LST reproducibility repository"
+version: 1.2.1
+authors:
+  - family-names: Jin
+    given-names: Mengxiao
+    affiliation: "School of Innovation and Creation Design, Shenzhen Polytechnic University"
+  - family-names: Shao
+    given-names: Yu
+    affiliation: "School of Innovation and Creation Design, Shenzhen Polytechnic University"
+  - family-names: Zheng
+    given-names: Quanyi
+    affiliation: "Shenzhen Tourism College, Jinan University, Shenzhen"
+    orcid: "https://orcid.org/0000-0002-2244-6148"
+contact:
+  - family-names: Zheng
+    given-names: Quanyi
+    affiliation: "Shenzhen Tourism College, Jinan University, Shenzhen"
+    orcid: "https://orcid.org/0000-0002-2244-6148"
+repository-code: "https://github.com/zhengquanyi729-ux/paid-shenzhen-lst-reproducibility"
+url: "https://github.com/zhengquanyi729-ux/paid-shenzhen-lst-reproducibility"
+abstract: >-
+  This repository contains the public reproducibility materials for the study
+  'Auditable autonomous symbolic discovery of urban thermal relationships with
+  admissibility constraints and separated validation'. It provides the frozen
+  scientific code, public analysis-ready Shenzhen tables, protocol and
+  provenance records, and a portable verification layer. Restricted Changchun
+  row-level data and raw source products whose redistribution rights are not
+  confirmed are not included in the public repository.
+keywords:
+  - urban climate
+  - land surface temperature
+  - symbolic regression
+  - reproducibility
+  - autonomous discovery
+  - spatial validation
+  - Shenzhen
